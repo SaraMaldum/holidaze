@@ -2,6 +2,8 @@ import React from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
+import Navbar from './components/layout/navbar/Navbar';
+import Footer from './components/layout/footer/Footer';
 import styled from 'styled-components';
 import './App.css';
 
@@ -17,7 +19,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Wrapper className="wrapper">
           <GlobalStyles />
+          <Navbar />
         </Wrapper>
+        <Footer/>
       </ThemeProvider>
     </>
   );
