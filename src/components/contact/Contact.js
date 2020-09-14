@@ -49,7 +49,7 @@ function Contact() {
                 
                 <Form.Group>
                     <StyledLabel>Your name</StyledLabel>
-                    <Input type="text" name="nameame" placeholder="Your name" ref={register()} />
+                    <Input type="text" name="name" placeholder="Your name" ref={register()} />
                     {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
                 </Form.Group>
 

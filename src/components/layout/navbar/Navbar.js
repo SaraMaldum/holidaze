@@ -10,11 +10,13 @@ import {
 import Container from 'react-bootstrap/Container';
 import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
+import Login from '../../login/Login';
 import logo from '../../../images/logo.png';
 import BgImg from '../../../images/bea-fladstad-3IN0hvhUCiY-unsplash.jpg'
 import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
+import {FaUserAlt} from 'react-icons/fa';
 
 //Styles components
 const StyledNavbar = styled(Navbar)`   
@@ -38,7 +40,7 @@ const StyledLink = styled(NavLink)`
         transition: .3s;
         font-style: italic;
     }
-`;
+`
 
 const style = {
     fontWeight: 'bold',
@@ -70,11 +72,14 @@ function NavBar() {
                             <StyledLink to="/" activeStyle={style} exact>
                                 Home
                             </StyledLink>
-                            <StyledLink to="/accommodations" activeStyle={style} exact>
+                            <StyledLink to="/accommodations" activeStyle={style}>
                                 Accommodations
                             </StyledLink>
-                            <StyledLink to="/contact" activeStyle={style} exact>
+                            <StyledLink to="/contact" activeStyle={style}>
                                 Contact us
+                            </StyledLink>
+                            <StyledLink to="/login" activeStyle={style}>
+                                <FaUserAlt />
                             </StyledLink>
                         </Nav>
                     </Navbar.Collapse>
@@ -89,6 +94,7 @@ function NavBar() {
                 <Route path="/" exact component={Home} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/login" component={Login} />
             </Switch>
         </Router>
     )
