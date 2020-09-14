@@ -9,10 +9,12 @@ import {
 } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Home from '../../home/Home';
+import Contact from '../../contact/Contact';
 import logo from '../../../images/logo.png';
 import BgImg from '../../../images/bea-fladstad-3IN0hvhUCiY-unsplash.jpg'
 import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
+import Accommodations from '../../accommodations/Accommodations';
 
 //Styles components
 const StyledNavbar = styled(Navbar)`   
@@ -67,7 +69,13 @@ function NavBar() {
                         <Nav className="ml-auto">
                             <StyledLink to="/" activeStyle={style} exact>
                                 Home
-                        </StyledLink>
+                            </StyledLink>
+                            <StyledLink to="/accommodations" activeStyle={style} exact>
+                                Accommodations
+                            </StyledLink>
+                            <StyledLink to="/contact" activeStyle={style} exact>
+                                Contact us
+                            </StyledLink>
                         </Nav>
                     </Navbar.Collapse>
                     
@@ -79,6 +87,8 @@ function NavBar() {
             </Container>
             <Switch>
                 <Route path="/" exact component={Home} />
+                <Route path="/accommodations" component={Accommodations} />
+                <Route path="/contact" component={Contact} />
             </Switch>
         </Router>
     )

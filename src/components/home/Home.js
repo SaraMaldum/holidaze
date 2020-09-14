@@ -10,8 +10,8 @@ import Bryggen from '../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
 import Hiking from '../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
 import styled from 'styled-components';
 
-const StyledCol = styled(Col)`
-    margin: 10px;
+const StyledImg = styled.div`
+    margin: 10px 0;
     height: 300px;
     filter: drop-shadow(2px 2px 2px gray);
 ` 
@@ -23,24 +23,29 @@ function Home() {
             <Searchbar />
 
             <Row>
-                <StyledCol md={3} 
-                style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                <Col md={3}>
+                    <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     <Buttons>The City</Buttons>
-                </StyledCol>
+                    </StyledImg>
+                </Col>
 
-                <StyledCol md={3} style={{backgroundImage: `url(${Fløyen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                <Col md={3}>
+                    <StyledImg style={{backgroundImage: `url(${Fløyen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     <Buttons>Fløyen</Buttons>
-                </StyledCol>
-
-                <StyledCol md={3} 
-                style={{backgroundImage: `url(${Bryggen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    </StyledImg>
+                </Col>
+                
+                <Col md={3}>
+                    <StyledImg style={{backgroundImage: `url(${Bryggen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     <Buttons>Bryggen</Buttons>
-                </StyledCol>
+                    </StyledImg>
+                </Col>
 
-                <StyledCol md={3} 
-                style={{backgroundImage: `url(${Hiking})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                <Col md={3}>
+                    <StyledImg style={{backgroundImage: `url(${Hiking})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     <Buttons>Hiking</Buttons>
-                </StyledCol>
+                    </StyledImg>
+                </Col>
             </Row>
             </Container>
         </>
