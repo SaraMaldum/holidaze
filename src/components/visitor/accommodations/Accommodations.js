@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { BASE_URL, headers } from "../../constants/api";
+import { BASE_URL, headers } from "../../../constants/api";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
@@ -70,7 +70,7 @@ function Accommodations() {
             <h1>Accommodations</h1>
             <Searchbar />
             <Row>
-                {accommodations.map((accommodation) => {
+                {accommodations.map(accommodation => {
                     return (
                         <StyledCol md={4} key={accommodation.id} >
                             <ImageContainer style={{backgroundImage: `url(${accommodation.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>

@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Searchbar from '../layout/searchbar/Searchbar';
 import Buttons from '../layout/buttons/Buttons';
-import TheCity from '../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
-import Fløyen from '../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
-import Bryggen from '../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
-import Hiking from '../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
+import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
+import Fløyen from '../../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
+import Bryggen from '../../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
+import Hiking from '../../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
 import styled from 'styled-components';
 
 const StyledImg = styled.div`
@@ -24,7 +24,7 @@ function Home() {
 
             <Row>
                 <Col md={3}>
-                    <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    <StyledImg className="text-center" style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     <Buttons>The City</Buttons>
                     </StyledImg>
                 </Col>

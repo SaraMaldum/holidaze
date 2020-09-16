@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import ErrorMsg from '../contact/error/ErrorMsg';
-import Buttons from '../layout/buttons/Buttons';
+import ErrorMsg from '../../visitor/contact/error/ErrorMsg';
+import Buttons from '../../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
-import Input from '../contact/input/Input';
+import Input from '../../visitor/contact/input/Input';
 
 const StyledLabel = styled( Form )`
     color: ${({theme}) => theme.colors.mainBlue};

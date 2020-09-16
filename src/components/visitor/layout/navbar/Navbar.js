@@ -10,21 +10,21 @@ import {
 import Container from 'react-bootstrap/Container';
 import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
-import Login from '../../login/Login';
-import logo from '../../../images/logo.png';
-import BgImg from '../../../images/bea-fladstad-3IN0hvhUCiY-unsplash.jpg'
+import Login from '../../../admin/login/Login';
+import logo from '../../../../images/logo.png';
+import BgImg from '../../../../images/bea-fladstad-3IN0hvhUCiY-unsplash.jpg'
 import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
 import {FaUserAlt} from 'react-icons/fa';
 
 //Styles components
-const StyledNavbar = styled(Navbar)`   
+const StyledContainer = styled(Container)`   
     background-image: url(${BgImg});
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
-    height: 715px;
+    height: 50vh;
 `
 
 const StyledLink = styled(NavLink)`
@@ -56,13 +56,17 @@ const Logo = styled.img`
         filter: drop-shadow(2px 2px 5px #004B66); 
     }
 `
+const HeaderBtn = styled(Buttons)`
+    margin: -20px 0;
+` 
+
 
 //Navbar function
 function NavBar() {
     return (
         <Router>
-            <StyledNavbar variant="dark" expand="lg">
-                <Container fluid>
+            <StyledContainer fluid>
+            <Navbar variant="dark" expand="lg">
                     <NavLink to="/">
                         <Navbar.Brand className="mr-auto"><Logo src={logo} alt="logo" /></Navbar.Brand>
                     </NavLink>
@@ -84,11 +88,12 @@ function NavBar() {
                         </Nav>
                     </Navbar.Collapse>
                     
-                </Container>
-            </StyledNavbar>
+            </Navbar>
+            </StyledContainer>
+
             <Container>
-                <Buttons href="#">Accommodations</Buttons>
-                <Buttons href="#">Contact us</Buttons>
+                <HeaderBtn href="#" className="float-left">Accommodations</HeaderBtn>
+                <HeaderBtn href="#" className="float-right">Contact us</HeaderBtn>
             </Container>
             <Switch>
                 <Route path="/" exact component={Home} />
