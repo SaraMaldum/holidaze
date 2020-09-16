@@ -8,6 +8,7 @@ import Buttons from '../layout/buttons/Buttons';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Input from './input/Input';
+import Heading1 from '../layout/headings/Heading1';
 
 const StyledLabel = styled( Form )`
     color: ${({theme}) => theme.colors.mainBlue};
@@ -43,7 +44,7 @@ function Contact() {
 
     return (
         <Container>
-            <h1>Contact form</h1>
+            <Heading1 title="Contact us"/>
             <Form onSubmit={handleSubmit( onSubmit )}>
                 {formSent && <p>Thank you for your message. We'll respond shortly.</p>}
                 

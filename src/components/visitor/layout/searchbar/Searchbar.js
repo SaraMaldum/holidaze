@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import styled from 'styled-components';
+import Heading2 from '../headings/Heading2';
 
 const StyledSearchField = styled(InputGroup)`
     margin-bottom: 20px;
@@ -13,7 +14,7 @@ const StyledSearchField = styled(InputGroup)`
 export default function Search({ handleSearch }) {
     return (
         <>
-            <h2>Find your accommodation:</h2>
+            <Heading2 title="Find your accommodation:"/>
             <StyledSearchField>
                 <FormControl placeholder="Search..." type="text"
                     onChange={event => handleSearch(event)} />

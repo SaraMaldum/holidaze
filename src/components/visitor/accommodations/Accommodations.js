@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Searchbar from '../layout/searchbar/Searchbar'
 import {FaStar, FaRegStar} from 'react-icons/fa';
 import StyledSpinner from '../layout/spinner/Spinner';
+import Heading1 from '../layout/headings/Heading1';
 
 const StyledCol = styled(Col)`
     margin-bottom: 20px;
@@ -67,7 +68,7 @@ function Accommodations() {
     return (
         <>
         <Container>
-            <h1>Accommodations</h1>
+            <Heading1 title="Accommodations"/>
             <Searchbar />
             <Row>
                 {accommodations.map(accommodation => {

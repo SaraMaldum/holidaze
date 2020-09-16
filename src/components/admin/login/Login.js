@@ -8,6 +8,7 @@ import ErrorMsg from '../../visitor/contact/error/ErrorMsg';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
 import Input from '../../visitor/contact/input/Input';
+import Heading1 from '../../visitor/layout/headings/Heading1';
 
 const StyledLabel = styled( Form )`
     color: ${({theme}) => theme.colors.mainBlue};
@@ -36,7 +37,7 @@ function Login() {
 
     return (
         <Container>
-            <h1>Log in</h1>
+            <Heading1 title="Log in" />
             <Form onSubmit={handleSubmit( onSubmit )}>                
                 <Form.Group>
                     <StyledLabel>User name</StyledLabel>

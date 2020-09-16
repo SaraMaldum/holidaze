@@ -6,16 +6,6 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
     }
-    h1 {
-        @media (max-width: 768px) {
-            font-size: 2rem;
-        }
-    }
-    h2 {
-        @media (max-width: 768px) {
-            font-size: 1.5rem;
-        }
-    }
 `;
 
 export default GlobalStyle;

@@ -23,8 +23,8 @@ const StyledContainer = styled(Container)`
     background-image: url(${BgImg});
     background-repeat: no-repeat;
     background-size: cover; 
-    background-position: center;
-    height: 50vh;
+    background-position:  center;
+    height: 90vh;
 `
 
 const StyledLink = styled(NavLink)`
@@ -48,16 +48,16 @@ const style = {
 }
 
 const Logo = styled.img`
-    width: 100px;
+    width: 150px;
 
     &:hover {
-        width: 106px;
+        width: 156px;
         transition: .3s;
         filter: drop-shadow(2px 2px 5px #004B66); 
     }
 `
 const HeaderBtn = styled(Buttons)`
-    margin: -20px 0;
+    margin: -30px 0;
 ` 
 
 
