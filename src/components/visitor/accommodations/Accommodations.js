@@ -9,8 +9,8 @@ import {FaStar, FaRegStar} from 'react-icons/fa';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import { Typeahead } from 'react-bootstrap-typeahead';
+
 
 const StyledCol = styled(Col)`
     margin-bottom: 20px;
@@ -43,9 +43,25 @@ const StyledStar = styled(FaRegStar)`
 
 ` 
 
+const StyledSearch = styled(Typeahead)`
+    margin: 20px 0;
+    
+    .rbt-highlight-text {
+        color: ${({theme}) => theme.colors.mainBlue};    
+    }
+    .rbt-input {
+        border: 2px solid #EB8F2D;
+        color: ${({theme}) => theme.colors.mainBlue};    
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+` 
+
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
-    const [filterAccommodations, setFilterAccommodations] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const establishmentURL = BASE_URL + "establishments";
@@ -58,32 +74,31 @@ function Accommodations() {
             .then((json) => {
                 console.log(json)
                 setAccommodations(json)
-                setFilterAccommodations(json)
             })
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
     },[options, establishmentURL]);
 
-    
+
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
     }
-
+    
     return (
         <>
         <Container>
             <Heading1 title="Accommodations"/>
             <Heading2 title="Find your accommodations"/>
-            <Autocomplete 
-                id="searchbar"
-                getOptionLabel={(options) => options.name}
-                options={filterAccommodations}
-                renderInput={(params) => <TextField {...params} label="Search here.." variant="outlined" />}
-                handleSearch={establishmentURL}
-                onChange={filterAccommodations}
-                />
+            <StyledSearch
+                id="accommodations.id"
+                labelKey="name"
+                onChange={setAccommodations.id}
+                options={accommodations}
+                placeholder="Search..."
+                selected={accommodations.id}
+            />
             <Row>
-                {filterAccommodations.map(accommodation => {
+                {accommodations.map(accommodation => {
                     return (
                         <StyledCol md={4} key={accommodation.id} >
                             <ImageContainer style={{backgroundImage: `url(${accommodation.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
