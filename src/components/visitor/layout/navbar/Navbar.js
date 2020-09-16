@@ -92,8 +92,8 @@ function NavBar() {
             </StyledContainer>
 
             <Container>
-                <HeaderBtn href="#" className="float-left">Accommodations</HeaderBtn>
-                <HeaderBtn href="#" className="float-right">Contact us</HeaderBtn>
+                <HeaderBtn href="Accommodations" className="float-left">Accommodations</HeaderBtn>
+                <HeaderBtn href="Contact" className="float-right">Contact us</HeaderBtn>
             </Container>
             <Switch>
                 <Route path="/" exact component={Home} />

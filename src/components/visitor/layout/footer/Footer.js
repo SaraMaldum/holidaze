@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import styled from 'styled-components';
+import StyledLink from '../link/ContactLink';
 
 const StyledFooter = styled.footer `
     text-align: center;
@@ -14,8 +15,14 @@ const StyledFooter = styled.footer `
     }
 
     .someIcon {
-        margin: 5px; 
+        margin: 10px; 
         font-size: 26px;
+
+        &:hover {
+            color: ${({theme}) => theme.colors.orange};
+            cursor: pointer;
+            transition: .3s;
+        }
     }
 ` 
 
@@ -23,10 +30,12 @@ function Footer() {
     return(
         <>
         <StyledFooter>
+            <div>
             <p className="followTxt">Follow us</p>
             <FaFacebook className="someIcon"/>
             <FaInstagram className="someIcon"/>
-            <p>Contact us</p>
+            </div>
+            <StyledLink title="Contact us" />
             <p>&copy; Sara Maldum</p>
             </StyledFooter>
         </>
