@@ -5,10 +5,12 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
-import Searchbar from '../layout/searchbar/Searchbar'
 import {FaStar, FaRegStar} from 'react-icons/fa';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
+import Heading2 from '../layout/headings/Heading2';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 const StyledCol = styled(Col)`
     margin-bottom: 20px;
@@ -43,24 +45,26 @@ const StyledStar = styled(FaRegStar)`
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
+    const [filterAccommodations, setFilterAccommodations] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const url = BASE_URL + "establishments";
+    const establishmentURL = BASE_URL + "establishments";
 
     const options = { headers };
 
     useEffect(() => {
-        fetch(url, options)
+        fetch(establishmentURL, options)
             .then((response) => response.json())
             .then((json) => {
                 console.log(json)
                 setAccommodations(json)
+                setFilterAccommodations(json)
             })
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
-    },[options, url]);
+    },[options, establishmentURL]);
 
-
+    
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
     }
@@ -69,9 +73,17 @@ function Accommodations() {
         <>
         <Container>
             <Heading1 title="Accommodations"/>
-            <Searchbar />
+            <Heading2 title="Find your accommodations"/>
+            <Autocomplete 
+                id="searchbar"
+                getOptionLabel={(options) => options.name}
+                options={filterAccommodations}
+                renderInput={(params) => <TextField {...params} label="Search here.." variant="outlined" />}
+                handleSearch={establishmentURL}
+                onChange={filterAccommodations}
+                />
             <Row>
-                {accommodations.map(accommodation => {
+                {filterAccommodations.map(accommodation => {
                     return (
                         <StyledCol md={4} key={accommodation.id} >
                             <ImageContainer style={{backgroundImage: `url(${accommodation.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
@@ -84,7 +96,8 @@ function Accommodations() {
                 })}
             </Row>
             </Container>
-        </>
+            </>
+ 
     );
 }
 

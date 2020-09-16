@@ -2,7 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Searchbar from '../layout/searchbar/Searchbar';
 import Buttons from '../layout/buttons/Buttons';
 import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
 import Fløyen from '../../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
@@ -30,7 +29,6 @@ function Home() {
         <>
             <Container>
             <Heading1 title="Welcome to Holidaze"/>
-            <Searchbar />
 
             <Row>
                 <Col lg={3} md={4} sm={6}>
