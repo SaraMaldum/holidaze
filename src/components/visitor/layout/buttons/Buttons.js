@@ -7,7 +7,9 @@ const StyledButton = styled(Button)`
     border: 2px solid #EB8F2D;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 10px;   
+    margin: 10px 0;   
+    padding: 10px;
+    
     
     &:hover {
         background-color: ${({ theme }) => theme.colors.white};

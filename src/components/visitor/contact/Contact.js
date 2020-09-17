@@ -7,6 +7,7 @@ import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col'
 import Input from './input/Input';
 import Heading1 from '../layout/headings/Heading1';
 
@@ -66,7 +67,10 @@ function Contact() {
                     {errors.message && <ErrorMsg>{errors.message.message}</ErrorMsg>}
                 </Form.Group>
 
+                <Col className="text-right">
                 <Buttons type="submit">Send</Buttons>
+                </Col>
+                
             </Form>
         </Container>
     )

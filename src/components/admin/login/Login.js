@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col'
 import ErrorMsg from '../../visitor/contact/error/ErrorMsg';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
@@ -50,9 +51,11 @@ function Login() {
                     <Input type="password" name="password" placeholder="Password" ref={register()} />
                     {errors.password && <ErrorMsg>{errors.password.message}</ErrorMsg>}
                 </Form.Group>
-
-                <Buttons type="submit">Log in</Buttons>
             </Form>
+            
+            <Col className="text-right">
+            <Buttons type="submit">Log in</Buttons>
+            </Col>
         </Container>
     )
 }

@@ -60,9 +60,9 @@ const HeaderBtn = styled(Buttons)`
     margin: -30px 0;
 ` 
 
-
 //Navbar function
 function NavBar() {
+
     return (
         <Router>
             <StyledContainer fluid>
