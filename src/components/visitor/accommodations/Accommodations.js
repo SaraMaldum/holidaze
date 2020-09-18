@@ -10,7 +10,6 @@ import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import Buttons from '../layout/buttons/Buttons';
 
 const StyledCol = styled(Col)`
     margin-bottom: 20px;
@@ -64,7 +63,7 @@ function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const establishmentURL = BASE_URL + "establishments";
+    const establishmentURL = BASE_URL + 'establishments';
 
     const options = { headers };
 
@@ -72,7 +71,6 @@ function Accommodations() {
         fetch(establishmentURL, options)
             .then((response) => response.json())
             .then((json) => {
-                console.log(json)
                 setAccommodations(json)
             })
             .catch((error) => console.log(error))
@@ -86,34 +84,33 @@ function Accommodations() {
     
     return (
         <>
-        <Container>
-            <Heading1 title="Accommodations"/>
-            <Heading2 title="Find your accommodations"/>
-            <StyledSearch
-                id={accommodations.id}
-                labelKey="name"
-                onChange={setAccommodations.id}
-                options={accommodations}
-                placeholder="Search..."
-                selected={accommodations.id}
-            />
-            <Row>
-                {accommodations.map(accommodation => {
-                    const {id, name, image} = accommodation;
-                    return (
-                        <StyledCol className="text-center" md={4} key={id} >
-                            <ImageContainer style={{backgroundImage: `url(${image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
-                            <StyledLink to={`establishments/${id}`}>{name}</StyledLink>
-                            <div>
-                            <StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledStar />
-                            </div>
-                        </StyledCol>
-                    );
-                })}
-            </Row>
+            <Container>
+                <Heading1 title="Accommodations"/>
+                <Heading2 title="Find your accommodations"/>
+                <StyledSearch
+                    id="accommodations.id"
+                    labelKey="name"
+                    onChange={setAccommodations.id}
+                    options={accommodations}
+                    placeholder="Search..."
+                    selected={accommodations.id}
+                />
+                <Row>
+                    {accommodations.map(accommodation => {
+                        const {id, name, image} = accommodation;
+                        return (
+                            <StyledCol className="text-center" md={4} key={id} >
+                                <ImageContainer style={{backgroundImage: `url(${image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
+                                <StyledLink to='Specific/:id'>{name}</StyledLink>
+                                <div>
+                                    <StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledStar />
+                                </div>
+                            </StyledCol>
+                        );
+                    })}
+                </Row>
             </Container>
-            </>
- 
+        </>
     );
 }
 

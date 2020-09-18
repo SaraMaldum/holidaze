@@ -15,17 +15,23 @@ const ImageContainer = styled.p`
 ` 
 
 function Specific() {
-    const [specificAccommodation, setSpecificAccommodation] = useState([]);
+    const [specificAccommodation, setSpecificAccommodation] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    let {id} = useParams();
+    let { id } = useParams();
 
-    const spesificURL = BASE_URL + 'establishments' + id;
+    const specificURL = BASE_URL + 'establishments/' + id;
+
+    console.log(setSpecificAccommodation)
 
     useEffect(() => {
-        fetch(spesificURL)
+        fetch(specificURL)
             .then(response => response.json())
-            .then(json => setSpecificAccommodation(json))
+            .then(json => {
+                console.log(json)
+                setSpecificAccommodation(json)
+
+            })
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
     });
@@ -37,11 +43,11 @@ function Specific() {
     return(
         <>
             <Container>
-            <Heading1 title={specificAccommodation.name}/>
+                <Heading1 title={specificAccommodation.name}/>
 
-            <ImageContainer>{specificAccommodation.image}</ImageContainer>
-            <Heading2 title="About the hotel" />
-            <Col>{specificAccommodation.description}</Col>
+                <ImageContainer>{specificAccommodation.image}</ImageContainer>
+                <Heading2 title="About the hotel" />
+                <Col>{specificAccommodation.description}</Col>
             </Container>
         </>
     )

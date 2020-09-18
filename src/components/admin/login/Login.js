@@ -54,7 +54,7 @@ function Login() {
             </Form>
             
             <Col className="text-right">
-            <Buttons type="submit">Log in</Buttons>
+                <Buttons type="submit">Log in</Buttons>
             </Col>
         </Container>
     )

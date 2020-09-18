@@ -14,7 +14,7 @@ import Heading1 from '../layout/headings/Heading1';
 const StyledLabel = styled( Form )`
     color: ${({theme}) => theme.colors.mainBlue};
     font-weight: bold;
-`;
+`
 
 const schema = yup.object().shape( {
     name: yup
@@ -68,9 +68,9 @@ function Contact() {
                 </Form.Group>
 
                 <Col className="text-right">
-                <Buttons type="submit">Send</Buttons>
+                    <Buttons type="submit">Send</Buttons>
                 </Col>
-                
+
             </Form>
         </Container>
     )

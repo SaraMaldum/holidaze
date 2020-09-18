@@ -17,6 +17,7 @@ import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
 import {FaUserAlt} from 'react-icons/fa';
+import Specific from '../../accommodations/specific/Specific';
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -62,11 +63,10 @@ const HeaderBtn = styled(Buttons)`
 
 //Navbar function
 function NavBar() {
-
     return (
         <Router>
             <StyledContainer fluid>
-            <Navbar variant="dark" expand="lg">
+                <Navbar variant="dark" expand="lg">
                     <NavLink to="/">
                         <Navbar.Brand className="mr-auto"><Logo src={logo} alt="logo" /></Navbar.Brand>
                     </NavLink>
@@ -85,10 +85,12 @@ function NavBar() {
                             <StyledLink to="/login" activeStyle={style}>
                                 <FaUserAlt />
                             </StyledLink>
+                            <StyledLink to="/specific" activeStyle={style}>
+                                Specific
+                            </StyledLink>
                         </Nav>
-                    </Navbar.Collapse>
-                    
-            </Navbar>
+                    </Navbar.Collapse>  
+                </Navbar>
             </StyledContainer>
 
             <Container>
@@ -100,6 +102,7 @@ function NavBar() {
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
+                <Route path="/specific:id" component={Specific} />
             </Switch>
         </Router>
     )

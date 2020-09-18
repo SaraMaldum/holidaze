@@ -28,33 +28,33 @@ function Home() {
     return( 
         <>
             <Container>
-            <Heading1 title="Welcome to Holidaze"/>
+                <Heading1 title="Welcome to Holidaze"/>
 
-            <Row>
-                <Col lg={3} md={4} sm={6}>
-                    <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                    <HomeBtn href="https://www.visitbergen.com/">The City</HomeBtn>
-                    </StyledImg>
-                </Col>
+                <Row>
+                    <Col lg={3} md={4} sm={6}>
+                        <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                            <HomeBtn href="https://www.visitbergen.com/">The City</HomeBtn>
+                        </StyledImg>
+                    </Col>
 
-                <Col lg={3} md={4} sm={6}>
-                    <StyledImg style={{backgroundImage: `url(${Fløyen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                    <HomeBtn href="https://www.floyen.no/">Fløyen</HomeBtn>
-                    </StyledImg>
-                </Col>
-                
-                <Col lg={3} md={4} sm={6}>
-                    <StyledImg style={{backgroundImage: `url(${Bryggen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                    <HomeBtn href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553" >Bryggen</HomeBtn>
-                    </StyledImg>
-                </Col>
+                    <Col lg={3} md={4} sm={6}>
+                        <StyledImg style={{backgroundImage: `url(${Fløyen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                            <HomeBtn href="https://www.floyen.no/">Fløyen</HomeBtn>
+                        </StyledImg>
+                    </Col>
+                    
+                    <Col lg={3} md={4} sm={6}>
+                        <StyledImg style={{backgroundImage: `url(${Bryggen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                            <HomeBtn href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553" >Bryggen</HomeBtn>
+                        </StyledImg>
+                    </Col>
 
-                <Col lg={3} md={4} sm={6}>
-                    <StyledImg style={{backgroundImage: `url(${Hiking})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                    <HomeBtn href="https://en.visitbergen.com/things-to-do/activities/hiking-in-bergen/seven-mountains-bergen?gclid=CjwKCAjw74b7BRA_EiwAF8yHFKA9ZSlqUVvcrFdYR-AJFBXaafyIdl54-YzexxY5E6RDI0q8C-2SMhoCeYAQAvD_BwE">Hiking</HomeBtn>
-                    </StyledImg>
-                </Col>
-            </Row>
+                    <Col lg={3} md={4} sm={6}>
+                        <StyledImg style={{backgroundImage: `url(${Hiking})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                            <HomeBtn href="https://en.visitbergen.com/things-to-do/activities/hiking-in-bergen/seven-mountains-bergen?gclid=CjwKCAjw74b7BRA_EiwAF8yHFKA9ZSlqUVvcrFdYR-AJFBXaafyIdl54-YzexxY5E6RDI0q8C-2SMhoCeYAQAvD_BwE">Hiking</HomeBtn>
+                        </StyledImg>
+                    </Col>
+                </Row>
             </Container>
         </>
     )

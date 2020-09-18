@@ -29,14 +29,14 @@ const StyledFooter = styled.footer `
 function Footer() {
     return(
         <>
-        <StyledFooter>
-            <div>
-            <p className="followTxt">Follow us</p>
-            <FaFacebook className="someIcon"/>
-            <FaInstagram className="someIcon"/>
-            </div>
-            <StyledLink title="Contact us" />
-            <p>&copy; Sara Maldum</p>
+            <StyledFooter>
+                <div>
+                    <p className="followTxt">Follow us</p>
+                    <FaFacebook className="someIcon"/>
+                    <FaInstagram className="someIcon"/>
+                </div>
+                <StyledLink title="Contact us" />
+                <p>&copy; Sara Maldum</p>
             </StyledFooter>
         </>
     )

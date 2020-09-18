@@ -7,6 +7,7 @@ const Heading2 = styled.h2`
     text-align: center;
     color: ${({theme}) => theme.colors.mainBlue};
     font-weight: bold;
+    
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
