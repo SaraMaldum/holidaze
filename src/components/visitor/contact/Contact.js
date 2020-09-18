@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 import Input from './input/Input';
 import Heading1 from '../layout/headings/Heading1';
 
-const StyledLabel = styled( Form )`
+const StyledLabel = styled( Form.Label )`
     color: ${({theme}) => theme.colors.mainBlue};
     font-weight: bold;
 `
