@@ -1,46 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
-import {FaStar, FaRegStar} from 'react-icons/fa';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import { Typeahead } from 'react-bootstrap-typeahead';
-
-const StyledCol = styled(Col)`
-    margin-bottom: 20px;
-`
-
-const ImageContainer = styled.p`
-    height: 200px;
-    margin: 0;
-    filter: drop-shadow(2px 2px 2px gray);
-` 
-
-const StyledLink = styled(NavLink) `
-    color: ${({theme}) => theme.colors.mainBlue};
-    font-weight: bold;
-
-    &:hover {
-    color: ${({theme}) => theme.colors.orange};
-        text-decoration: none;
-        transition: .3s;
-    }
-` 
-const StyledFilledStar = styled(FaStar)`
-    color: ${({theme}) => theme.colors.starYellow};
-    font-size: 24px;
-`
-
-const StyledStar = styled(FaRegStar)`
-    color: ${({theme}) => theme.colors.starYellow};
-    font-size: 24px;
-
-` 
+import AccommodationItems from './AccommodationItems';
 
 const StyledSearch = styled(Typeahead)`
     margin: 20px 0;
@@ -99,13 +67,13 @@ function Accommodations() {
                     {accommodations.map(accommodation => {
                         const {id, name, image} = accommodation;
                         return (
-                            <StyledCol className="text-center" md={4} key={id} >
-                                <ImageContainer style={{backgroundImage: `url(${image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
-                                <StyledLink to='Specific/:id'>{name}</StyledLink>
-                                <div>
-                                    <StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledStar />
-                                </div>
-                            </StyledCol>
+                            <Col sm={6} md={4} lg={3} key={id}>
+                                <AccommodationItems 
+                                    id={id}
+                                    name={name}
+                                    image={image}
+                                />   
+                            </Col>
                         );
                     })}
                 </Row>

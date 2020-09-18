@@ -22,16 +22,10 @@ function Specific() {
 
     const specificURL = BASE_URL + 'establishments/' + id;
 
-    console.log(setSpecificAccommodation)
-
     useEffect(() => {
         fetch(specificURL)
             .then(response => response.json())
-            .then(json => {
-                console.log(json)
-                setSpecificAccommodation(json)
-
-            })
+            .then(json => setSpecificAccommodation(json))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
     });

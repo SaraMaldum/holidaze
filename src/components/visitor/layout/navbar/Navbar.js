@@ -85,9 +85,6 @@ function NavBar() {
                             <StyledLink to="/login" activeStyle={style}>
                                 <FaUserAlt />
                             </StyledLink>
-                            <StyledLink to="/specific" activeStyle={style}>
-                                Specific
-                            </StyledLink>
                         </Nav>
                     </Navbar.Collapse>  
                 </Navbar>
@@ -101,8 +98,9 @@ function NavBar() {
                 <Route path="/" exact component={Home} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/accommodations/:id" component={Specific} />
                 <Route path="/login" component={Login} />
-                <Route path="/specific:id" component={Specific} />
+
             </Switch>
         </Router>
     )
