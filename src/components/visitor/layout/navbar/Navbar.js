@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {
@@ -10,17 +10,13 @@ import {
 import Container from 'react-bootstrap/Container';
 import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
-import Login from '../../../admin/login/Login';
 import logo from '../../../../images/logo.png';
 import BgImg from '../../../../images/headerImg.jpg'
 import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
-import {FaUserAlt} from 'react-icons/fa';
-import Specific from '../../accommodations/detailed/Detail';
+import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
-import {AuthContext } from '../../../../context/AuthContext';
-import Logout from '../../../admin/login/Logout';
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -81,7 +77,6 @@ const HeaderBtn = styled(Buttons)`
 
 //Navbar function
 function NavBar() {
-    const { user } = useContext(AuthContext);
 
     return (
         <Router>
@@ -102,18 +97,9 @@ function NavBar() {
                             <StyledLink to="/contact" activeStyle={style}>
                                 Contact us
                             </StyledLink>
-
-                            {user ? (
-                                <>
-                                    <StyledLink to="/admin">Admin</StyledLink>
-                                    <Logout />
-                                </>
-                            ) : (
-                                <StyledLink to="/login" activeStyle={style}>
-                                    <FaUserAlt />
-                                </StyledLink>
-                            )}
-                            
+                            <StyledLink to="/admin" activeStyle={style}>
+                                Admin
+                            </StyledLink>                            
                         </Nav>
                     </Navbar.Collapse>  
                 </Navbar>
@@ -125,11 +111,10 @@ function NavBar() {
             </BtnContainer>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/specific/:id" component={Specific} />
+                <Route path="/detail/:id" component={Detail} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/admin" component={ContactMsg} />
-                <Route path="/login" component={Login} />
             </Switch>
         </Router>
     );
