@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../../constants/api";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';

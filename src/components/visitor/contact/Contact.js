@@ -5,16 +5,11 @@ import { yupResolver } from '@hookform/resolvers';
 import Form from 'react-bootstrap/Form';
 import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
-import styled from 'styled-components';
+import FormLabel from '../contact/formStyles/FormLabel';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col'
-import Input from './input/Input';
+import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
-
-const StyledLabel = styled( Form.Label )`
-    color: ${({theme}) => theme.colors.mainBlue};
-    font-weight: bold;
-`
 
 const schema = yup.object().shape( {
     name: yup
@@ -50,19 +45,19 @@ function Contact() {
                 {formSent && <p>Thank you for your message. We'll respond shortly.</p>}
                 
                 <Form.Group>
-                    <StyledLabel>Your name</StyledLabel>
+                    <FormLabel>Your name</FormLabel>
                     <Input type="text" name="name" placeholder="Your name" ref={register()} />
                     {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
                 </Form.Group>
 
                 <Form.Group>
-                    <StyledLabel>Email</StyledLabel>
+                    <FormLabel>Email</FormLabel>
                     <Input type="email" name="email" placeholder="Email address" ref={register()} />
                     {errors.email && <ErrorMsg>{errors.email.message}</ErrorMsg>}
                 </Form.Group>
 
                 <Form.Group>
-                    <StyledLabel>Message</StyledLabel>
+                    <FormLabel>Message</FormLabel>
                     <Input type="text" as="textarea" rows="3" name="message" placeholder="Your message" ref={register()} />
                     {errors.message && <ErrorMsg>{errors.message.message}</ErrorMsg>}
                 </Form.Group>

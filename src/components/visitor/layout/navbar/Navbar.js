@@ -17,6 +17,8 @@ import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
 import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
+import AddAccommodation from "../../../admin/edit/AddAccommodation";
+import AdminDashboard from "../../../admin/AdminDashboard";
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -114,7 +116,10 @@ function NavBar() {
                 <Route path="/detail/:id" component={Detail} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/admin" component={ContactMsg} />
+                <Route path="/admin" component={AdminDashboard} />
+                <Route path="/addAccommodation" component={AddAccommodation} />
+                <Route path="/contactMsg" component={ContactMsg} />
+
             </Switch>
         </Router>
     );
