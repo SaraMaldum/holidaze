@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {
@@ -12,40 +12,43 @@ import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
 import Login from '../../../admin/login/Login';
 import logo from '../../../../images/logo.png';
-import BgImg from '../../../../images/bea-fladstad-3IN0hvhUCiY-unsplash.jpg'
+import BgImg from '../../../../images/headerImg.jpg'
 import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
 import Accommodations from '../../accommodations/Accommodations';
 import {FaUserAlt} from 'react-icons/fa';
-import Specific from '../../accommodations/specific/Specific';
+import Specific from '../../accommodations/detailed/Detail';
+import ContactMsg from '../../../admin/contactMsg/ContactMsg';
+import {AuthContext } from '../../../../context/AuthContext';
+import Logout from '../../../admin/login/Logout';
 
 //Styles components
 const StyledContainer = styled(Container)`   
     background-image: url(${BgImg});
     background-repeat: no-repeat;
     background-size: cover; 
-    background-position:  center;
-    height: 90vh;
+    background-position: center;
+    height: 50vh;
 `
 
 const StyledLink = styled(NavLink)`
-    color: ${({ theme }) => theme.colors.orange};
+    color: ${({ theme }) => theme.colors.white};
     padding: 10px 15px;
     text-transform: uppercase;
-    border-bottom: 1px solid #EB8F2D;
+    border-bottom: 1px solid #FFFFFF;
     font-weight: bold;
     
     &:hover {
-        color: ${({ theme }) => theme.colors.orange};
+        color: ${({ theme }) => theme.colors.white};
         text-decoration: none;
         transition: .3s;
-        font-style: italic;
+        border-bottom: 3px solid #EB8F2D;
     }
 `
 
 const style = {
     fontWeight: 'bold',
-    borderBottom: '3px solid #EB8F2D',
+    borderBottom: '3px solid #FFFFFF',
 }
 
 const Logo = styled.img`
@@ -54,15 +57,32 @@ const Logo = styled.img`
     &:hover {
         width: 156px;
         transition: .3s;
-        filter: drop-shadow(2px 2px 5px #004B66); 
+        filter: drop-shadow(2px 2px 5px white); 
     }
 `
+
+const BtnContainer = styled(Container)`
+    margin-top: -82px;
+    padding: 4px;
+    max-width: 350px;
+    background-color: rgba(255,255,255,.6);
+` 
+
+const HeadingTxt = styled.p`
+    font-size: 24px;
+    color: ${({theme}) => theme.colors.darkBlue};
+    font-weight: bold;
+    text-transform: uppercase;
+` 
+
 const HeaderBtn = styled(Buttons)`
     margin: -30px 0;
 ` 
 
 //Navbar function
 function NavBar() {
+    const { user } = useContext(AuthContext);
+
     return (
         <Router>
             <StyledContainer fluid>
@@ -82,28 +102,37 @@ function NavBar() {
                             <StyledLink to="/contact" activeStyle={style}>
                                 Contact us
                             </StyledLink>
-                            <StyledLink to="/login" activeStyle={style}>
-                                <FaUserAlt />
-                            </StyledLink>
+
+                            {user ? (
+                                <>
+                                    <StyledLink to="/admin">Admin</StyledLink>
+                                    <Logout />
+                                </>
+                            ) : (
+                                <StyledLink to="/login" activeStyle={style}>
+                                    <FaUserAlt />
+                                </StyledLink>
+                            )}
+                            
                         </Nav>
                     </Navbar.Collapse>  
                 </Navbar>
             </StyledContainer>
 
-            <Container>
-                <HeaderBtn href="Accommodations" className="float-left">Accommodations</HeaderBtn>
-                <HeaderBtn href="Contact" className="float-right">Contact us</HeaderBtn>
-            </Container>
+            <BtnContainer className="text-center">
+                <HeadingTxt>Explore Bergen today!</HeadingTxt>
+                <HeaderBtn href="Accommodations">View Accommodations</HeaderBtn>
+            </BtnContainer>
             <Switch>
                 <Route path="/" exact component={Home} />
+                <Route path="/specific/:id" component={Specific} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/accommodations/:id" component={Specific} />
+                <Route path="/admin" component={ContactMsg} />
                 <Route path="/login" component={Login} />
-
             </Switch>
         </Router>
-    )
+    );
 }
 
 export default NavBar;

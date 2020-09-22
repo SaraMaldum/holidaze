@@ -7,25 +7,9 @@ import Row from 'react-bootstrap/Row';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
-import { Typeahead } from 'react-bootstrap-typeahead';
 import AccommodationItems from './AccommodationItems';
+import Autocomplete from 'react-autocomplete';
 
-const StyledSearch = styled(Typeahead)`
-    margin: 20px 0;
-    
-    .rbt-highlight-text {
-        color: ${({theme}) => theme.colors.mainBlue};    
-    }
-    .rbt-input {
-        border: 2px solid #EB8F2D;
-        color: ${({theme}) => theme.colors.mainBlue};    
-        display: block;
-        width: 100%;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-` 
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
@@ -54,14 +38,24 @@ function Accommodations() {
         <>
             <Container>
                 <Heading1 title="Accommodations"/>
-                <Heading2 title="Find your accommodations"/>
-                <StyledSearch
-                    id="accommodations.id"
-                    labelKey="name"
-                    onChange={setAccommodations.id}
-                    options={accommodations}
-                    placeholder="Search..."
-                    selected={accommodations.id}
+                <Heading2 title="Find your accommodation"/>
+                <Autocomplete
+                    items={accommodations}
+                    shouldItemRender={(accommodations, value) => 
+                        accommodations.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
+                    getItemValue={(accommodations) => 
+                        accommodations.name }
+                    inputProps={{ style: { width: '100%', marginBottom: '20px', padding: '5px', border: '2px solid #EB8F2D', borderRadius: '5px', display: 'inline-block' }, placeholder: 'Search...'}}  
+                    wrapperStyle={{ width: '100%' }}
+                    renderItem={(accommodations) =>
+                        <Col md={12} key={accommodations.id}
+                        style={{ padding: '5px' }}>
+                          {accommodations.name}
+                        </Col>
+                      }
+                      value={accommodations.name}
+                      onChange={(e) => accommodations.name = e.target.value}
+                      onSelect={(id) => accommodations.name = id}
                 />
                 <Row>
                     {accommodations.map(accommodation => {
@@ -71,7 +65,7 @@ function Accommodations() {
                                 <AccommodationItems 
                                     id={id}
                                     name={name}
-                                    image={image}
+                                    image={image}                                   
                                 />   
                             </Col>
                         );

@@ -7,9 +7,9 @@ const StyledLink = styled.a`
     color: ${({theme}) => theme.colors.white};
 
     &:hover {
-        color: ${({theme}) => theme.colors.white};
-        font-style: italic;
+        color: ${({theme}) => theme.colors.orange};
         text-decoration: none;
+        transition: .3s;
     }
 ` 
 

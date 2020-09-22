@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
@@ -10,11 +10,12 @@ import Buttons from '../../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
 import Input from '../../visitor/contact/input/Input';
 import Heading1 from '../../visitor/layout/headings/Heading1';
+import {AuthContext } from '../../../context/AuthContext';
 
-const StyledLabel = styled( Form )`
+const StyledLabel = styled( Form.Label )`
     color: ${({theme}) => theme.colors.mainBlue};
     font-weight: bold;
-`;
+`
 
 const schema = yup.object().shape( {
     userName: yup
@@ -23,39 +24,40 @@ const schema = yup.object().shape( {
         .required( 'Username has to be longer than 4 characters.'),
     password: yup
         .string()
-        .min(8, "Please enter your password, longer than 8 characters." )
+        .min(8, "Password has to be longer than 8 characters." )
         .required( "Password is required." ),
 } );
 
 function Login() {
+    
     const { register, handleSubmit, errors } = useForm( {
         resolver: yupResolver( schema )
     } );
 
     function onSubmit( data ) {
-        console.log("data", data );
+        console.log("Log in information: ", data );
     }
 
     return (
         <Container>
-            <Heading1 title="Log in" />
-            <Form onSubmit={handleSubmit( onSubmit )}>                
+            <Form onSubmit={handleSubmit(onSubmit)}>
+                <Heading1 title="Log in" />
                 <Form.Group>
-                    <StyledLabel>User name</StyledLabel>
-                    <Input type="text" name="userName" placeholder="User name" ref={register()} />
+                    <StyledLabel>Name</StyledLabel>
+                    <Input name="userName" placeholder="Enter your username" ref={register()} />
                     {errors.userName && <ErrorMsg>{errors.userName.message}</ErrorMsg>}
                 </Form.Group>
 
                 <Form.Group>
                     <StyledLabel>Password</StyledLabel>
-                    <Input type="password" name="password" placeholder="Password" ref={register()} />
+                    <Input name="password" placeholder="Enter your password" type="password" ref={register()} />
                     {errors.password && <ErrorMsg>{errors.password.message}</ErrorMsg>}
                 </Form.Group>
+
+                <Col className="text-right">
+                    <Buttons type="submit" href="/admin">Submit</Buttons>
+                </Col>
             </Form>
-            
-            <Col className="text-right">
-                <Buttons type="submit">Log in</Buttons>
-            </Col>
         </Container>
     )
 }

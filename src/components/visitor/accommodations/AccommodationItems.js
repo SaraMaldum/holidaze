@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Col from 'react-bootstrap/Col';
-import { NavLink } from "react-router-dom";
+import Heading3 from '../layout/headings/Heading3';
 import {FaStar, FaRegStar} from 'react-icons/fa';
+import {NavLink} from 'react-router-dom';
 
-const StyledCol = styled(Col)`
-    margin-bottom: 20px;
+const StyledCol = styled(NavLink)`
+    margin: 20px 0;
+    
+    &:hover {
+        filter: drop-shadow(2px 2px 2px gray);
+        text-decoration: none;
+        transition: .3s;
+    }
 `
 
 const ImageContainer = styled.p`
@@ -15,31 +21,23 @@ const ImageContainer = styled.p`
     filter: drop-shadow(2px 2px 2px gray);
 ` 
 
-const StyledLink = styled(NavLink) `
-    color: ${({theme}) => theme.colors.mainBlue};
-    font-weight: bold;
-
-    &:hover {
-    color: ${({theme}) => theme.colors.orange};
-        text-decoration: none;
-        transition: .3s;
-    }
-` 
 const StyledFilledStar = styled(FaStar)`
     color: ${({theme}) => theme.colors.starYellow};
     font-size: 24px;
+    margin-bottom: 15px;
 `
 
 const StyledStar = styled(FaRegStar)`
     color: ${({theme}) => theme.colors.starYellow};
     font-size: 24px;
+    margin-bottom: 15px;
 ` 
 
 function AccommodationItems({id, name, image}) {
     return(
-        <StyledCol className="text-center" key={id} >
+        <StyledCol className="text-center" key={id}  to={"/specific/" + id}>
             <ImageContainer style={{backgroundImage: `url(${image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
-            <StyledLink to={'accommodations/' + id}>{name}</StyledLink>
+            <Heading3 title={name}/>
             <div>
                 <StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledFilledStar /><StyledStar />
             </div>
