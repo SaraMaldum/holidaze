@@ -30,7 +30,7 @@ const Mail = styled.a`
     }
 `
 
-function Specific() {
+function Detail() {
     const [detailedAccommodation, setdetailedAccommodation] = useState(null);
     const [loading, setLoading] = useState(true);
     
@@ -39,15 +39,15 @@ function Specific() {
     let { id } = useParams();
 
 
-    const specificURL = BASE_URL + 'establishments/' + id;
+    const detailURL = BASE_URL + 'establishments/' + id;
 
     useEffect(() => {
-        fetch(specificURL, options)
+        fetch(detailURL, options)
             .then(response => response.json())
             .then(json => setdetailedAccommodation(json))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
-    }, [specificURL, options]);
+    }, [detailURL, options]);
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
@@ -70,11 +70,11 @@ function Specific() {
                 </Col>
 
                 <Col className="text-right">
-                    <Buttons>Book now</Buttons>
+                    <Buttons href={"/enquiry/" + id}>Book now</Buttons>
                 </Col>
             </Container>
         </>
     )
 }
 
-export default Specific;
+export default Detail;

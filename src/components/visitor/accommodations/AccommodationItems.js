@@ -35,7 +35,7 @@ const StyledStar = styled(FaRegStar)`
 
 function AccommodationItems({id, name, image}) {
     return(
-        <StyledCol className="text-center" key={id}  to={"/specific/" + id}>
+        <StyledCol className="text-center" key={id}  to={"/detail/" + id}>
             <ImageContainer style={{backgroundImage: `url(${image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
             <Heading3 title={name}/>
             <div>

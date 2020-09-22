@@ -30,9 +30,9 @@ function AddAccommodation() {
 
     return(
         <Container>
+            <Heading1 title="Add hotel" />
             <AdminMenu />
             <Form onSubmit={handleSubmit(onSubmit)}>
-                <Heading1 title="Add hotel" />
                 <Form.Group>
                     <FormLabel>Accommodation name*</FormLabel>
                     <Input placeholder="Accommodation name" name="name" ref={register()}/>

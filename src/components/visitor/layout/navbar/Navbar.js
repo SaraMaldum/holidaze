@@ -12,13 +12,17 @@ import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
 import logo from '../../../../images/logo.png';
 import BgImg from '../../../../images/headerImg.jpg'
-import Buttons from '../buttons/Buttons';
 import styled from 'styled-components';
+import HeaderButton from './HeaderButton';
 import Accommodations from '../../accommodations/Accommodations';
 import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
 import AddAccommodation from "../../../admin/edit/AddAccommodation";
 import AdminDashboard from "../../../admin/AdminDashboard";
+import DeleteAccommodation from "../../../admin/edit/DeleteAccommodation";
+import EditAccommodation from "../../../admin/edit/EditAccommodation";
+import BookingEnquiries from "../../../admin/enquiries/BookingEnquiries";
+import Enquiry from "../../enquiry/Enquiry";
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -51,31 +55,14 @@ const style = {
 
 const Logo = styled.img`
     width: 150px;
+    filter: drop-shadow(-0.9px 1px 1px rgba(255,255,255,.9)); 
 
     &:hover {
         width: 156px;
         transition: .3s;
-        filter: drop-shadow(2px 2px 5px white); 
+        filter: drop-shadow(1px 2px 5px white); 
     }
 `
-
-const BtnContainer = styled(Container)`
-    margin-top: -82px;
-    padding: 4px;
-    max-width: 350px;
-    background-color: rgba(255,255,255,.6);
-` 
-
-const HeadingTxt = styled.p`
-    font-size: 24px;
-    color: ${({theme}) => theme.colors.darkBlue};
-    font-weight: bold;
-    text-transform: uppercase;
-` 
-
-const HeaderBtn = styled(Buttons)`
-    margin: -30px 0;
-` 
 
 //Navbar function
 function NavBar() {
@@ -106,20 +93,20 @@ function NavBar() {
                     </Navbar.Collapse>  
                 </Navbar>
             </StyledContainer>
-
-            <BtnContainer className="text-center">
-                <HeadingTxt>Explore Bergen today!</HeadingTxt>
-                <HeaderBtn href="Accommodations">View Accommodations</HeaderBtn>
-            </BtnContainer>
+            <HeaderButton />
+            
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/detail/:id" component={Detail} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/enquiry/:id" component={Enquiry} />
                 <Route path="/admin" component={AdminDashboard} />
                 <Route path="/addAccommodation" component={AddAccommodation} />
+                <Route path="/deleteAccommodation" component={DeleteAccommodation} />
+                <Route path="/editAccommodation" component={EditAccommodation} />
                 <Route path="/contactMsg" component={ContactMsg} />
-
+                <Route path="/enquiries" component={BookingEnquiries} />
             </Switch>
         </Router>
     );

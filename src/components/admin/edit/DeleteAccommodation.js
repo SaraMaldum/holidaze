@@ -1,15 +1,14 @@
 import React from 'react';
 import Heading1 from '../../visitor/layout/headings/Heading1';
-
 import AdminMenu from '../AdminMenu';
 
-function ContactMsg() {
+function DeleteAccommodation(){
     return(
         <>
-            <Heading1 title="Contact messages" />
+            <Heading1 title="Delete Accommodation" />
             <AdminMenu />
         </>
     )
 }
 
-export default ContactMsg;
+export default DeleteAccommodation;
