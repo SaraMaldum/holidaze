@@ -11,7 +11,6 @@ import Col from 'react-bootstrap/Col'
 import Input from '../contact/formStyles/Input';
 import DatePicker from './DatePicker';
 import {moment} from 'react-moment';
-import Heading3 from '../layout/headings/Heading3';
 
 const schema = yup.object().shape( {
     name: yup
@@ -54,7 +53,7 @@ function EnquiryForm() {
                     {errors.email && <ErrorMsg>{errors.email.message}</ErrorMsg>}
                 </Form.Group>
                 
-                <Heading3 title="Choose dates"/>
+                <FormLabel>Choose dates</FormLabel>
                 <DatePicker date={date} onChange={e => setDate(e.target.value)} />
 
                 <Col className="text-right">

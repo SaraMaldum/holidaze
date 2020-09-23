@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Buttons from '../layout/buttons/Buttons';
-import { Container, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import {BASE_URL, headers} from '../../../constants/api';
