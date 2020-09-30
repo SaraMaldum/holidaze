@@ -35,7 +35,7 @@ function Accommodations() {
                 {accommodations.map((accommodation) => {
                     return (
                         <Col md={3} key={accommodation.id}>
-                            <NavLink to={`/admin/accommodationOverview/edit/${accommodation.id}`}>{accommodation.name}</NavLink>
+                            <NavLink to={`/edit/${accommodation.id}`}>{accommodation.name}</NavLink>
                         </Col>
                     );
                 })}
