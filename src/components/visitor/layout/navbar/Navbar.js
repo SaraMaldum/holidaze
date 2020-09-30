@@ -17,12 +17,12 @@ import HeaderButton from './HeaderButton';
 import Accommodations from '../../accommodations/Accommodations';
 import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
-import AddAccommodation from "../../../admin/edit/AddAccommodation";
+import AddAccommodation from "../../../admin/AddAccommodation";
 import AdminDashboard from "../../../admin/AdminDashboard";
-import DeleteAccommodation from "../../../admin/edit/DeleteAccommodation";
-import EditAccommodation from "../../../admin/edit/EditAccommodation";
+import EditAccommodation from "../../../admin/EditAccommodation";
 import BookingEnquiries from "../../../admin/enquiries/BookingEnquiries";
 import Enquiry from "../../enquiry/Enquiry";
+import AccommodationOverview from '../../../admin/AccommodationOverview';
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -102,11 +102,12 @@ function NavBar() {
                 <Route path="/contact" component={Contact} />
                 <Route path="/enquiry/:id" component={Enquiry} />
                 <Route path="/admin" component={AdminDashboard} />
-                <Route path="/addAccommodation" component={AddAccommodation} />
-                <Route path="/deleteAccommodation" component={DeleteAccommodation} />
-                <Route path="/editAccommodation" component={EditAccommodation} />
+                <Route path="/add" component={AddAccommodation} />
+                <Route path="/edit" component={EditAccommodation} />
                 <Route path="/contactMsg" component={ContactMsg} />
                 <Route path="/enquiries" component={BookingEnquiries} />
+                <Route path="/accommodationOverview" component={AccommodationOverview} />
+                <Route path="/edit/:id" component={EditAccommodation} />
             </Switch>
         </Router>
     );

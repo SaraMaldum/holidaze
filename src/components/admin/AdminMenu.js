@@ -2,7 +2,7 @@ import React from 'react';
 import{NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import { BsPlusCircleFill,BsCalendarFill } from 'react-icons/bs';
-import { AiFillDelete, AiFillEdit, AiFillMessage } from 'react-icons/ai';
+import { AiFillHome,  AiFillMessage } from 'react-icons/ai';
 
 const StyledUl = styled.ul`
     margin-top: 20px; 
@@ -40,13 +40,10 @@ function AdminMenu(){
         <>
             <StyledUl className="text-center">
                 <StyledList>
-                    <StyledLink to="/addAccommodation" activeStyle={style} ><BsPlusCircleFill /> Add</StyledLink>
+                    <StyledLink to="/admin" activeStyle={style} ><AiFillHome /> Admin</StyledLink>
                 </StyledList>
                 <StyledList>
-                    <StyledLink to="/deleteAccommodation" activeStyle={style} ><AiFillDelete /> Delete</StyledLink>
-                </StyledList>
-                <StyledList>
-                    <StyledLink to="/editAccommodation" activeStyle={style} ><AiFillEdit /> Edit</StyledLink>
+                    <StyledLink to="/add" activeStyle={style} ><BsPlusCircleFill /> Add</StyledLink>
                 </StyledList>
                 <StyledList>
                     <StyledLink to="/contactMsg" activeStyle={style} ><AiFillMessage /> Contact messages</StyledLink>

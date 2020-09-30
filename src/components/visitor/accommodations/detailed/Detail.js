@@ -62,7 +62,6 @@ function Detail() {
                 <Heading2 title="About the hotel" />
                 <Col md={12}>
                     <p>{detailedAccommodation.description}</p>
-                    <p>At our accommodation, we are able to house {detailedAccommodation.maxGuests} people.</p>
                     <p>If you have any questions directed to us, please send us an email at <Mail href='mailto:example@example.com'>{detailedAccommodation.email}</Mail></p>
                 </Col>
                 <Col>

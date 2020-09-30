@@ -1,18 +1,18 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { BASE_URL, headers } from "../../../constants/api";
+import { BASE_URL, headers } from "../../constants/api";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormLabel from '../../visitor/contact/formStyles/FormLabel';
-import Input from '../../visitor/contact/formStyles/Input';
-import Heading1 from '../../visitor/layout/headings/Heading1';
+import FormLabel from '../visitor/contact/formStyles/FormLabel';
+import Input from '../visitor/contact/formStyles/Input';
+import Heading1 from '../visitor/layout/headings/Heading1';
 import Col from 'react-bootstrap/Col';
-import Buttons from '../../visitor/layout/buttons/Buttons';
-import AdminMenu from '../AdminMenu';
+import Buttons from '../visitor/layout/buttons/Buttons';
+import AdminMenu from './AdminMenu';
 
 function AddAccommodation() {
-    const {register, handleSubmit} = useForm();
+    const { register, handleSubmit } = useForm();
 
     const history = useHistory();
 
@@ -25,45 +25,45 @@ function AddAccommodation() {
 
         await fetch (AddAccommodationURL, options);
 
-        history.push("admin/accommodations");
+        history.push("/admin/accommodationOverview");
     }
 
     return(
         <Container>
-            <Heading1 title="Add hotel" />
+            <Heading1 title="Add accommodation" />
             <AdminMenu />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group>
-                    <FormLabel>Accommodation name*</FormLabel>
-                    <Input placeholder="Accommodation name" name="name" ref={register()}/>
+                    <FormLabel>Accommodation name</FormLabel>
+                    <Input placeholder="Accommodation name" name="name" ref={register}/>
                 </Form.Group>
 
                 <Form.Group>
                     <FormLabel>Email address</FormLabel>
-                    <Input placeholder="Email address" name="email" ref={register()}/>
+                    <Input placeholder="Email address" name="email" ref={register}/>
                 </Form.Group>
 
                 <Form.Group>
                     <FormLabel>Image</FormLabel>
-                    <Input placeholder="Link to image" name="image" ref={register()}/>
+                    <Input placeholder="Link to image" name="image" ref={register}/>
                 </Form.Group>
 
                 <Form.Group>
                     <FormLabel>Price</FormLabel>
-                    <Input placeholder="Price per night" name="price" ref={register()}/>
+                    <Input placeholder="Price per night" name="price" ref={register}/>
                 </Form.Group>
-
+                
                 <Form.Group>
                     <FormLabel>Description</FormLabel>
-                    <Input placeholder="Description" as="textarea" rows="3" name="description" ref={register()}/>
+                    <Input placeholder="Description" type="text" as="textarea" rows="3" name="description" ref={register}/>
                 </Form.Group>
 
-                <p>*required fields</p>
+                <Col className="text-right">
+                    <Buttons type="submit" >Add Accommodation</Buttons>
+                </Col>
             </Form>
 
-            <Col className="text-right">
-                <Buttons type="submit">Add Accommodation</Buttons>
-            </Col>
+            
         </Container>
     )
 

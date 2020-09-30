@@ -11,6 +11,7 @@ import Col from 'react-bootstrap/Col'
 import Input from '../contact/formStyles/Input';
 import DatePicker from './DatePicker';
 import {moment} from 'react-moment';
+import { Row } from 'react-bootstrap';
 
 const schema = yup.object().shape( {
     name: yup
@@ -41,23 +42,35 @@ function EnquiryForm() {
             <Form onSubmit={handleSubmit( onSubmit )}>
                 {enquiryForm && <p>Thank you for your booking. We're looking forward seeing you.</p>}
                 
-                <Form.Group>
-                    <FormLabel>Your name</FormLabel>
-                    <Input type="text" name="name" placeholder="Your name" ref={register()} />
-                    {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
-                </Form.Group>
+                <Row>
+                    <Col md={6} sm={12}>
+                        <Form.Group>
+                            <FormLabel>Your name</FormLabel>
+                            <Input type="text" name="name" placeholder="Your name" ref={register()} />
+                            {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
+                        </Form.Group>
+                    </Col>
 
-                <Form.Group>
-                    <FormLabel>Email</FormLabel>
-                    <Input type="email" name="email" placeholder="Email address" ref={register()} />
-                    {errors.email && <ErrorMsg>{errors.email.message}</ErrorMsg>}
-                </Form.Group>
+                    <Col md={6} sm={12}>
+                        <Form.Group >
+                            <FormLabel>Email</FormLabel>
+                            <Input type="email" name="email" placeholder="Email address" ref={register()} />
+                            {errors.email && <ErrorMsg>{errors.email.message}</ErrorMsg>}
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={12}>
+                        <Form.Group>
+                            <FormLabel>Choose dates</FormLabel>
+                            <DatePicker date={date} onChange={e => setDate(e.target.value)} />
+                        </Form.Group>
+                    </Col>
+                </Row>
+
                 
-                <FormLabel>Choose dates</FormLabel>
-                <DatePicker date={date} onChange={e => setDate(e.target.value)} />
 
                 <Col className="text-right">
-                    <Buttons type="submit">Send</Buttons>
+                    <Buttons type="submit">Book now</Buttons>
                 </Col>
 
             </Form>

@@ -21,7 +21,6 @@ const HeaderBtn = styled(Buttons)`
     margin: -30px 0;
 ` 
 
-
 function HomeHeaderBtn() {
     return(
         <>

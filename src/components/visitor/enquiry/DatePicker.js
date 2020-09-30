@@ -24,6 +24,7 @@ function DatePicker() {
                 onDatesChange={handleDatesChange}
                 focusedInput={focusedInput}
                 onFocusChange={focusedInput => setFocusedInput(focusedInput)}
+                required
             />
         </DateWrapper>
     );

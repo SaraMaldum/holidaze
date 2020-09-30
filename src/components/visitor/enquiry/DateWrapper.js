@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 const DateWrapper = styled.div`
+    height: 320px;
+
     .DateRangePicker {
         border: 2px solid #00749E;
         border-radius: 10px;
         padding: 5px;
-
+        margin-bottom: 10px; 
+        display: block;
+        
         .DateRangePickerInput__withBorder {
             color: ${({theme}) => theme.colors.mainBlue};
             border: none;
@@ -73,6 +77,7 @@ const DateWrapper = styled.div`
             border: 1px double white;
             color: white
         }
+        
         
 `
 

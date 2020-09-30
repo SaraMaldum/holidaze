@@ -6,6 +6,7 @@ export default {
         white: '#FFFFFF',
         darkBlue: '#004B66',
         error: '#EB7600',
-        starYellow: '#FFEE00'
+        starYellow: '#FFEE00',
+        delete: '#F03B2D',
     }
 }
