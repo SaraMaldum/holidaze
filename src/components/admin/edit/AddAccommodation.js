@@ -1,15 +1,15 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { BASE_URL, headers } from "../../constants/api";
+import { BASE_URL, headers } from "../../../constants/api";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormLabel from '../visitor/contact/formStyles/FormLabel';
-import Input from '../visitor/contact/formStyles/Input';
-import Heading1 from '../visitor/layout/headings/Heading1';
+import FormLabel from '../../visitor/contact/formStyles/FormLabel';
+import Input from '../../visitor/contact/formStyles/Input';
+import Heading1 from '../../visitor/layout/headings/Heading1';
 import Col from 'react-bootstrap/Col';
-import Buttons from '../visitor/layout/buttons/Buttons';
-import AdminMenu from './AdminMenu';
+import Buttons from '../../visitor/layout/buttons/Buttons';
+import AdminMenu from '../AdminMenu';
 
 function AddAccommodation() {
     const { register, handleSubmit } = useForm();

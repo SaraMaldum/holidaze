@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { BASE_URL, headers, PATCH } from '../../constants/api';
-import Heading1 from '../visitor/layout/headings/Heading1';
-import AdminMenu from './AdminMenu';
+import { BASE_URL, headers, PATCH } from '../../../constants/api';
+import Heading1 from '../../visitor/layout/headings/Heading1';
+import AdminMenu from '../AdminMenu';
 import { Container, Col, FormLabel } from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 import DeleteAccommodation from './DeleteAccommodation';
-import Input from '../visitor/contact/formStyles/Input';
-import Buttons from '../visitor/layout/buttons/Buttons';
+import Input from '../../visitor/contact/formStyles/Input';
+import Buttons from '../../visitor/layout/buttons/Buttons';
 
 function EditAccommodation(){
     const defaultState = {
@@ -42,7 +42,7 @@ function EditAccommodation(){
 
         await fetch(editURL, updateOptions);
         
-        history.push("/admin/accommodationOverview");
+        history.push("/admin/edit/accommodationOverview");
     }
 
     return(

@@ -2,8 +2,8 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import Buttons from '../visitor/layout/buttons/Buttons';
-import {BASE_URL, headers, DELETE} from '../../constants/api';
+import Buttons from '../../visitor/layout/buttons/Buttons';
+import {BASE_URL, headers, DELETE} from '../../../constants/api';
 import {AiFillDelete} from 'react-icons/ai'
 import styled from 'styled-components';
 
