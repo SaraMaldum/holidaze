@@ -15,6 +15,9 @@ function EditAccommodation(){
     const defaultState = {
         name: "",
         email: "",
+        image: "",
+        price: "",
+        description: "",
     };
 
     const history = useHistory();
@@ -25,8 +28,6 @@ function EditAccommodation(){
 
     const options = { headers };
     const editURL = BASE_URL + "establishments/" + id;
-
-    console.log()
 
     useEffect(() => {
         fetch(editURL, options)
@@ -53,12 +54,27 @@ function EditAccommodation(){
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group>
                         <FormLabel>Name</FormLabel>
-                        <Input name="name" defaultValue={accommodation.name} placeholder="Enter a name for the hotel" ref={register}/>
+                        <Input name="name" defaultValue={accommodation.name} placeholder="Accommodation name" ref={register}/>
                     </Form.Group>
 
                     <Form.Group>
                         <FormLabel>Email address</FormLabel>
-                        <Input name="email" defaultValue={accommodation.email} placeholder="Enter an email address" ref={register}/>
+                        <Input name="email" defaultValue={accommodation.email} placeholder="Email address" ref={register}/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <FormLabel>Image</FormLabel>
+                        <Input name="image" defaultValue={accommodation.image} placeholder="Link to image" ref={register}/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <FormLabel>Price</FormLabel>
+                        <Input name="price" defaultValue={accommodation.price} placeholder="Price per night" ref={register}/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <FormLabel>Description</FormLabel>
+                        <Input name="description" defaultValue={accommodation.description} placeholder="Description" ref={register}/>
                     </Form.Group>
                 </Form>
                 <Col className="text-right">

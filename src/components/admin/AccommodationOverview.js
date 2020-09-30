@@ -3,6 +3,21 @@ import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
 import Heading2 from '../visitor/layout/headings/Heading2';
 import { Col, Row } from "react-bootstrap";
+import styled from 'styled-components';
+
+const AccommodationLink = styled(NavLink)`
+    color: ${({theme}) => theme.colors.mainBlue};
+
+    &:hover {
+        text-decoration: none; 
+        font-weight: bold;
+        color: ${({theme}) => theme.colors.mainBlue};
+
+    }
+` 
+const StyledRow = styled(Row)`
+    margin-bottom: 10px;
+` 
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
@@ -31,15 +46,15 @@ function Accommodations() {
         <>
             <Heading2 title="Click to edit"/>
             {error && <div className="error">{error}</div>}
-            <Row>
+            <StyledRow>
                 {accommodations.map((accommodation) => {
                     return (
                         <Col md={3} key={accommodation.id}>
-                            <NavLink to={`/edit/${accommodation.id}`}>{accommodation.name}</NavLink>
+                            <AccommodationLink to={`/edit/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
                         </Col>
                     );
                 })}
-            </Row>
+            </StyledRow>
         </>
     );
 }

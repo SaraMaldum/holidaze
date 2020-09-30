@@ -43,6 +43,20 @@ function AddAccommodation() {
                     <Input placeholder="Email address" name="email" ref={register}/>
                 </Form.Group>
 
+                <Form.Group>
+                    <FormLabel>Image</FormLabel>
+                    <Input placeholder="Image link" name="image" ref={register}/>
+                </Form.Group>
+                
+                <Form.Group>
+                    <FormLabel>Email address</FormLabel>
+                    <Input placeholder="Price" name="price" ref={register}/>
+                </Form.Group>
+
+                <Form.Group>
+                    <FormLabel>Email address</FormLabel>
+                    <Input placeholder="Description" name="description" as="textarea" rows="3" ref={register}/>
+                </Form.Group>
 
                 <Col className="text-right">
                     <Buttons type="submit" >Add Accommodation</Buttons>

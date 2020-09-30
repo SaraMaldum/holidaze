@@ -101,12 +101,12 @@ function NavBar() {
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/enquiry/:id" component={Enquiry} />
+
                 <Route path="/admin" component={AdminDashboard} />
-                <Route path="/add" component={AddAccommodation} />
-                <Route path="/edit" component={EditAccommodation} />
-                <Route path="/contactMsg" component={ContactMsg} />
-                <Route path="/enquiries" component={BookingEnquiries} />
                 <Route path="/accommodationOverview" component={AccommodationOverview} />
+                <Route path="/add" component={AddAccommodation} />
+                <Route path="/contactMsg" component={ContactMsg} />
+                <Route path="/enquiries" component={BookingEnquiries} />                
                 <Route path="/edit/:id" component={EditAccommodation} />
             </Switch>
         </Router>

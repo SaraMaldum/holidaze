@@ -36,7 +36,8 @@ function DeleteAccommodation(props){
             ]
         });
     }
-
+    console.log(props)
+    
     async function deleteAccommodation() {
         const deleteURL = BASE_URL + 'establishments/' + props.id;
         const options = { headers, method: DELETE };
