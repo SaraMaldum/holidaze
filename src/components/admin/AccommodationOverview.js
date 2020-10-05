@@ -42,7 +42,8 @@ function Accommodations() {
             })
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
-    }, [options, overviewURL]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;

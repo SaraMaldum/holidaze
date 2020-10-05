@@ -30,7 +30,8 @@ function ContactMsg() {
         .then((json) => setMessages(json))
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
-    }, [contactURL, options]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     
 
     async function onSubmit(data) {
@@ -64,8 +65,7 @@ function ContactMsg() {
                             </MsgCol>
                         );
                     })}
-                </Row>
-                
+                </Row>       
             </Container>
         </>
     )

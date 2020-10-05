@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
@@ -52,7 +52,6 @@ function Contact() {
         finally {
             setFormSent( true );
          }
-        
     }
 
     return (

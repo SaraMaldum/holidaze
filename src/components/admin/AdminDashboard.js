@@ -13,7 +13,6 @@ function AdminDashboard(){
                 <p className="text-center">On this side of Holidaze, you're able to add, edit, delete and get an overview of messages and enquiries made to us.</p>
                 <AccommodationOverview />
             </Container>
-
         </>
     )
 }

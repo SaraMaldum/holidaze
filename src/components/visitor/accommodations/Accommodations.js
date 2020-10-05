@@ -26,7 +26,8 @@ function Accommodations() {
             })
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
-    },[options, establishmentURL]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
 
     if (loading) {

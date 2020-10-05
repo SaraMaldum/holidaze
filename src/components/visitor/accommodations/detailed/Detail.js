@@ -47,7 +47,8 @@ function Detail() {
             .then(json => setdetailedAccommodation(json))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
-    }, [detailURL, options]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;

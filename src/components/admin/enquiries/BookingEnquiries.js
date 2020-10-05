@@ -23,7 +23,8 @@ function BokoingEnquiries() {
         .then((json) => setEnquiries(json))
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
-    }, [enquiryURL, options]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     
     console.log(enquiries)
     
@@ -56,10 +57,8 @@ function BokoingEnquiries() {
                             <p>Date: {enquiry.checkIn} to {enquiry.checkOut}</p>
                         </Col>
                     );
-                })}
-                    
+                })}           
                 </Row>
-                
             </Container>
         </>
     )

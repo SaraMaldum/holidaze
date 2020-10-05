@@ -36,7 +36,8 @@ function DeleteAccommodation(){
             .then((json) => setAccommodation(json))
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
-    }, [deleteURL, options]);
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     async function onSubmit(data) {
         console.log("data", data);

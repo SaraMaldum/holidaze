@@ -30,7 +30,8 @@ function Enquiry() {
             .then(json => setEnquiry(json))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
-    }, [enquiryURL, options]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
@@ -43,7 +44,6 @@ function Enquiry() {
                 <Heading2 title={enquiry.name} />
                 <ImageContainer style={{backgroundImage: `url(${enquiry.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
                 <EnquiryForm />
-
             </Container>
         </>
     )
