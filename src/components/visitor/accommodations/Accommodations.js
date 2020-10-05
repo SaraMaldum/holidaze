@@ -38,6 +38,7 @@ function Accommodations() {
             <Container>
                 <Heading1 title="Accommodations"/>
                 <Heading2 title="Find your accommodation"/>
+                <StyledSpinner />
                 <Autocomplete
                     items={accommodations}
                     shouldItemRender={(accommodations, value) => 

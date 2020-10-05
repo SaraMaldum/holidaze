@@ -19,7 +19,7 @@ import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
 import AddAccommodation from "../../../admin/edit/AddAccommodation";
 import AdminDashboard from "../../../admin/AdminDashboard";
-import EditAccommodation from "../../../admin/edit/EditAccommodation";
+import DeleteAccommodation from "../../../admin/edit/DeleteAccommodation";
 import BookingEnquiries from "../../../admin/enquiries/BookingEnquiries";
 import Enquiry from "../../enquiry/Enquiry";
 import AccommodationOverview from '../../../admin/AccommodationOverview';
@@ -101,13 +101,14 @@ function NavBar() {
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/enquiry/:id" component={Enquiry} />
-
+                
                 <Route path="/admin" component={AdminDashboard} />
                 <Route path="/accommodationOverview" component={AccommodationOverview} />
                 <Route path="/add" component={AddAccommodation} />
                 <Route path="/contactMsg" component={ContactMsg} />
                 <Route path="/enquiries" component={BookingEnquiries} />                
-                <Route path="/edit/:id" component={EditAccommodation} />
+                <Route path="/delete/:id" component={DeleteAccommodation} />
+
             </Switch>
         </Router>
     );

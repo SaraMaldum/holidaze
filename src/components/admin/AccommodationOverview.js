@@ -4,6 +4,7 @@ import { BASE_URL, headers } from "../../constants/api";
 import Heading2 from '../visitor/layout/headings/Heading2';
 import { Col, Row } from "react-bootstrap";
 import styled from 'styled-components';
+import StyledSpinner from '../visitor/layout/spinner/Spinner';
 
 const AccommodationLink = styled(NavLink)`
     color: ${({theme}) => theme.colors.mainBlue};
@@ -12,7 +13,6 @@ const AccommodationLink = styled(NavLink)`
         text-decoration: none; 
         font-weight: bold;
         color: ${({theme}) => theme.colors.mainBlue};
-
     }
 ` 
 const StyledRow = styled(Row)`
@@ -22,6 +22,7 @@ const StyledRow = styled(Row)`
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const overviewURL = BASE_URL + "establishments";
 
@@ -39,18 +40,24 @@ function Accommodations() {
                     setAccommodations(json);
                 }
             })
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false));
     }, [options, overviewURL]);
+
+    if (loading) {
+        return <StyledSpinner animation="border" size="md" />;
+    }
 
     return (
         <>
             <Heading2 title="Click to edit"/>
+            <StyledSpinner />
             {error && <div className="error">{error}</div>}
             <StyledRow>
                 {accommodations.map((accommodation) => {
                     return (
                         <Col md={3} key={accommodation.id}>
-                            <AccommodationLink to={`/edit/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
+                            <AccommodationLink to={`/delete/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
                         </Col>
                     );
                 })}

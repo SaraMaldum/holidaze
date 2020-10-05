@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
@@ -10,6 +10,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col'
 import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
+import { useHistory } from 'react-router-dom';
+import {BASE_URL, headers, POST} from '../../../constants/api';
 
 const schema = yup.object().shape( {
     name: yup
@@ -28,14 +30,35 @@ const schema = yup.object().shape( {
 
 function Contact() {
     const [formSent, setFormSent] = useState( false ); //variable for sending validation message
+    const [sendMsg, setSentMsg ] = useState([])
+
+    const options = { headers };
+    const contactMsgURL = BASE_URL + 'contacts';
+
+    let history = useHistory();
 
     const { register, handleSubmit, errors } = useForm( {
         resolver: yupResolver( schema )
     } );
 
-    function onSubmit( data ) {
+    useEffect(() => {
+        fetch(contactMsgURL, options)
+        .then((response) => response.json())
+        .then((json) => {setFormSent(json)
+            setSentMsg(json)
+        })
+        .catch((error) => console.log(error));
+    }, [contactMsgURL, options]);
+
+    async function onSubmit( data ) {
         setFormSent( true );
         console.log( 'The data that was submitted: ' + JSON.stringify( data ) );
+        
+        const updateOptions = {headers, method: POST, body: JSON.stringify(data)};
+
+        await fetch(contactMsgURL, updateOptions);
+
+        history.push("/contact")
     }
 
     return (
