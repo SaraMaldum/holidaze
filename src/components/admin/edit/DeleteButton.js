@@ -19,7 +19,7 @@ const DeleteBtn = styled(Buttons)`
     }
 ` 
 
-function DeleteAccommodation(props){
+function DeleteButton(props){
     const history = useHistory();
 
     function checkDelete() {
@@ -52,4 +52,4 @@ function DeleteAccommodation(props){
     )
 }
 
-export default DeleteAccommodation;
+export default DeleteButton;

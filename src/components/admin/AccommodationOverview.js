@@ -50,7 +50,7 @@ function Accommodations() {
 
     return (
         <>
-            <Heading2 title="Click to edit"/>
+            <Heading2 title="Click to delete"/>
             <StyledSpinner />
             {error && <div className="error">{error}</div>}
             <StyledRow>

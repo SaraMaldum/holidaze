@@ -40,7 +40,7 @@ function ContactMsg() {
 
         await fetch(contactURL, updateOptions);
 
-        history.push("/admin/contact/contactMsg")
+        history.push("/admin/contactMsg/contactMsg")
     }
 
     if (loading) {
@@ -53,18 +53,17 @@ function ContactMsg() {
                 <Heading1 title="Contact messages" />
                 <AdminMenu />
                 <StyledSpinner />
-                <Row onSubmit={handleSubmit(onSubmit)} className="text-center">
-                {messages.map((message) => {
-                    return (
-                        <MsgCol sm={6} md={4} key={message.id}>
-                            <Heading2 title={message.name} />
-                            <p>Email address: {message.email}</p>
-                            <p>Message: {message.message}</p>
-                            <p>Recieved: {message.createdAt}</p>
-                        </MsgCol>
-                    );
-                })}
-                    
+                <Row onSubmit={handleSubmit(onSubmit)}>
+                    {messages.map((message) => {
+                        return (
+                            <MsgCol sm={6} md={4} key={message.id} >
+                                <Heading2 title={message.name} />
+                                <p>Email address: {message.email}</p>
+                                <p>Message: {message.message}</p>
+                                <p>Recieved: {message.createdAt}</p>
+                            </MsgCol>
+                        );
+                    })}
                 </Row>
                 
             </Container>

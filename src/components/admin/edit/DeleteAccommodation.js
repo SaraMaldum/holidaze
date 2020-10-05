@@ -11,7 +11,7 @@ import DeleteButton from './DeleteButton';
 import Input from '../../visitor/contact/formStyles/Input';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
 
-function EditAccommodation(){
+function DeleteAccommodation(){
     const defaultState = {
         name: "",
         email: "",
@@ -28,24 +28,24 @@ function EditAccommodation(){
     let { id } = useParams();
 
     const options = { headers };
-    const editURL = BASE_URL + "establishments/" + id;
+    const deleteURL = BASE_URL + "establishments/" + id;
 
     useEffect(() => {
-        fetch(editURL, options)
+        fetch(deleteURL, options)
             .then((response) => response.json())
             .then((json) => setAccommodation(json))
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
-    }, [editURL, options]);
+    }, [deleteURL, options]);
 
     async function onSubmit(data) {
         console.log("data", data);
 
         const updateOptions = { headers, method: PATCH, body: JSON.stringify(data) };
 
-        await fetch(editURL, updateOptions);
+        await fetch(deleteURL, updateOptions);
         
-        history.push("/admin/edit/accommodationOverview");
+        history.push("/admin/accommodationOverview");
     }
 
     if (loading) {
@@ -55,7 +55,7 @@ function EditAccommodation(){
     return(
         <>
             <Container>
-                <Heading1 title="Edit Accommodation" />
+                <Heading1 title="Delete Accommodation" />
                 <StyledSpinner />
                 <AdminMenu  />
                 <Form onSubmit={handleSubmit(onSubmit)}>
@@ -92,4 +92,4 @@ function EditAccommodation(){
     )
 }
 
-export default EditAccommodation;
+export default DeleteAccommodation;
