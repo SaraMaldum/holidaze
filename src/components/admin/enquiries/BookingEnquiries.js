@@ -9,10 +9,11 @@ import Heading2 from '../../visitor/layout/headings/Heading2';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
 
 function BokoingEnquiries() {
-    const history = useHistory();
-    const { handleSubmit } = useForm();
     const [enquiries, setEnquiries] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { handleSubmit } = useForm();
+
+    const history = useHistory();
 
     const options = { headers };
     const enquiryURL = BASE_URL + 'enquiries';
