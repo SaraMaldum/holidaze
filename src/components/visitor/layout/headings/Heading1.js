@@ -7,7 +7,8 @@ const Heading1 = styled.h1`
     text-align: center;
     color: ${({theme}) => theme.colors.mainBlue};
     font-weight: bold;
-        
+    text-transform: uppercase; 
+    
     @media (max-width: 768px) {
         font-size: 2rem;
     }

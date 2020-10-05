@@ -33,9 +33,9 @@ function Accommodations() {
     return (
         <>
             <Container>
+                <StyledSpinner />
                 <Heading1 title="Accommodations"/>
                 <Heading2 title="Find your accommodation"/>
-                <StyledSpinner />
                 <Autocomplete
                 getItemValue={(accommodations) => 
                     accommodations.name }

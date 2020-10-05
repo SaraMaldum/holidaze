@@ -51,9 +51,9 @@ function ContactMsg() {
     return(
         <>
             <Container>
+                <StyledSpinner />
                 <Heading1 title="Contact messages" />
                 <AdminMenu />
-                <StyledSpinner />
                 <Row onSubmit={handleSubmit(onSubmit)}>
                     {messages.map((message) => {
                         return (

@@ -46,9 +46,9 @@ function BokoingEnquiries() {
     return(
         <>
             <Container>
+                <StyledSpinner />
                 <Heading1 title="Booking enquiries" />
                 <AdminMenu />
-                <StyledSpinner />
                 <Row onSubmit={handleSubmit(onSubmit)}>
                 {enquiries.map((enquiry) => {
                     return (

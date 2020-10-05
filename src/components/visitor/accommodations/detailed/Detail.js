@@ -56,6 +56,7 @@ function Detail() {
     return(
         <>
             <Container>
+                <StyledSpinner />
                 <Heading1 title={detailedAccommodation.name}/>
                 <ImageContainer style={{backgroundImage: `url(${detailedAccommodation.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
 

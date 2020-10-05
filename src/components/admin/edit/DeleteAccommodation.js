@@ -56,8 +56,8 @@ function DeleteAccommodation(){
     return(
         <>
             <Container>
-                <Heading1 title="Delete Accommodation" />
                 <StyledSpinner />
+                <Heading1 title="Delete Accommodation" />
                 <AdminMenu  />
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group>

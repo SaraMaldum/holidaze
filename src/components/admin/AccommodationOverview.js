@@ -51,8 +51,8 @@ function Accommodations() {
 
     return (
         <>
-            <Heading2 title="Click to delete"/>
             <StyledSpinner />
+            <Heading2 title="Click to delete"/>
             {error && <div className="error">{error}</div>}
             <StyledRow>
                 {accommodations.map((accommodation) => {

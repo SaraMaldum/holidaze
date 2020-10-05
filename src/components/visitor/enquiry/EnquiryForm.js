@@ -9,7 +9,8 @@ import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from '../contact/formStyles/Input';
-import DatePicker from './DatePicker';
+import DatePicker from './datepicker/DatePicker';
+import SentMsg from '../contact/sentMsg/SentMsg';
 
 const schema = yup.object().shape( {
     name: yup
@@ -52,7 +53,7 @@ function EnquiryForm() {
     return (
         <Container>
             <Form onSubmit={handleSubmit( onSubmit )}>
-                {enquiryForm && <p>Thank you for your booking. We're looking forward seeing you.</p>}  
+                {enquiryForm && <SentMsg>Thank you for your booking. We're looking forward seeing you.</SentMsg>}  
                 <Row>
                     <Col md={6} sm={12}>
                         <Form.Group>
