@@ -18,11 +18,11 @@ function ContactMsg() {
     const { handleSubmit } = useForm();
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
+    
+    const history = useHistory();
 
     const options = { headers };
     const contactURL = BASE_URL + 'contacts';
-
-    let history = useHistory();
 
     useEffect(() => {
         fetch(contactURL, options)

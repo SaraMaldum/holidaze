@@ -12,6 +12,7 @@ import Input from '../contact/formStyles/Input';
 import DatePicker from './DatePicker';
 import {moment} from 'react-moment';
 import { Row } from 'react-bootstrap';
+import {BASE_URL, headers, POST} from '../../../constants/api';
 
 const schema = yup.object().shape( {
     name: yup
@@ -28,13 +29,27 @@ function EnquiryForm() {
     const [enquiryForm, setEnquiryForm] = useState( false ); //variable for sending validation message
     const [date, setDate] = useState(moment);
 
+    const bookingURL = BASE_URL + 'enquiries';
+
     const { register, handleSubmit, errors } = useForm( {
         resolver: yupResolver( schema )
     } );
 
-    function onSubmit( data ) {
-        setEnquiryForm( true );
+    async function onSubmit( data ) {
+        setEnquiryForm( false );
         console.log( 'The data that was submitted: ' + JSON.stringify( data ) );
+        
+        try {
+            const updateOptions = {headers, method: POST, body: JSON.stringify(data)};
+
+            await fetch(bookingURL, updateOptions);
+        }
+        catch(error) {
+            console.log(error);
+        }
+        finally {
+            setEnquiryForm( true );
+         }
     }
 
     return (
@@ -66,8 +81,6 @@ function EnquiryForm() {
                         </Form.Group>
                     </Col>
                 </Row>
-
-                
 
                 <Col className="text-right">
                     <Buttons type="submit">Book now</Buttons>

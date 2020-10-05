@@ -26,6 +26,7 @@ function BokoingEnquiries() {
     }, [enquiryURL, options]);
     
     console.log(enquiries)
+    
     async function onSubmit(data) {
         console.log(data)
 
