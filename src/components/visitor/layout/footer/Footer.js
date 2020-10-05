@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
-import styled from 'styled-components';
 import StyledLink from '../link/ContactLink';
+import styled from 'styled-components';
 
 const StyledFooter = styled.footer `
     text-align: center;

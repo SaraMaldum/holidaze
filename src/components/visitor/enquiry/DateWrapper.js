@@ -36,11 +36,10 @@ const DateWrapper = styled.div`
             color: ${({theme}) => theme.colors.darkBlue};
 
             &:hover {
-            color: ${({theme}) => theme.colors.white};
+                color: ${({theme}) => theme.colors.white};
             }
         }
         .CalendarDay__default {
-
             &:hover {
                 background: ${({theme}) => theme.colors.orange};
             }
@@ -76,9 +75,7 @@ const DateWrapper = styled.div`
             background: #80e8e0;
             border: 1px double white;
             color: white
-        }
-        
-        
+        } 
 `
 
 export default DateWrapper;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Spinner from 'react-bootstrap/Spinner';
+import { Spinner } from 'react-bootstrap';
 
 const StyledSpinner = styled(Spinner)`
     position: relative;

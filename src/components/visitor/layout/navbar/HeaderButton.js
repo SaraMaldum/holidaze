@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 import Buttons from '../buttons/Buttons';
 
 const BtnContainer = styled(Container)`

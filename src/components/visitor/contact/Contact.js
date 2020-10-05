@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
-import Form from 'react-bootstrap/Form';
+import { Form, Container, Col } from 'react-bootstrap';
+import {BASE_URL, headers, POST} from '../../../constants/api';
 import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col'
 import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
-import {BASE_URL, headers, POST} from '../../../constants/api';
 
 const schema = yup.object().shape( {
     name: yup
@@ -36,7 +34,6 @@ function Contact() {
         resolver: yupResolver( schema )
     } );
 
-
     async function onSubmit( data ) {
         setFormSent( false );
         console.log( 'The data that was submitted: ' + JSON.stringify( data ) );
@@ -59,7 +56,6 @@ function Contact() {
             <Heading1 title="Contact us"/>
             <Form onSubmit={handleSubmit( onSubmit )}>
                 {formSent && <p>Thank you for your message. We'll respond shortly.</p>}
-                
                 <Form.Group>
                     <FormLabel>Your name</FormLabel>
                     <Input type="text" name="name" placeholder="Your name" ref={register()} />

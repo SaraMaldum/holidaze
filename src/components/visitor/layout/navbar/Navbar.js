@@ -1,19 +1,16 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     NavLink,
 } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Home from '../../home/Home';
-import Contact from '../../contact/Contact';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../../../../images/logo.png';
 import BgImg from '../../../../images/headerImg.jpg'
-import styled from 'styled-components';
 import HeaderButton from './HeaderButton';
+import Home from '../../home/Home';
+import Contact from '../../contact/Contact';
 import Accommodations from '../../accommodations/Accommodations';
 import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
@@ -23,6 +20,7 @@ import DeleteAccommodation from "../../../admin/edit/DeleteAccommodation";
 import BookingEnquiries from "../../../admin/enquiries/BookingEnquiries";
 import Enquiry from "../../enquiry/Enquiry";
 import AccommodationOverview from '../../../admin/AccommodationOverview';
+import styled from 'styled-components';
 
 //Styles components
 const StyledContainer = styled(Container)`   
@@ -66,9 +64,8 @@ const Logo = styled.img`
 
 //Navbar function
 function NavBar() {
-
     return (
-        <Router>
+        <Router basename="/holidaze">
             <StyledContainer fluid>
                 <Navbar variant="dark" expand="lg">
                     <NavLink to="/">

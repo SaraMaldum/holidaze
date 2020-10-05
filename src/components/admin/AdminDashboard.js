@@ -1,7 +1,7 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import Heading1 from '../visitor/layout/headings/Heading1';
 import AdminMenu from './AdminMenu';
-import Container from 'react-bootstrap/Container';
 import AccommodationOverview from './AccommodationOverview';
 
 function AdminDashboard(){

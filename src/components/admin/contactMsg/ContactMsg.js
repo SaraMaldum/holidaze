@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import Heading1 from '../../visitor/layout/headings/Heading1';
-import {Container, Col, Row } from 'react-bootstrap';
-import AdminMenu from '../AdminMenu';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import {BASE_URL, headers, GET} from '../../../constants/api';
 import { useForm } from "react-hook-form";
+import { BASE_URL, headers, GET } from '../../../constants/api';
+import { Container, Col, Row } from 'react-bootstrap';
+import AdminMenu from '../AdminMenu';
+import Heading1 from '../../visitor/layout/headings/Heading1';
 import Heading2 from '../../visitor/layout/headings/Heading2';
-import styled from 'styled-components';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
+import styled from 'styled-components';
 
 const MsgCol = styled(Col)`
     border-right: 1px solid #EB8F2D;
@@ -15,9 +15,9 @@ const MsgCol = styled(Col)`
 `
 
 function ContactMsg() {
-    const { handleSubmit } = useForm();
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { handleSubmit } = useForm();
     
     const history = useHistory();
 

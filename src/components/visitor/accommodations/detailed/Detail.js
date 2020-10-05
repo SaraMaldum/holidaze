@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { Container, Col } from 'react-bootstrap';
 import { BASE_URL, headers } from '../../../../constants/api';
 import Heading1 from '../../layout/headings/Heading1';
 import Heading2 from '../../layout/headings/Heading2';
 import StyledSpinner from '../../layout/spinner/Spinner';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
 import Buttons from '../../layout/buttons/Buttons';
+import styled from 'styled-components';
 
 const ImageContainer = styled.p`
     height: 200px;

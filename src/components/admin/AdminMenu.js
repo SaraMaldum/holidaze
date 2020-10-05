@@ -1,8 +1,8 @@
 import React from 'react';
-import{NavLink} from 'react-router-dom';
+import{ NavLink } from 'react-router-dom';
+import { BsPlusCircleFill, BsCalendarFill } from 'react-icons/bs';
+import { AiFillHome, AiFillMessage } from 'react-icons/ai';
 import styled from 'styled-components';
-import { BsPlusCircleFill,BsCalendarFill } from 'react-icons/bs';
-import { AiFillHome,  AiFillMessage } from 'react-icons/ai';
 
 const StyledUl = styled.ul`
     margin-top: 20px; 

@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Heading3 = styled.h3`
     margin-top: 20px;

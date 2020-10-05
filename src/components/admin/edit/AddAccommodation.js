@@ -2,12 +2,10 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/api";
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+import { Form, Container, Col } from 'react-bootstrap';
 import FormLabel from '../../visitor/contact/formStyles/FormLabel';
 import Input from '../../visitor/contact/formStyles/Input';
 import Heading1 from '../../visitor/layout/headings/Heading1';
-import Col from 'react-bootstrap/Col';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 import AdminMenu from '../AdminMenu';
 
@@ -62,11 +60,8 @@ function AddAccommodation() {
                     <Buttons type="submit" >Add Accommodation</Buttons>
                 </Col>
             </Form>
-
-            
         </Container>
     )
-
 }
 
 export default AddAccommodation;

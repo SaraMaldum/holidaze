@@ -7,6 +7,6 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         color: ${({theme}) => theme.colors.darkBlue}
     }
-`;
+`
 
 export default GlobalStyle;

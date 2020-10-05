@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../../constants/api";
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Container, Row, Col } from 'react-bootstrap';
+import Autocomplete from 'react-autocomplete';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import AccommodationItems from './AccommodationItems';
-import Autocomplete from 'react-autocomplete';
-
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
@@ -29,7 +26,6 @@ function Accommodations() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
-
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
     }
@@ -41,11 +37,10 @@ function Accommodations() {
                 <Heading2 title="Find your accommodation"/>
                 <StyledSpinner />
                 <Autocomplete
+                getItemValue={(accommodations) => 
+                    accommodations.name }
                     items={accommodations}
-                    shouldItemRender={(accommodations, value) => 
-                        accommodations.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
-                    getItemValue={(accommodations) => 
-                        accommodations.name }
+                    shouldItemRender={(accommodations, value) => accommodations.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
                     inputProps={{ style: { width: '100%', marginBottom: '20px', padding: '5px', border: '2px solid #EB8F2D', borderRadius: '5px', display: 'inline-block' }, placeholder: 'Search...'}}  
                     wrapperStyle={{ width: '100%' }}
                     renderItem={(accommodations) =>
@@ -56,7 +51,7 @@ function Accommodations() {
                       }
                       value={accommodations.name}
                       onChange={(e) => accommodations.name = e.target.value}
-                      onSelect={(id) => accommodations.name = id}
+                      onSelect={(id) => accommodations.id = id}
                 />
                 <Row>
                     {accommodations.map(accommodation => {

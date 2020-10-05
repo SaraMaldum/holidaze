@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import Heading1 from '../../visitor/layout/headings/Heading1';
-import {Container, Col, Row } from 'react-bootstrap';
-import AdminMenu from '../AdminMenu';
-import { useHistory } from 'react-router-dom';
-import {BASE_URL, headers, GET} from '../../../constants/api';
+import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
+import { Container, Col, Row } from 'react-bootstrap';
+import { BASE_URL, headers, GET } from '../../../constants/api';
+import AdminMenu from '../AdminMenu';
+import Heading1 from '../../visitor/layout/headings/Heading1';
 import Heading2 from '../../visitor/layout/headings/Heading2';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
 

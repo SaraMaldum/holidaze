@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import Heading3 from '../layout/headings/Heading3';
-import {FaStar, FaRegStar} from 'react-icons/fa';
-import {NavLink} from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledCol = styled(NavLink)`
     margin: 20px 0;
@@ -43,7 +43,6 @@ function AccommodationItems({id, name, image}) {
             </div>
         </StyledCol>
     )
-
 }
 
 AccommodationItems.propTypes = {

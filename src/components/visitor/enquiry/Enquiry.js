@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import {BASE_URL, headers} from '../../../constants/api';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
-import {BASE_URL, headers} from '../../../constants/api';
 import StyledSpinner from '../layout/spinner/Spinner';
-import styled from 'styled-components';
 import EnquiryForm from './EnquiryForm';
+import styled from 'styled-components';
 
 const ImageContainer = styled.p`
     height: 200px;
@@ -14,13 +15,14 @@ const ImageContainer = styled.p`
 ` 
 
 function Enquiry() {
-    const [enquiry, setEnquiry] = useState([]);
+    const [enquiry, setEnquiry] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const options = {headers};
 
+    let {id} = useParams();
 
-    const enquiryURL = BASE_URL + "establishments/";
+    const enquiryURL = BASE_URL + "establishments/" + id;
 
     useEffect(() => {
         fetch(enquiryURL, options) 

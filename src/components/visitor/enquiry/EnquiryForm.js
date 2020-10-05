@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
-import Form from 'react-bootstrap/Form';
+import {moment} from 'react-moment';
+import { Form, Container, Row, Col } from 'react-bootstrap';
+import {BASE_URL, headers, POST} from '../../../constants/api';
 import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col'
 import Input from '../contact/formStyles/Input';
 import DatePicker from './DatePicker';
-import {moment} from 'react-moment';
-import { Row } from 'react-bootstrap';
-import {BASE_URL, headers, POST} from '../../../constants/api';
 
 const schema = yup.object().shape( {
     name: yup
@@ -55,8 +52,7 @@ function EnquiryForm() {
     return (
         <Container>
             <Form onSubmit={handleSubmit( onSubmit )}>
-                {enquiryForm && <p>Thank you for your booking. We're looking forward seeing you.</p>}
-                
+                {enquiryForm && <p>Thank you for your booking. We're looking forward seeing you.</p>}  
                 <Row>
                     <Col md={6} sm={12}>
                         <Form.Group>
@@ -85,7 +81,6 @@ function EnquiryForm() {
                 <Col className="text-right">
                     <Buttons type="submit">Book now</Buttons>
                 </Col>
-
             </Form>
         </Container>
     )

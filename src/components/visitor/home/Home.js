@@ -1,14 +1,12 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
+import Heading1 from '../layout/headings/Heading1';
 import Buttons from '../layout/buttons/Buttons';
 import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
 import Fløyen from '../../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
 import Bryggen from '../../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
 import Hiking from '../../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
 import styled from 'styled-components';
-import Heading1 from '../layout/headings/Heading1';
 
 const StyledImg = styled.div`
     margin: 10px 0;

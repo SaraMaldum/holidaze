@@ -2,9 +2,9 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { AiFillDelete } from 'react-icons/ai'
+import { BASE_URL, headers, DELETE } from '../../../constants/api';
 import Buttons from '../../visitor/layout/buttons/Buttons';
-import {BASE_URL, headers, DELETE} from '../../../constants/api';
-import {AiFillDelete} from 'react-icons/ai'
 import styled from 'styled-components';
 
 const DeleteBtn = styled(Buttons)`
@@ -40,15 +40,18 @@ function DeleteButton(props){
     
     async function deleteAccommodation() {
         const deleteURL = BASE_URL + 'establishments/' + props.id;
+
         const options = { headers, method: DELETE };
+
         await fetch(deleteURL, options);
+
         history.push("/admin/accommodationOverview");
     }
 
     return(
-            <DeleteBtn onClick={checkDelete}>
-                <AiFillDelete /> Delete
-            </DeleteBtn>
+        <DeleteBtn onClick={checkDelete}>
+            <AiFillDelete /> Delete
+        </DeleteBtn>
     )
 }
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
 import { BASE_URL, headers } from "../../constants/api";
 import Heading2 from '../visitor/layout/headings/Heading2';
-import { Col, Row } from "react-bootstrap";
-import styled from 'styled-components';
 import StyledSpinner from '../visitor/layout/spinner/Spinner';
+import styled from 'styled-components';
 
 const AccommodationLink = styled(NavLink)`
     color: ${({theme}) => theme.colors.mainBlue};
