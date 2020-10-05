@@ -29,6 +29,7 @@ const StyledContainer = styled(Container)`
     background-size: cover; 
     background-position: center;
     height: 50vh;
+    font-family: 'Fira Sans', sans-serif;
 `
 
 const StyledLink = styled(NavLink)`

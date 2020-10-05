@@ -8,6 +8,7 @@ const BtnContainer = styled(Container)`
     padding: 4px;
     max-width: 350px;
     background-color: rgba(255,255,255,.6);
+    font-family: 'Fira Sans', sans-serif;
 ` 
 
 const HeadingTxt = styled.p`

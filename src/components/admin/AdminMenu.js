@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const StyledUl = styled.ul`
     margin-top: 20px; 
+    font-family: 'Fira Sans', sans-serif;
 `
 const StyledLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.orange};

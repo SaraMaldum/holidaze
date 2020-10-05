@@ -9,7 +9,7 @@ const StyledButton = styled(Button)`
     text-transform: uppercase;
     margin: 10px 0;   
     padding: 10px;
-    
+    font-family: 'Fira Sans', sans-serif;
     
     &:hover {
         background-color: ${({ theme }) => theme.colors.white};
