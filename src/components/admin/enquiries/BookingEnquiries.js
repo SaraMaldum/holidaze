@@ -53,7 +53,8 @@ function BokoingEnquiries() {
                 {enquiries.map((enquiry) => {
                     return (
                         <Col md={4} key={enquiry.establishmentId}>
-                            <Heading2 title={enquiry.name} />
+                            <Heading2 title={enquiry.establishmentId} />
+                            <p>Name: {enquiry.name}</p>
                             <p>Email address: {enquiry.email}</p>
                             <p>Date: {enquiry.checkIn} to {enquiry.checkOut}</p>
                         </Col>

@@ -42,7 +42,7 @@ function Enquiry() {
             <Container>
                 <StyledSpinner />
                 <Heading1 title="Booking enquiry"/>
-                <Heading2 title={enquiry.name} />
+                <Heading2 title={enquiry.name}  />
                 <ImageContainer style={{backgroundImage: `url(${enquiry.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
                 <EnquiryForm />
             </Container>

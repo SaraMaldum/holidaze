@@ -70,7 +70,7 @@ function Detail() {
                 </Col>
 
                 <Col className="text-right">
-                    <Buttons href={"/enquiry/" + id}>Book now</Buttons>
+                    <Buttons href={`/enquiry/${detailedAccommodation.id}`}>Book now</Buttons>
                 </Col>
             </Container>
         </>

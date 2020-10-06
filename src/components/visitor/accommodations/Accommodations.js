@@ -37,7 +37,7 @@ function Accommodations() {
                 <Heading1 title="Accommodations"/>
                 <Heading2 title="Find your accommodation"/>
                 <Autocomplete
-                getItemValue={(accommodations) => 
+                    getItemValue={(accommodations) => 
                     accommodations.name }
                     items={accommodations}
                     shouldItemRender={(accommodations, value) => accommodations.name.toLowerCase().indexOf(value.toLowerCase()) > -1}

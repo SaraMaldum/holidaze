@@ -66,7 +66,7 @@ const Logo = styled.img`
 //Navbar function
 function NavBar() {
     return (
-        <Router basename="/holidaze">
+        <Router>
             <StyledContainer fluid>
                 <Navbar variant="dark" expand="lg">
                     <NavLink to="/">
