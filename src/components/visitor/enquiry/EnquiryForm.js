@@ -1,34 +1,12 @@
 import React, {useState }from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory, useParams } from 'react-router-dom';
-// import * as yup from 'yup';
-// import { yupResolver } from '@hookform/resolvers';
+import { useHistory} from 'react-router-dom';
 import { Form, Container, Row, Col } from 'react-bootstrap';
 import { BASE_URL, headers } from '../../../constants/api';
-//import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from '../contact/formStyles/Input';
 import SentMsg from '../contact/sentMsg/SentMsg';
-//const schema = yup.object().shape( {
-    //name: yup
-      //  .string()
-      //  .min( 4, 'Name has to be longer than 4 characters' )
-        //.required( "Please enter your full name, at least 4 characters" ),
-    //email: yup
-      //  .string()
-        //.email( "Please enter a valid email" )
-       // .required( "Please enter your email address" ), 
-    //checkIn: yup
-      //  .date()
-        //.string()
-       // .checkIn("Check in date is required")
-        //.required(),
-   // checkOut: yup
-     //   .string()
-       // .checkIn("Check out date is required")
-       // .required(),
-//} );
 
 function EnquiryForm({Accommodation}) {
     const [enquiryForm, setEnquiryForm] = useState( false ); //variable for sending validation message
@@ -56,9 +34,7 @@ function EnquiryForm({Accommodation}) {
         <Container>
             <Form onSubmit={handleSubmit(onSubmit)}>
             {enquiryForm && <SentMsg>Thank you for your booking. We're looking forward seeing you.</SentMsg>}  
-
                 <Row>
-
                     <Col md={12}>
                         <Form.Group>
                             <FormLabel>Accommodation name</FormLabel>
@@ -123,4 +99,3 @@ function EnquiryForm({Accommodation}) {
 
 export default EnquiryForm;
 
-//<DatePicker type="date" name="date" date={date} onChange={e => setDate(e.target.value)} />

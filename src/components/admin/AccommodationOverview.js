@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { Col, Row } from "react-bootstrap";
-import { BASE_URL, headers } from "../../constants/api";
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
+import { BASE_URL, headers } from '../../constants/api';
 import Heading2 from '../visitor/layout/headings/Heading2';
 import StyledSpinner from '../visitor/layout/spinner/Spinner';
 import styled from 'styled-components';
@@ -24,7 +24,7 @@ function Accommodations() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const overviewURL = BASE_URL + "establishments";
+    const overviewURL = BASE_URL + 'establishments';
 
     const options = { headers };
 

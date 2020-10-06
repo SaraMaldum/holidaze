@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { BASE_URL, headers } from "../../../constants/api";
 import { Container, Row, Col } from 'react-bootstrap';
 import Autocomplete from 'react-autocomplete';

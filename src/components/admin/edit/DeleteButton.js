@@ -1,7 +1,7 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+import { useHistory } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import { AiFillDelete } from 'react-icons/ai'
 import { BASE_URL, headers, DELETE } from '../../../constants/api';
 import Buttons from '../../visitor/layout/buttons/Buttons';

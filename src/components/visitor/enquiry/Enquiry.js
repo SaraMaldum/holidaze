@@ -22,7 +22,7 @@ function Enquiry() {
 
     let {id} = useParams();
 
-    const enquiryURL = BASE_URL + "establishments/" + id;
+    const enquiryURL = BASE_URL + 'establisments/' + id;
 
     useEffect(() => {
         fetch(enquiryURL, options) 

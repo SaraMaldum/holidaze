@@ -1,7 +1,7 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { useHistory } from "react-router-dom";
-import { BASE_URL, headers } from "../../../constants/api";
+import { BASE_URL, headers } from '../../../constants/api';
 import { Form, Container, Col } from 'react-bootstrap';
 import FormLabel from '../../visitor/contact/formStyles/FormLabel';
 import Input from '../../visitor/contact/formStyles/Input';
@@ -15,9 +15,9 @@ function AddAccommodation() {
     const history = useHistory();
 
     async function onSubmit(data) {
-        console.log("data", data);
+        console.log('data', data);
 
-        const AddAccommodationURL = BASE_URL + "establishments";
+        const AddAccommodationURL = BASE_URL + 'establishments';
 
         const options = { headers, method: "POST", body: JSON.stringify(data) };
 

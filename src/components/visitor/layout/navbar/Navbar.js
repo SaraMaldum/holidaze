@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,11 +14,11 @@ import Contact from '../../contact/Contact';
 import Accommodations from '../../accommodations/Accommodations';
 import Detail from '../../accommodations/detailed/Detail';
 import ContactMsg from '../../../admin/contactMsg/ContactMsg';
-import AddAccommodation from "../../../admin/edit/AddAccommodation";
-import AdminDashboard from "../../../admin/AdminDashboard";
-import DeleteAccommodation from "../../../admin/edit/DeleteAccommodation";
-import BookingEnquiries from "../../../admin/enquiries/BookingEnquiries";
-import Enquiry from "../../enquiry/Enquiry";
+import AddAccommodation from '../../../admin/edit/AddAccommodation';
+import AdminDashboard from '../../../admin/AdminDashboard';
+import DeleteAccommodation from '../../../admin/edit/DeleteAccommodation';
+import BookingEnquiries from '../../../admin/enquiries/BookingEnquiries';
+import Enquiry from '../../enquiry/Enquiry';
 import AccommodationOverview from '../../../admin/AccommodationOverview';
 import styled from 'styled-components';
 

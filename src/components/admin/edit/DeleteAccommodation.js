@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useParams, useHistory } from 'react-router-dom';
 import { Container, Col, Form } from 'react-bootstrap';
 import { BASE_URL, headers, PATCH } from '../../../constants/api';
 import Heading1 from '../../visitor/layout/headings/Heading1';
@@ -28,7 +27,7 @@ function DeleteAccommodation(){
     let { id } = useParams();
 
     const options = { headers };
-    const deleteURL = BASE_URL + "establishments/" + id;
+    const deleteURL = BASE_URL + 'establisments/' + id;
 
     useEffect(() => {
         fetch(deleteURL, options)

@@ -14,16 +14,16 @@ import SentMsg from './sentMsg/SentMsg';
 const schema = yup.object().shape( {
     name: yup
         .string()
-        .min( 4, 'Name has to be longer than 4 characters' )
-        .required( "Please enter your full name, at least 4 characters" ),
+        .min( 4, 'Name has to be longer than 4 characters.' )
+        .required(),
     email: yup
         .string()
-        .email( "Please enter a valid email" )
-        .required( "Please enter your email address" ),
+        .email( 'Please enter a valid email.' )
+        .required(),
     message: yup
         .string()
-        .min( 10, 'Message needs to be longer than 10 characters.')
-        .required("Please enter a message longer than 10 characters."),
+        .min( 10, 'Message needs to be longer than 10 characters.' )
+        .required(),
 } );
 
 function Contact() {
