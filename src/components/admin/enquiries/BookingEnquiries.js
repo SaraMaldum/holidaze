@@ -7,6 +7,15 @@ import AdminMenu from '../AdminMenu';
 import Heading1 from '../../visitor/layout/headings/Heading1';
 import Heading2 from '../../visitor/layout/headings/Heading2';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
+import DeleteEnquiry from './DeleteEnquiry';
+import Buttons from '../../visitor/layout/buttons/Buttons';
+import moment from 'moment';
+import styled from 'styled-components';
+
+const EnquiryCol = styled(Col)`
+    border-right: 1px solid #EB8F2D;
+    margin: 10px 0;
+`
 
 function BokoingEnquiries() {
     const [enquiries, setEnquiries] = useState([]);
@@ -14,7 +23,7 @@ function BokoingEnquiries() {
     const { handleSubmit } = useForm();
 
     const history = useHistory();
-
+      
     const options = { headers };
     const enquiryURL = BASE_URL + 'enquiries';
 
@@ -26,9 +35,7 @@ function BokoingEnquiries() {
         .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
-    console.log(enquiries)
-    
+        
     async function onSubmit(data) {
         console.log(data)
 
@@ -52,12 +59,17 @@ function BokoingEnquiries() {
                 <Row onSubmit={handleSubmit(onSubmit)}>
                 {enquiries.map((enquiry) => {
                     return (
-                        <Col md={4} key={enquiry.establishmentId}>
-                            <Heading2 title={enquiry.establishmentId} />
-                            <p>Name: {enquiry.name}</p>
+                        <EnquiryCol md={4} key={enquiry.id}>
+                            <Heading2 title={enquiry.name} />
+                            <p>Accommodation id: {enquiry.establishmentId}</p>
                             <p>Email address: {enquiry.email}</p>
-                            <p>Date: {enquiry.checkIn} to {enquiry.checkOut}</p>
-                        </Col>
+                            <p>Check in: {moment(enquiry.checkIn).format("MMM Do YY")} </p>
+                            <p>Check out: {moment(enquiry.checkOut).format("MMM Do YY")}</p>
+                            <Col  className="text-right">
+                                <Buttons href={`mailto:${enquiry.email}`}>Confirmation</Buttons>
+                                <DeleteEnquiry id={enquiry.id} />
+                            </Col>
+                        </EnquiryCol>
                     );
                 })}           
                 </Row>

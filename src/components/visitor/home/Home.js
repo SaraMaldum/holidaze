@@ -6,6 +6,7 @@ import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
 import Fløyen from '../../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
 import Bryggen from '../../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
 import Hiking from '../../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
+import Typeahead from './typeahead/Typeahead';
 import styled from 'styled-components';
 
 const StyledImg = styled.div`
@@ -27,7 +28,7 @@ function Home() {
         <>
             <Container>
                 <Heading1 title="Welcome to Holidaze"/>
-
+                <Typeahead />
                 <Row>
                     <Col lg={3} md={4} sm={6}>
                         <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>

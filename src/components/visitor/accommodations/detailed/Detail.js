@@ -58,12 +58,12 @@ function Detail() {
             <Container>
                 <StyledSpinner />
                 <Heading1 title={detailedAccommodation.name}/>
-                <ImageContainer style={{backgroundImage: `url(${detailedAccommodation.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
+                <ImageContainer style={{backgroundImage: `url(${detailedAccommodation.image})`, backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
 
                 <Heading2 title="About the hotel" />
                 <Col md={12}>
                     <p>{detailedAccommodation.description}</p>
-                    <p>If you have any questions directed to us, please send us an email at <Mail href='mailto:example@example.com'>{detailedAccommodation.email}</Mail></p>
+                    <p>If you have any questions directed to us, please send us an email at <Mail href={`mailto:${detailedAccommodation.email}`} >{detailedAccommodation.email}</Mail></p>
                 </Col>
                 <Col>
                     <Price>{detailedAccommodation.price}€ per night</Price>

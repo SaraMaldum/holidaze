@@ -20,9 +20,9 @@ function Enquiry() {
 
     const options = {headers};
 
-    let {id} = useParams();
+    let { id } = useParams();
 
-    const enquiryURL = BASE_URL + 'establisments/' + id;
+    const enquiryURL = BASE_URL + 'establishments/' + id;
 
     useEffect(() => {
         fetch(enquiryURL, options) 
@@ -32,6 +32,7 @@ function Enquiry() {
             .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;

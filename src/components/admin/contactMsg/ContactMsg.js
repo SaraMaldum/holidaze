@@ -7,6 +7,8 @@ import AdminMenu from '../AdminMenu';
 import Heading1 from '../../visitor/layout/headings/Heading1';
 import Heading2 from '../../visitor/layout/headings/Heading2';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
+import DeleteMsg from './DeleteMsg';
+import Buttons from '../../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
 
 const MsgCol = styled(Col)`
@@ -62,6 +64,10 @@ function ContactMsg() {
                                 <p>Email address: {message.email}</p>
                                 <p>Message: {message.message}</p>
                                 <p>Recieved: {message.createdAt}</p>
+                                <Col className="text-right">
+                                    <Buttons href={`mailto:${message.email}`}>Reply</Buttons>
+                                    <DeleteMsg id={message.id} />
+                                </Col>
                             </MsgCol>
                         );
                     })}

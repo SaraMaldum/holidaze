@@ -52,13 +52,13 @@ function Accommodations() {
     return (
         <>
             <StyledSpinner />
-            <Heading2 title="Click to delete"/>
-            {error && <div className="error">{error}</div>}
+            <Heading2 title="Click to edit"/>
+            {error && <div>{error}</div>}
             <StyledRow>
                 {accommodations.map((accommodation) => {
                     return (
                         <Col md={3} key={accommodation.id}>
-                            <AccommodationLink to={`/delete/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
+                            <AccommodationLink to={`/edit/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
                         </Col>
                     );
                 })}

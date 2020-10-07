@@ -9,8 +9,9 @@ import DeleteButton from './DeleteButton';
 import FormLabel from '../../visitor/contact/formStyles/FormLabel';
 import Input from '../../visitor/contact/formStyles/Input';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
+import Buttons from '../../visitor/layout/buttons/Buttons';
 
-function DeleteAccommodation(){
+function EditAccommodation(){
     const defaultState = {
         name: "",
         email: "",
@@ -27,10 +28,10 @@ function DeleteAccommodation(){
     let { id } = useParams();
 
     const options = { headers };
-    const deleteURL = BASE_URL + 'establisments/' + id;
+    const editURL = BASE_URL + 'establishments/' + id;
 
     useEffect(() => {
-        fetch(deleteURL, options)
+        fetch(editURL, options)
             .then((response) => response.json())
             .then((json) => setAccommodation(json))
             .catch((error) => console.log(error))
@@ -43,7 +44,7 @@ function DeleteAccommodation(){
 
         const updateOptions = { headers, method: PATCH, body: JSON.stringify(data) };
 
-        await fetch(deleteURL, updateOptions);
+        await fetch(editURL, updateOptions);
         
         history.push("/admin/accommodationOverview");
     }
@@ -56,7 +57,7 @@ function DeleteAccommodation(){
         <>
             <Container>
                 <StyledSpinner />
-                <Heading1 title="Delete Accommodation" />
+                <Heading1 title="Edit Accommodation" />
                 <AdminMenu  />
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group>
@@ -85,6 +86,7 @@ function DeleteAccommodation(){
                     </Form.Group>
                 </Form>
                 <Col className="text-right">
+                    <Buttons type="submit">Update</Buttons>
                     <DeleteButton id={id} />
                 </Col>
             </Container>
@@ -92,4 +94,4 @@ function DeleteAccommodation(){
     )
 }
 
-export default DeleteAccommodation;
+export default EditAccommodation;
