@@ -3,13 +3,14 @@ import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
-import { Form, Container, Row, Col } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 import { BASE_URL, headers } from '../../../constants/api';
 import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from '../contact/formStyles/Input';
 import SentMsg from '../contact/sentMsg/SentMsg';
+import StyledContainer from '../layout/containerStyle/StyledContainer';
 
 const schema = yup.object().shape( {
     name: yup
@@ -46,7 +47,7 @@ function EnquiryForm() {
     }
 
     return (
-        <Container>
+        <StyledContainer>
             <Form onSubmit={handleSubmit(onSubmit)}>
             {enquiryForm && <SentMsg>Thank you for your booking. We're looking forward seeing you.</SentMsg>}  
                 <Row>
@@ -93,7 +94,7 @@ function EnquiryForm() {
                 </Col>
                 </Row>
         </Form>
-        </Container>
+        </StyledContainer>
     )
 }
 

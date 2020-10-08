@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { BASE_URL, headers, GET } from '../../../constants/api';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import AdminMenu from '../AdminMenu';
 import Heading1 from '../../visitor/layout/headings/Heading1';
 import Heading2 from '../../visitor/layout/headings/Heading2';
@@ -52,7 +53,7 @@ function ContactMsg() {
 
     return(
         <>
-            <Container>
+            <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title="Contact messages" />
                 <AdminMenu />
@@ -72,7 +73,7 @@ function ContactMsg() {
                         );
                     })}
                 </Row>       
-            </Container>
+            </StyledContainer>
         </>
     )
 }

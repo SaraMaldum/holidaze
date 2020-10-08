@@ -23,7 +23,7 @@ import AccommodationOverview from '../../../admin/AccommodationOverview';
 import styled from 'styled-components';
 
 //Styles components
-const StyledContainer = styled(Container)`   
+const HeaderContainer = styled(Container)`   
     background-image: url(${BgImg});
     background-repeat: no-repeat;
     background-size: cover; 
@@ -67,7 +67,7 @@ const Logo = styled.img`
 function NavBar() {
     return (
         <Router>
-            <StyledContainer fluid>
+            <HeaderContainer fluid>
                 <Navbar variant="dark" expand="lg">
                     <NavLink to="/">
                         <Navbar.Brand className="mr-auto"><Logo src={logo} alt="logo" /></Navbar.Brand>
@@ -90,7 +90,7 @@ function NavBar() {
                         </Nav>
                     </Navbar.Collapse>  
                 </Navbar>
-            </StyledContainer>
+            </HeaderContainer>
             <HeaderButton />
             
             <Switch>

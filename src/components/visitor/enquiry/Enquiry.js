@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import {BASE_URL, headers} from '../../../constants/api';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import StyledSpinner from '../layout/spinner/Spinner';
+import StyledContainer from '../layout/containerStyle/StyledContainer';
 import EnquiryForm from './EnquiryForm';
 import styled from 'styled-components';
 
@@ -40,13 +40,13 @@ function Enquiry() {
     
     return(
         <>
-            <Container>
+            <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title="Booking enquiry"/>
                 <Heading2 title={enquiry.name}  />
                 <ImageContainer style={{backgroundImage: `url(${enquiry.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
                 <EnquiryForm />
-            </Container>
+            </StyledContainer>
         </>
     )
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { BASE_URL, headers } from '../../../../constants/api';
 import Heading1 from '../../layout/headings/Heading1';
 import Heading2 from '../../layout/headings/Heading2';
 import StyledSpinner from '../../layout/spinner/Spinner';
+import StyledContainer from '../../layout/containerStyle/StyledContainer';
 import Buttons from '../../layout/buttons/Buttons';
 import styled from 'styled-components';
 
@@ -55,24 +56,28 @@ function Detail() {
 
     return(
         <>
-            <Container>
+            <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title={detailedAccommodation.name}/>
                 <ImageContainer style={{backgroundImage: `url(${detailedAccommodation.image})`, backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
 
-                <Heading2 title="About the hotel" />
+                <Heading2 title="About the accommodation" />
                 <Col md={12}>
                     <p>{detailedAccommodation.description}</p>
                     <p>If you have any questions directed to us, please send us an email at <Mail href={`mailto:${detailedAccommodation.email}`} >{detailedAccommodation.email}</Mail></p>
+                    <div>{detailedAccommodation.selfCatering 
+                        ? <p>{detailedAccommodation.name} has self catering.</p> 
+                        : <p>{detailedAccommodation.name} does not have self catering.</p>
+                    }</div>
                 </Col>
                 <Col>
-                    <Price>{detailedAccommodation.price}€ per night</Price>
+                    <Price>{detailedAccommodation.price}€ per night for one person.</Price>
                 </Col>
 
                 <Col className="text-right">
                     <Buttons href={`/enquiry/${detailedAccommodation.id}`}>Book now</Buttons>
                 </Col>
-            </Container>
+            </StyledContainer>
         </>
     )
 }

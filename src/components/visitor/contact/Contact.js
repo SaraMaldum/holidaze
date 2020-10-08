@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
-import { Form, Container, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 import {BASE_URL, headers, POST} from '../../../constants/api';
 import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
+import StyledContainer from '../layout/containerStyle/StyledContainer';
 import SentMsg from './sentMsg/SentMsg';
 
 const schema = yup.object().shape( {
@@ -53,7 +54,7 @@ function Contact() {
     }
 
     return (
-        <Container>
+        <StyledContainer>
             <Heading1 title="Contact us"/>
             <Form onSubmit={handleSubmit( onSubmit )}>
                 {formSent && <SentMsg>Thank you for your message. We'll respond shortly.</SentMsg>}
@@ -80,7 +81,7 @@ function Contact() {
                 </Col>
 
             </Form>
-        </Container>
+        </StyledContainer>
     )
 }
 

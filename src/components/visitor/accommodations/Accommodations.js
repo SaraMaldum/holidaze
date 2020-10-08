@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BASE_URL, headers } from "../../../constants/api";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import StyledSpinner from '../layout/spinner/Spinner';
 import Heading1 from '../layout/headings/Heading1';
 import Heading2 from '../layout/headings/Heading2';
 import AccommodationItems from './AccommodationItems';
+import StyledContainer from '../layout/containerStyle/StyledContainer';
 import Search from './search/Search';
 
 function Accommodations() {
@@ -48,7 +49,7 @@ function Accommodations() {
     
     return (
         <>
-            <Container>
+            <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title="Accommodations"/>
                 <Heading2 title="Find your accommodation"/>
@@ -68,7 +69,7 @@ function Accommodations() {
                         );
                     })}
                 </Row>
-            </Container>
+            </StyledContainer>
         </>
     );
 }

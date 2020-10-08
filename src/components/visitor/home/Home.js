@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Heading1 from '../layout/headings/Heading1';
 import Buttons from '../layout/buttons/Buttons';
+import StyledContainer from '../layout/containerStyle/StyledContainer';
 import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
 import Fløyen from '../../../images/leonard-rb-NuAtjag7oJ4-unsplash.jpg';
 import Bryggen from '../../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
@@ -26,35 +27,35 @@ const HomeBtn = styled(Buttons)`
 function Home() {
     return( 
         <>
-            <Container>
+            <StyledContainer>
                 <Heading1 title="Welcome to Holidaze"/>
                 <Typeahead />
                 <Row>
                     <Col lg={3} md={4} sm={6}>
                         <StyledImg style={{backgroundImage: `url(${TheCity})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                            <HomeBtn href="https://www.visitbergen.com/">The City</HomeBtn>
+                            <HomeBtn href="https://www.visitbergen.com/" target="_blank">The City</HomeBtn>
                         </StyledImg>
                     </Col>
 
                     <Col lg={3} md={4} sm={6}>
                         <StyledImg style={{backgroundImage: `url(${Fløyen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                            <HomeBtn href="https://www.floyen.no/">Fløyen</HomeBtn>
+                            <HomeBtn href="https://www.floyen.no/" target="_blank">Fløyen</HomeBtn>
                         </StyledImg>
                     </Col>
                     
                     <Col lg={3} md={4} sm={6}>
                         <StyledImg style={{backgroundImage: `url(${Bryggen})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                            <HomeBtn href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553" >Bryggen</HomeBtn>
+                            <HomeBtn href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553" target="_blank">Bryggen</HomeBtn>
                         </StyledImg>
                     </Col>
 
                     <Col lg={3} md={4} sm={6}>
                         <StyledImg style={{backgroundImage: `url(${Hiking})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                            <HomeBtn href="https://en.visitbergen.com/things-to-do/activities/hiking-in-bergen/seven-mountains-bergen?gclid=CjwKCAjw74b7BRA_EiwAF8yHFKA9ZSlqUVvcrFdYR-AJFBXaafyIdl54-YzexxY5E6RDI0q8C-2SMhoCeYAQAvD_BwE">Hiking</HomeBtn>
+                            <HomeBtn href="https://en.visitbergen.com/things-to-do/activities/hiking-in-bergen/seven-mountains-bergen?gclid=CjwKCAjw74b7BRA_EiwAF8yHFKA9ZSlqUVvcrFdYR-AJFBXaafyIdl54-YzexxY5E6RDI0q8C-2SMhoCeYAQAvD_BwE" target="_blank">Hiking</HomeBtn>
                         </StyledImg>
                     </Col>
                 </Row>
-            </Container>
+            </StyledContainer>
         </>
     )
 }

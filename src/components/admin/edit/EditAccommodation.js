@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams, useHistory } from 'react-router-dom';
-import { Container, Col, Form } from 'react-bootstrap';
+import { Col, Form } from 'react-bootstrap';
 import { BASE_URL, headers, PATCH } from '../../../constants/api';
 import Heading1 from '../../visitor/layout/headings/Heading1';
 import AdminMenu from '../AdminMenu';
@@ -9,6 +9,7 @@ import DeleteButton from './DeleteButton';
 import FormLabel from '../../visitor/contact/formStyles/FormLabel';
 import Input from '../../visitor/contact/formStyles/Input';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
+import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 
 function EditAccommodation(){
@@ -55,7 +56,7 @@ function EditAccommodation(){
 
     return(
         <>
-            <Container>
+            <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title="Edit Accommodation" />
                 <AdminMenu  />
@@ -89,7 +90,7 @@ function EditAccommodation(){
                     <Buttons type="submit">Update</Buttons>
                     <DeleteButton id={id} />
                 </Col>
-            </Container>
+            </StyledContainer>
         </>
     )
 }

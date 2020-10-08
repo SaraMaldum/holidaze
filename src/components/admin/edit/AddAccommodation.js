@@ -2,11 +2,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from "react-router-dom";
 import { BASE_URL, headers } from '../../../constants/api';
-import { Form, Container, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 import FormLabel from '../../visitor/contact/formStyles/FormLabel';
 import Input from '../../visitor/contact/formStyles/Input';
 import Heading1 from '../../visitor/layout/headings/Heading1';
 import Buttons from '../../visitor/layout/buttons/Buttons';
+import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import AdminMenu from '../AdminMenu';
 
 function AddAccommodation() {
@@ -27,7 +28,7 @@ function AddAccommodation() {
     }
 
     return(
-        <Container>
+        <StyledContainer>
             <Heading1 title="Add accommodation" />
             <AdminMenu />
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -60,7 +61,7 @@ function AddAccommodation() {
                     <Buttons type="submit" >Add Accommodation</Buttons>
                 </Col>
             </Form>
-        </Container>
+        </StyledContainer>
     )
 }
 
