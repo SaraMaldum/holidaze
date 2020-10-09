@@ -10,6 +10,7 @@ import Bryggen from '../../../images/kaitlyn-collins-vG0SDJrrOIA-unsplash.jpg';
 import Hiking from '../../../images/michael-fousert-7uJk9VBl94g-unsplash.jpg';
 import Typeahead from './typeahead/Typeahead';
 import styled from 'styled-components';
+import HeaderButton from '../layout/navbar/HeaderButton';
 
 const StyledImg = styled.div`
     margin: 10px 0;
@@ -28,6 +29,7 @@ const HomeBtn = styled(Buttons)`
 function Home() {
     return( 
         <>
+        <HeaderButton />
             <StyledContainer>
                 <Heading1 title="Welcome to Holidaze"/>
                 <Heading2 title="Find an accommodation" />

@@ -89,7 +89,6 @@ function NavBar() {
                     </Navbar.Collapse>  
                 </Navbar>
             </HeaderContainer>
-            <HeaderButton />
             
             <Switch>
                 <Route path="/" exact component={Home} />

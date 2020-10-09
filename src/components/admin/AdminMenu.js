@@ -47,7 +47,7 @@ function AdminMenu(){
                     <StyledLink to="/add" activeStyle={style} ><BsPlusCircleFill /> Add</StyledLink>
                 </StyledList>
                 <StyledList>
-                    <StyledLink to="/contactMsg" activeStyle={style} ><AiFillMessage /> Contact messages</StyledLink>
+                    <StyledLink to="/messages" activeStyle={style} ><AiFillMessage /> Contact messages</StyledLink>
                 </StyledList>
                 <StyledList>
                     <StyledLink to="/enquiries" activeStyle={style} ><BsCalendarFill /> Booking enquiries</StyledLink>

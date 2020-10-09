@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const StyledContainer = styled(Container)`
     background-image: url(/images/${switchProp("path",{
         "/": "headerImg.jpg",
-        "/accommodations": "bea-fladstad-3IN0hvhUCiY-unsplash.jpg",
+        "/accommodations": "norway-2144781_1920.jpg",
         "/detail": "norway-2144781_1920.jpg",
         "/contact": "kuno-schweizer-2H0FmDFWL-w-unsplash.jpg",
         "/enquiry": "kuno-schweizer-2H0FmDFWL-w-unsplash.jpg",
@@ -22,13 +22,13 @@ const StyledContainer = styled(Container)`
     
 `;
 
-function HeaderContainer() {
+function HeaderContainer({children}) {
     const location = useLocation();
     const path = location.pathname;
 
     console.log(path);
 
-    return <StyledContainer fluid path={path} />;
+return <StyledContainer fluid path={path}>{children}</StyledContainer>;
 }
 
 export default HeaderContainer;
