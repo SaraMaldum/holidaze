@@ -22,6 +22,7 @@
     "react-scripts": "3.4.3",
     "react-yup": "^1.15.0",
     "styled-components": "^5.2.0",
+    "styled-tools": "^1.7.2",
     "yup": "^0.29.3"
   },
   "scripts": {

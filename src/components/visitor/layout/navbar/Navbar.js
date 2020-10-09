@@ -22,7 +22,7 @@ import Enquiry from '../../enquiry/Enquiry';
 import AccommodationOverview from '../../../admin/AccommodationOverview';
 import styled from 'styled-components';
 
-//Styles components
+//Styled components
 const HeaderContainer = styled(Container)`   
     background-image: url(${BgImg});
     background-repeat: no-repeat;
@@ -66,7 +66,7 @@ const Logo = styled.img`
 //Navbar function
 function NavBar() {
     return (
-        <Router>
+        <Router basename="/holidaze">
             <HeaderContainer fluid>
                 <Navbar variant="dark" expand="lg">
                     <NavLink to="/">
@@ -95,8 +95,8 @@ function NavBar() {
             
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/detail/:id" component={Detail} />
                 <Route path="/accommodations" component={Accommodations} />
+                <Route path="/detail/:id" component={Detail} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/enquiry/:id" component={Enquiry} />
 
@@ -105,7 +105,6 @@ function NavBar() {
                 <Route path="/add" component={AddAccommodation} />
                 <Route path="/contactMsg" component={ContactMsg} />
                 <Route path="/enquiries/:id" component={BookingEnquiries} />
-                <Route path="/enquiries" component={BookingEnquiries} />                
                 <Route path="/edit/:id" component={EditAccommodation} />
             </Switch>
         </Router>

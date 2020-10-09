@@ -65,10 +65,12 @@ function Detail() {
                 <Col md={12}>
                     <p>{detailedAccommodation.description}</p>
                     <p>If you have any questions directed to us, please send us an email at <Mail href={`mailto:${detailedAccommodation.email}`} >{detailedAccommodation.email}</Mail></p>
-                    <div>{detailedAccommodation.selfCatering 
+                    <div>
+                        {detailedAccommodation.selfCatering 
                         ? <p>{detailedAccommodation.name} has self catering.</p> 
                         : <p>{detailedAccommodation.name} does not have self catering.</p>
-                    }</div>
+                        }
+                    </div>
                 </Col>
                 <Col>
                     <Price>{detailedAccommodation.price}€ per night for one person.</Price>
