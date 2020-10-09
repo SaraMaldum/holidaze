@@ -67,7 +67,12 @@ function BokoingEnquiries() {
                             <p>Check in: {moment(enquiry.checkIn).format("MMM Do YY")} </p>
                             <p>Check out: {moment(enquiry.checkOut).format("MMM Do YY")}</p>
                             <Col  className="text-right">
-                                <Buttons href={`mailto:${enquiry.email}`}>Confirmation</Buttons>
+                                <Buttons href={`mailto:${enquiry.email}
+                                    ?subject=Booking confirmation for ${enquiry.name}
+                                    &body=Hi, ${enquiry.name}! Thank you for your booking. We're looking forward to seeing you at 
+                                    ${moment(enquiry.checkIn).format("MMM Do YY")}.`}>
+                                        Confirmation
+                                </Buttons>
                                 <DeleteEnquiry id={enquiry.id} />
                             </Col>
                         </EnquiryCol>

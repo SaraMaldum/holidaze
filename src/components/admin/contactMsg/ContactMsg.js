@@ -44,7 +44,7 @@ function ContactMsg() {
 
         await fetch(contactURL, updateOptions);
 
-        history.push("/admin/contactMsg/contactMsg")
+        history.push("/admin/contactMsg/messages")
     }
 
     if (loading) {

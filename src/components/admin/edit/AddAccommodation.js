@@ -24,7 +24,7 @@ function AddAccommodation() {
 
         await fetch (AddAccommodationURL, options);
 
-        history.push("/admin/accommodationOverview");
+        history.push("/admin/overview");
     }
 
     return(

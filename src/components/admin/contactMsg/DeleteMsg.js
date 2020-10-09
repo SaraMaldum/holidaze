@@ -45,7 +45,7 @@ function DeleteButton(props){
 
         await fetch(deleteURL, options);
 
-        history.push("/admin/contactMsg/contactMsg");
+        history.push("/admin/contactMsg/messages");
     }
 
     return(

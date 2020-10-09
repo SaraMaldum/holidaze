@@ -1,24 +1,34 @@
+import React from "react";
 import { useLocation } from 'react-router-dom';
-import styled from 'styled-components';
 import { switchProp } from 'styled-tools';
 import { Container } from 'react-bootstrap';
+import styled from 'styled-components';
 
-const location = useLocation();
-console.log(location.pathname);
-
-const HeaderContainer = styled(Container)`
-    background-repeat: none;
-    background-position: center;
-    background-size: cover; 
-    background-image: url(${switchProp("path", {
-        "/home": "headerImg.jpg",
-        "/accommodations": "norway-2144781_1920.jpg",
+const StyledContainer = styled(Container)`
+    background-image: url(/images/${switchProp("path",{
+        "/": "headerImg.jpg",
+        "/accommodations": "bea-fladstad-3IN0hvhUCiY-unsplash.jpg",
         "/detail": "norway-2144781_1920.jpg",
-        "/contact": "kuno-schweizer-2H0FmDFWL-w-unsplash.jpg", 
+        "/contact": "kuno-schweizer-2H0FmDFWL-w-unsplash.jpg",
         "/enquiry": "kuno-schweizer-2H0FmDFWL-w-unsplash.jpg",
-    })});
+    },
+        "headerImg.jpg"
+    )});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    font-family: "Fira Sans", sans-serif;
+    
 `;
 
+function HeaderContainer() {
+    const location = useLocation();
+    const path = location.pathname;
+
+    console.log(path);
+
+    return <StyledContainer fluid path={path} />;
+}
 
 export default HeaderContainer;
-

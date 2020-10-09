@@ -5,9 +5,8 @@ import {
     Route,
     NavLink,
 } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../../../../images/logo.png';
-import BgImg from '../../../../images/headerImg.jpg'
 import HeaderButton from './HeaderButton';
 import Home from '../../home/Home';
 import Contact from '../../contact/Contact';
@@ -20,19 +19,11 @@ import EditAccommodation from '../../../admin/edit/EditAccommodation';
 import BookingEnquiries from '../../../admin/enquiries/BookingEnquiries';
 import Enquiry from '../../enquiry/Enquiry';
 import AccommodationOverview from '../../../admin/AccommodationOverview';
-import styled from 'styled-components';
 import { VscMenu } from 'react-icons/vsc'; 
+import HeaderContainer from './HeaderContainer';
+import styled from 'styled-components';
 
 //Styles components
-const HeaderContainer = styled(Container)`   
-    background-image: url(${BgImg});
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-    height: 50vh;
-    font-family: 'Fira Sans', sans-serif;
-`
-
 const StyledLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.white};
     padding: 10px 15px;
@@ -72,7 +63,7 @@ const StyledBurger = styled(VscMenu)`
 function NavBar() {
     return (
         <Router>
-            <HeaderContainer fluid>
+            <HeaderContainer>
                 <Navbar expand="lg">
                     <NavLink to="/">
                         <Navbar.Brand className="mr-auto"><Logo src={logo} alt="logo" /></Navbar.Brand>
@@ -108,9 +99,9 @@ function NavBar() {
                 <Route path="/enquiry/:id" component={Enquiry} />
 
                 <Route path="/admin" component={AdminDashboard} />
-                <Route path="/accommodationOverview" component={AccommodationOverview} />
+                <Route path="/overview" component={AccommodationOverview} />
                 <Route path="/add" component={AddAccommodation} />
-                <Route path="/contactMsg" component={ContactMsg} />
+                <Route path="/messages" component={ContactMsg} />
                 <Route path="/enquiries/:id" component={BookingEnquiries} />
                 <Route path="/enquiries" component={BookingEnquiries} />                
                 <Route path="/edit/:id" component={EditAccommodation} />

@@ -45,7 +45,7 @@ function DeleteButton(props){
 
         await fetch(deleteURL, options);
 
-        history.push("/admin/accommodationOverview");
+        history.push("/admin/overview");
     }
 
     return(
