@@ -3,3 +3,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.navbar-light .navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: none;
+}

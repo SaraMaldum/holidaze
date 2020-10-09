@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
+import { RiHotelLine } from 'react-icons/ri';
 import { BASE_URL, headers } from '../../constants/api';
 import Heading2 from '../visitor/layout/headings/Heading2';
 import StyledSpinner from '../visitor/layout/spinner/Spinner';
@@ -8,17 +9,25 @@ import styled from 'styled-components';
 
 const AccommodationLink = styled(NavLink)`
     color: ${({theme}) => theme.colors.mainBlue};
-
+    border-left: 1px solid #EB8F2D;
+    padding: 10px;
+    
     &:hover {
         text-decoration: none; 
         font-weight: bold;
         color: ${({theme}) => theme.colors.mainBlue};
+        border-left: 3px solid #EB8F2D;
+
     }
 ` 
-const StyledRow = styled(Row)`
-    margin-bottom: 10px;
+const StyledCol = styled(Col)`
+    margin: 10px 0;
+    padding: 10px;
 ` 
 
+const StyledHotel = styled(RiHotelLine)`
+    font-size: 20px;
+` 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [error, setError] = useState(null);
@@ -54,15 +63,20 @@ function Accommodations() {
             <StyledSpinner />
             <Heading2 title="Click to edit"/>
             {error && <div>{error}</div>}
-            <StyledRow>
-                {accommodations.map((accommodation) => {
+
+            <Row>
+            {accommodations.map((accommodation) => {
                     return (
-                        <Col md={3} key={accommodation.id}>
-                            <AccommodationLink to={`/edit/${accommodation.id}`}>{accommodation.name}</AccommodationLink>
-                        </Col>
+                        <StyledCol sm={6} md={4} xl={3} key={accommodation.id}>
+                            <AccommodationLink to={`/edit/${accommodation.id}`}><StyledHotel /> {accommodation.name}</AccommodationLink>
+                        </StyledCol>
                     );
                 })}
-            </StyledRow>
+            </Row>
+
+
+
+                
         </>
     );
 }

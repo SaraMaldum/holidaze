@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Heading1 from '../layout/headings/Heading1';
+import Heading2 from '../layout/headings/Heading2';
 import Buttons from '../layout/buttons/Buttons';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
 import TheCity from '../../../images/matt-lamers-PHEklbSsCxE-unsplash.jpg';
@@ -29,6 +30,7 @@ function Home() {
         <>
             <StyledContainer>
                 <Heading1 title="Welcome to Holidaze"/>
+                <Heading2 title="Find an accommodation" />
                 <Typeahead />
                 <Row>
                     <Col lg={3} md={4} sm={6}>
