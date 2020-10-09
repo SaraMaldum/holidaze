@@ -2,10 +2,10 @@ import React from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
-import Navbar from './components/visitor/layout/navbar/Navbar';
 import Footer from './components/visitor/layout/footer/Footer';
 import styled from 'styled-components';
 import './App.css';
+import Layout from './components/visitor/layout/Layout';
 
 const Wrapper = styled.div`
   &.wrapper {
@@ -18,9 +18,13 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Wrapper className="wrapper">
+        <Layout>
+
           <GlobalStyles />
-          <Navbar />
+
+          </Layout>
         </Wrapper>
+
         <Footer/>
       </ThemeProvider>
     </>

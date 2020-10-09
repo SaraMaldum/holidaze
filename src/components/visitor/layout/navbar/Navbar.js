@@ -1,25 +1,8 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import logo from '../../../../images/logo.png';
-import HeaderButton from './HeaderButton';
-import Home from '../../home/Home';
-import Contact from '../../contact/Contact';
-import Accommodations from '../../accommodations/Accommodations';
-import Detail from '../../accommodations/detailed/Detail';
-import ContactMsg from '../../../admin/contactMsg/ContactMsg';
-import AddAccommodation from '../../../admin/edit/AddAccommodation';
-import AdminDashboard from '../../../admin/AdminDashboard';
-import EditAccommodation from '../../../admin/edit/EditAccommodation';
-import BookingEnquiries from '../../../admin/enquiries/BookingEnquiries';
-import Enquiry from '../../enquiry/Enquiry';
-import AccommodationOverview from '../../../admin/AccommodationOverview';
 import { VscMenu } from 'react-icons/vsc'; 
+import logo from '../../../../images/logo.png';
 import HeaderContainer from './HeaderContainer';
 import styled from 'styled-components';
 
@@ -62,7 +45,7 @@ const StyledBurger = styled(VscMenu)`
 //Navbar function
 function NavBar() {
     return (
-        <Router>
+        <>
             <HeaderContainer>
                 <Navbar expand="lg">
                     <NavLink to="/">
@@ -89,23 +72,7 @@ function NavBar() {
                     </Navbar.Collapse>  
                 </Navbar>
             </HeaderContainer>
-            
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/detail/:id" component={Detail} />
-                <Route path="/accommodations" component={Accommodations} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/enquiry/:id" component={Enquiry} />
-
-                <Route path="/admin" component={AdminDashboard} />
-                <Route path="/overview" component={AccommodationOverview} />
-                <Route path="/add" component={AddAccommodation} />
-                <Route path="/messages" component={ContactMsg} />
-                <Route path="/enquiries/:id" component={BookingEnquiries} />
-                <Route path="/enquiries" component={BookingEnquiries} />                
-                <Route path="/edit/:id" component={EditAccommodation} />
-            </Switch>
-        </Router>
+        </>
     );
 }
 

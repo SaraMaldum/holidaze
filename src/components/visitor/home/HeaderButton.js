@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
-import Buttons from '../buttons/Buttons';
+import Buttons from '../layout/buttons/Buttons';
 
 const BtnContainer = styled(Container)`
     margin-top: -82px;
