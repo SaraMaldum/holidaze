@@ -66,7 +66,8 @@ function ContactMsg() {
                                 <p>Message: {message.message}</p>
                                 <p>Recieved: {message.createdAt}</p>
                                 <Col className="text-right">
-                                    <Buttons href={`mailto:${message.email}`}>Reply</Buttons>
+                                    <Buttons href={`mailto:${message.email}?subject=Contact form response to - ${message.name}
+                                    &body=Hi, ${message.name}! `}>Reply</Buttons>
                                     <DeleteMsg id={message.id} />
                                 </Col>
                             </MsgCol>

@@ -20,6 +20,7 @@ const HeadingTxt = styled.p`
 
 const HeaderBtn = styled(Buttons)`
     margin: -30px 0;
+    box-shadow: 4px 4px 8px gray;
 ` 
 
 function HomeHeaderBtn() {
@@ -27,7 +28,7 @@ function HomeHeaderBtn() {
         <>
             <BtnContainer className="text-center">
                 <HeadingTxt>Explore Bergen today!</HeadingTxt>
-                <HeaderBtn href="Accommodations">View Accommodations</HeaderBtn>
+                <HeaderBtn href="/accommodations">View Accommodations</HeaderBtn>
             </BtnContainer>
         </>
     )

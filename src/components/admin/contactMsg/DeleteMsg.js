@@ -36,7 +36,6 @@ function DeleteButton(props){
             ]
         });
     }
-    console.log(props)
     
     async function deleteMsg() {
         const deleteURL = BASE_URL + 'contacts/' + props.id;

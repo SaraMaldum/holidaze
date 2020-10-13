@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import { VscMenu } from 'react-icons/vsc'; 
-import logo from '../../../../images/logo.png';
+import logo from '../../../../images/logoWhite.png';
 import HeaderContainer from './HeaderContainer';
 import styled from 'styled-components';
 
@@ -28,11 +28,11 @@ const style = {
 }
 
 const Logo = styled.img`
-    width: 150px;
+    width: 180px;
     filter: drop-shadow(-0.9px 1px 1px rgba(255,255,255,.9)); 
 
     &:hover {
-        width: 156px;
+        width: 186px;
         transition: .3s;
         filter: drop-shadow(1px 2px 5px white); 
     }

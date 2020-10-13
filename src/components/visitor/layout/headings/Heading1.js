@@ -10,7 +10,7 @@ const Heading1 = styled.h1`
     text-transform: uppercase; 
     
     @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 `
 

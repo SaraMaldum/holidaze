@@ -26,7 +26,7 @@ function Layout() {
                 <Route path="/detail/:id" component={Detail} />
                 <Route path="/accommodations" component={Accommodations} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/enquiry/:id" component={Enquiry} />
+                <Route path="/booking/:id" component={Enquiry} />
 
                 <Route path="/admin" component={AdminDashboard} />
                 <Route path="/overview" component={AccommodationOverview} />

@@ -77,7 +77,7 @@ function Detail() {
                 </Col>
 
                 <Col className="text-right">
-                    <Buttons href={`/enquiry/${detailedAccommodation.id}`}>Book now</Buttons>
+                    <Buttons href={`/booking/${detailedAccommodation.id}`}>Book now</Buttons>
                 </Col>
             </StyledContainer>
         </>
