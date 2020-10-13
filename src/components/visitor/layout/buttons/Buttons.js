@@ -10,6 +10,7 @@ const StyledButton = styled(Button)`
     margin: 10px 0;   
     padding: 10px;
     font-family: 'Fira Sans', sans-serif;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
     
     &:hover {
         background-color: ${({ theme }) => theme.colors.white};

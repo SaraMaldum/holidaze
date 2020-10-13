@@ -15,6 +15,11 @@ import styled from 'styled-components';
 const MsgCol = styled(Col)`
     border-right: 1px solid #EB8F2D;
     margin: 10px 0;
+
+    @media (max-width: 576px) {
+        border-bottom: 1px solid #EB8F2D;
+        border-right: none;
+    }
 `
 
 function ContactMsg() {

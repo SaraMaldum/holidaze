@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import { VscMenu } from 'react-icons/vsc'; 
-import logo from '../../../../images/logoWhite.png';
+import logo from '../../../../images/logoHolidaze.png';
 import HeaderContainer from './HeaderContainer';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ const StyledLink = styled(NavLink)`
     font-weight: bold;
     
     &:hover {
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.darkBlue};
         text-decoration: none;
         transition: .3s;
         border-bottom: 3px solid #EB8F2D;
@@ -24,17 +24,17 @@ const StyledLink = styled(NavLink)`
 
 const style = {
     fontWeight: 'bold',
-    borderBottom: '3px solid #FFFFFF',
+    color: '#004B66',
+    borderBottom: '3px solid #EB8F2D',
 }
 
 const Logo = styled.img`
     width: 180px;
-    filter: drop-shadow(-0.9px 1px 1px rgba(255,255,255,.9)); 
+    filter: drop-shadow(-0.9px 1px 1px rgba(0,0,0,.9)); 
 
     &:hover {
         width: 186px;
         transition: .3s;
-        filter: drop-shadow(1px 2px 5px white); 
     }
 `
 const StyledBurger = styled(VscMenu)`

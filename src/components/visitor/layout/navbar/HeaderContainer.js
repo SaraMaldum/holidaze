@@ -10,12 +10,9 @@ const StyledContainer = styled(Container)`
         "/": "headerImg.jpg",
         "/accommodations": "tomas-eidsvold-g_ykfRZUDkk-unsplash.jpg",
         "/contact": "pexels-tobias-bjørkli-4654559.jpg",
-        "/booking/": "headerDark.jpg",
-        "/admin": "michael-fousert-lE5-z4nTCTQ-unsplash.jpg",
+        "/admin": "cliff-731840_1920.jpg",
         "/add": "norway-2144782_1280.jpg",
         "/messages": "pexels-tobias-bjørkli-4654559.jpg",
-        "/enquiries": "headerDark.jpg",
-        "/edit/": "norway-1256416_1920.jpg",
     },
         "headerDark.jpg"
     )});
