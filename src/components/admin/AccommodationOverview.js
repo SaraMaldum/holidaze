@@ -10,11 +10,12 @@ import styled from 'styled-components';
 const StyledCol = styled(Col)`
     margin: 10px 0;
     padding: 10px;
-` 
+`;
 
 const StyledHotel = styled(RiHotelLine)`
     font-size: 20px;
-` 
+`;
+
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [error, setError] = useState(null);

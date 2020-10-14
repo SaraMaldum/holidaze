@@ -21,7 +21,7 @@ const MsgCol = styled(Col)`
         border-bottom: 1px solid #EB8F2D;
         border-right: none;
     }
-`
+`;
 
 function ContactMsg() {
     const [messages, setMessages] = useState([]);

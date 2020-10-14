@@ -11,7 +11,7 @@ import FormLabel from '../contact/formStyles/FormLabel';
 import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
-import SentMsg from './sentMsg/SentMsg';
+import ResultMsg from './resultMsg/ResultMsg';
 
 const schema = yup.object().shape( {
     name: yup
@@ -58,7 +58,7 @@ function Contact() {
         <StyledContainer>
             <Heading1 title="Contact us"/>
             <Form onSubmit={handleSubmit( onSubmit )}>
-                {formSent && <SentMsg>Thank you for your message. We'll respond shortly.</SentMsg>}
+                {formSent && <ResultMsg>Thank you for your message. We'll respond shortly.</ResultMsg>}
                 <Form.Group>
                     <FormLabel>Your name</FormLabel>
                     <Input type="text" name="name" placeholder="Your name" ref={register()} />

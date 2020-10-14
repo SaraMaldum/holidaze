@@ -13,6 +13,6 @@ const StyledLink = styled(NavLink)`
         transition: .3s;
         border-bottom: 3px solid #00749E;
     }
-`
+`;
 
 export default StyledLink; 

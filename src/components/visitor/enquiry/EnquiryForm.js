@@ -10,7 +10,7 @@ import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from '../contact/formStyles/Input';
-import SentMsg from '../contact/sentMsg/SentMsg';
+import ResultMsg from '../contact/resultMsg/ResultMsg';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
 
 const schema = yup.object().shape( {
@@ -50,18 +50,14 @@ function EnquiryForm() {
     return (
         <StyledContainer>
             <Form onSubmit={handleSubmit(onSubmit)}>
-            {enquiryForm && <SentMsg>Thank you for your booking. We're looking forward seeing you.</SentMsg>}  
+            {enquiryForm && <ResultMsg>Thank you for your booking. We're looking forward seeing you.</ResultMsg>}  
                 <Row>
-                    <Col md={12}>
-                        <Form.Group>
-                            <FormLabel>Accommodation id</FormLabel>
-                            <Input
-                                name="establishmentId"
-                                defaultValue={id}
-                                ref={register}
-                            />
-                        </Form.Group>
-                    </Col>
+                    <Input
+                        name="establishmentId"
+                        defaultValue={id}
+                        type="hidden"
+                        ref={register}
+                    />
                     <Col md={12}>
                         <Form.Group>
                             <FormLabel>Full name</FormLabel>

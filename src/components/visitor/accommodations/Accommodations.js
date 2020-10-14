@@ -7,6 +7,7 @@ import Heading2 from '../layout/headings/Heading2';
 import AccommodationItems from './AccommodationItems';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
 import Search from './search/Search';
+import ResultMsg from '../contact/resultMsg/ResultMsg';
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
@@ -54,7 +55,7 @@ function Accommodations() {
                 <Heading1 title="Accommodations"/>
                 <Heading2 title="Find your accommodation"/>
                 <Search handleSearch={filterAccommodation}/>
-                {filteredAccommodation.length === 0 && <p>No results</p>}
+                {filteredAccommodation.length === 0 && <ResultMsg>No results</ResultMsg>}
                 <Row>
                     {filteredAccommodation.map(accommodation => {
                         const {id, name, image} = accommodation;

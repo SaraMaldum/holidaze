@@ -13,11 +13,12 @@ const ImageContainer = styled.p`
     height: 200px;
     margin: 0;
     filter: drop-shadow(2px 2px 2px gray);
-` 
+`;
+
 const Price = styled.p`
     font-weight: bold;
     color: ${({theme}) => theme.colors.mainBlue};
-` 
+`; 
 
 const Mail = styled.a`
     font-weight: bold;
@@ -28,7 +29,7 @@ const Mail = styled.a`
         color: ${({theme}) => theme.colors.mainBlue};
         transition: .3s;
     }
-`
+`;
 
 function Detail() {
     const [detailedAccommodation, setdetailedAccommodation] = useState(null);

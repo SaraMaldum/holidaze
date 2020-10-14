@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
+import { InputGroup, FormControl  } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledSearchField = styled(FormControl)`
@@ -19,7 +18,7 @@ const StyledSearchField = styled(FormControl)`
         outline: 0;
         transition: .3s;
     }
-`
+`;
 
 export default function Search({ handleSearch }) {
     return (

@@ -22,7 +22,7 @@ const EnquiryCol = styled(Col)`
         border-bottom: 1px solid #EB8F2D;
         border-right: none;
     }
-`
+`;
 
 function BokoingEnquiries() {
     const [enquiries, setEnquiries] = useState([]);

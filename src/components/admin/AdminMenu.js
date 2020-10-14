@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const StyledUl = styled.ul`
     margin-top: 20px; 
     font-family: 'Fira Sans', sans-serif;
-`
+`;
 
 const StyledList = styled.li`
     display: inline-block;
@@ -16,7 +16,8 @@ const StyledList = styled.li`
         display: block;
         padding: 10px;
     }
-`
+`;
+
 const style = {
     fontWeight: 'bold',
     borderBottom: '3px solid #00749E',
