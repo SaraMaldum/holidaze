@@ -56,7 +56,7 @@ function Accommodations() {
             {accommodations.map((accommodation) => {
                     return (
                         <StyledCol sm={6} md={4} xl={3} key={accommodation.id}>
-                            <AccommodationLink to={`/edit/${accommodation.id}`}><StyledHotel /> {accommodation.name}</AccommodationLink>
+                            <AccommodationLink to={`/admin/edit/${accommodation.id}`}><StyledHotel /> {accommodation.name}</AccommodationLink>
                         </StyledCol>
                     );
                 })}

@@ -50,7 +50,7 @@ function BokoingEnquiries() {
 
         await fetch(enquiryURL, updateOptions);
 
-        history.push("/admin/enquiries/enquiries")
+        history.push("/admin/enquiries")
     }
 
     if (loading) {
@@ -75,8 +75,7 @@ function BokoingEnquiries() {
                             <Col  className="text-right">
                                 <Buttons href={`mailto:${enquiry.email}
                                     ?subject=Booking confirmation for ${enquiry.name}
-                                    &body=Hi, ${enquiry.name}! Thank you for your booking. We're looking forward to seeing you at 
-                                    ${moment(enquiry.checkIn).format("MMM Do YY")}.`}>
+                                    &body=Hi, ${enquiry.name}! %0A%0A Thank you for your booking. %0A%0A We're looking forward to seeing you at ${moment(enquiry.checkIn).format("MMM Do YY")}. %0A%0A Best regards, %0A%0A Holidaze %0A%0A`}>
                                        <RiSendPlaneFill /> Confirmation
                                 </Buttons>
                                 <DeleteEnquiry id={enquiry.id} />

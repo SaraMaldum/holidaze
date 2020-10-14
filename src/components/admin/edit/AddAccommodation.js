@@ -9,9 +9,10 @@ import Heading1 from '../../visitor/layout/headings/Heading1';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import AdminMenu from '../AdminMenu';
+import ErrorMsg from '../../visitor/contact/error/ErrorMsg';
 
 function AddAccommodation() {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const history = useHistory();
 
@@ -24,7 +25,7 @@ function AddAccommodation() {
 
         await fetch (AddAccommodationURL, options);
 
-        history.push("/admin/overview");
+        history.push("/admin/");
     }
 
     return(
@@ -33,13 +34,15 @@ function AddAccommodation() {
             <AdminMenu />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group>
-                    <FormLabel>Accommodation name</FormLabel>
-                    <Input placeholder="Accommodation name" name="name" ref={register}/>
+                    <FormLabel>Accommodation name*</FormLabel>
+                    <Input placeholder="Accommodation name" name="name" ref={register({required: true, minLength: 4})}/>
+                    {errors.name && <ErrorMsg>Hotel name is required.</ErrorMsg>}
                 </Form.Group>
 
                 <Form.Group>
-                    <FormLabel>Email address</FormLabel>
-                    <Input placeholder="Email address" name="email" ref={register}/>
+                    <FormLabel>Email address*</FormLabel>
+                    <Input placeholder="Email address" name="email" ref={register({required: true, minLength: 4})}/>
+                    {errors.email && <ErrorMsg>Email address is required.</ErrorMsg>}
                 </Form.Group>
 
                 <Form.Group>
@@ -48,15 +51,16 @@ function AddAccommodation() {
                 </Form.Group>
                 
                 <Form.Group>
-                    <FormLabel>Email address</FormLabel>
-                    <Input placeholder="Price" name="price" ref={register}/>
+                    <FormLabel>Price*</FormLabel>
+                    <Input placeholder="Price" type="number" name="price" ref={register({required: true})}/>
                 </Form.Group>
 
                 <Form.Group>
-                    <FormLabel>Email address</FormLabel>
+                    <FormLabel>Description</FormLabel>
                     <Input placeholder="Description" name="description" as="textarea" rows="3" ref={register}/>
                 </Form.Group>
 
+                <p>* are required fields.</p>
                 <Col className="text-right">
                     <Buttons type="submit" >Add Accommodation</Buttons>
                 </Col>

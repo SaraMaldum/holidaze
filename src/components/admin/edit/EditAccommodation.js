@@ -47,7 +47,7 @@ function EditAccommodation(){
 
         await fetch(editURL, updateOptions);
         
-        history.push("/admin/overview");
+        history.push("/admin/");
     }
 
     if (loading) {

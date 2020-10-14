@@ -32,7 +32,7 @@ function DeleteButton(props){
 
         await fetch(deleteURL, options);
 
-        history.push("/admin/enquiries/enquiries");
+        history.push("/admin/enquiries");
     }
 
     return(

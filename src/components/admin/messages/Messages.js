@@ -50,7 +50,7 @@ function Messages() {
 
         await fetch(messageURL, updateOptions);
 
-        history.push("/admin/messages/messages")
+        history.push("/admin/messages")
     }
 
     if (loading) {
