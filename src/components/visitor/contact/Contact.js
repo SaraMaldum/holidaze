@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
 import { Form, Col } from 'react-bootstrap';
+import { RiSendPlaneFill } from 'react-icons/ri';
 import {BASE_URL, headers, POST} from '../../../constants/api';
 import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
@@ -77,7 +78,7 @@ function Contact() {
                 </Form.Group>
 
                 <Col className="text-right">
-                    <Buttons type="submit">Send</Buttons>
+                    <Buttons type="submit"><RiSendPlaneFill /> Send</Buttons>
                 </Col>
 
             </Form>

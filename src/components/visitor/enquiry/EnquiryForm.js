@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
 import { Form, Row, Col } from 'react-bootstrap';
+import { FaCalendarAlt } from 'react-icons/fa';
 import { BASE_URL, headers } from '../../../constants/api';
 import ErrorMsg from '../contact/error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
@@ -90,7 +91,7 @@ function EnquiryForm() {
                     </Col>
                   
                 <Col className="text-right">
-                    <Buttons type="submit">Book now</Buttons>
+                    <Buttons type="submit"><FaCalendarAlt /> Book now</Buttons>
                 </Col>
                 </Row>
         </Form>

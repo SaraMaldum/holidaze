@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { BASE_URL, headers, GET } from '../../../constants/api';
 import { Col, Row } from 'react-bootstrap';
+import { GoReply } from 'react-icons/go';
 import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import AdminMenu from '../AdminMenu';
 import Heading1 from '../../visitor/layout/headings/Heading1';
@@ -72,7 +73,7 @@ function ContactMsg() {
                                 <p>Recieved: {message.createdAt}</p>
                                 <Col className="text-right">
                                     <Buttons href={`mailto:${message.email}?subject=Contact form response to - ${message.name}
-                                    &body=Hi, ${message.name}! `}>Reply</Buttons>
+                                    &body=Hi, ${message.name}! `}><GoReply /> Reply</Buttons>
                                     <DeleteMsg id={message.id} />
                                 </Col>
                             </MsgCol>

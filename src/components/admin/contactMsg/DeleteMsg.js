@@ -4,22 +4,9 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { AiFillDelete } from 'react-icons/ai'
 import { BASE_URL, headers, DELETE } from '../../../constants/api';
-import Buttons from '../../visitor/layout/buttons/Buttons';
-import styled from 'styled-components';
+import DeleteBtn from '../../visitor/layout/buttons/DeleteBtn';
 
-const DeleteBtn = styled(Buttons)`
-    background-color: ${({theme}) => theme.colors.delete};
-    border: 2px solid #F03B2D;
-    margin-left: 10px;
-
-    &:hover {
-        background-color: ${({theme}) => theme.colors.white};
-        color: ${({theme}) => theme.colors.delete};
-        border: 2px solid #F03B2D;
-    }
-` 
-
-function DeleteButton(props){
+function DeleteMsg(props){
     const history = useHistory();
 
     function checkDelete() {
@@ -54,4 +41,4 @@ function DeleteButton(props){
     )
 }
 
-export default DeleteButton;
+export default DeleteMsg;

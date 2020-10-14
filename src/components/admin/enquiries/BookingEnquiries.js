@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
+import { RiSendPlaneFill } from 'react-icons/ri'
 import { BASE_URL, headers, GET } from '../../../constants/api';
 import AdminMenu from '../AdminMenu';
 import Heading1 from '../../visitor/layout/headings/Heading1';
@@ -76,7 +77,7 @@ function BokoingEnquiries() {
                                     ?subject=Booking confirmation for ${enquiry.name}
                                     &body=Hi, ${enquiry.name}! Thank you for your booking. We're looking forward to seeing you at 
                                     ${moment(enquiry.checkIn).format("MMM Do YY")}.`}>
-                                        Confirmation
+                                       <RiSendPlaneFill /> Confirmation
                                 </Buttons>
                                 <DeleteEnquiry id={enquiry.id} />
                             </Col>
