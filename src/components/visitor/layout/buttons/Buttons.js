@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
     &:hover {
         background-color: ${({ theme }) => theme.colors.white};
         border: 2px solid #EB8F2D;
-        color: #EB8F2D;
+        color: ${({theme}) => theme.colors.orange};
         transition: 0.4s;
     }
 `;

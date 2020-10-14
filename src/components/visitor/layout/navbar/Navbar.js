@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import { VscMenu } from 'react-icons/vsc'; 
+import { VscMenu } from 'react-icons/vsc';
 import logo from '../../../../images/logoHolidaze.png';
 import HeaderContainer from './HeaderContainer';
+import { AuthContext } from "../../../../context/AutContext";
+import Logout from "../../../auth/Logout";
+import UserIcon from './UserIcon';
 import styled from 'styled-components';
 
 //Styles components
@@ -17,7 +20,7 @@ const StyledLink = styled(NavLink)`
     &:hover {
         color: ${({ theme }) => theme.colors.darkBlue};
         text-decoration: none;
-        transition: .3s;
+        transition: .4s;
         border-bottom: 3px solid #EB8F2D;
     }
 `;
@@ -34,7 +37,7 @@ const Logo = styled.img`
 
     &:hover {
         width: 186px;
-        transition: .3s;
+        transition: .4s;
     }
 `;
 
@@ -45,6 +48,8 @@ const StyledBurger = styled(VscMenu)`
 
 //Navbar function
 function NavBar() {
+    const { user } = useContext(AuthContext);
+
     return (
         <>
             <HeaderContainer>
@@ -66,9 +71,14 @@ function NavBar() {
                             <StyledLink to="/contact" activeStyle={style}>
                                 Contact us
                             </StyledLink>
-                            <StyledLink to="/admin" activeStyle={style}>
-                                Admin
-                            </StyledLink>                            
+                            {user ? (
+                                <>
+                                    <StyledLink to="/admin" activeStyle={style}> <UserIcon /> </StyledLink>
+                                    <Logout />
+                                </>
+                            ) : (
+                                <StyledLink to="/register" activeStyle={style}> <UserIcon /> </StyledLink>
+                            )}                            
                         </Nav>
                     </Navbar.Collapse>  
                 </Navbar>

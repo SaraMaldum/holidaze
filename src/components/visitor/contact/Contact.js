@@ -7,7 +7,7 @@ import { RiSendPlaneFill } from 'react-icons/ri';
 import {BASE_URL, headers, POST} from '../../../constants/api';
 import ErrorMsg from './error/ErrorMsg';
 import Buttons from '../layout/buttons/Buttons';
-import FormLabel from '../contact/formStyles/FormLabel';
+import FormLabel from './formStyles/FormLabel';
 import Input from './formStyles/Input';
 import Heading1 from '../layout/headings/Heading1';
 import StyledContainer from '../layout/containerStyle/StyledContainer';

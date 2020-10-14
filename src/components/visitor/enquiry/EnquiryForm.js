@@ -44,7 +44,6 @@ function EnquiryForm() {
           history.go();
 
           setEnquiryForm(true);
-          setTimeout(() => setEnquiryForm(false), 5000);
     }
 
     return (
