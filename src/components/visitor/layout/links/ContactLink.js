@@ -15,7 +15,7 @@ const StyledLink = styled.a`
 
 function ContactLink({title}) {
     return (
-        <StyledLink href="contact">{title}</StyledLink>
+        <StyledLink href="/contact">{title}</StyledLink>
     )
 }
 

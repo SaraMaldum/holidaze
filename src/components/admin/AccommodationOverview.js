@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 import { RiHotelLine } from 'react-icons/ri';
 import { BASE_URL, headers } from '../../constants/api';
 import Heading2 from '../visitor/layout/headings/Heading2';
 import StyledSpinner from '../visitor/layout/spinner/Spinner';
+import AccommodationLink from '../visitor/layout/links/AccommodationLink';
 import styled from 'styled-components';
 
-const AccommodationLink = styled(NavLink)`
-    color: ${({theme}) => theme.colors.mainBlue};
-    border-left: 1px solid #EB8F2D;
-    padding: 10px;
-    
-    &:hover {
-        text-decoration: none; 
-        font-weight: bold;
-        color: ${({theme}) => theme.colors.mainBlue};
-        border-left: 3px solid #EB8F2D;
-
-    }
-` 
 const StyledCol = styled(Col)`
     margin: 10px 0;
     padding: 10px;
