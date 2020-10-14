@@ -61,10 +61,6 @@ function Accommodations() {
                     );
                 })}
             </Row>
-
-
-
-                
         </>
     );
 }

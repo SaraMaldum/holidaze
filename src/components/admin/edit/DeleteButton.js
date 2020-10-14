@@ -23,7 +23,6 @@ function DeleteButton(props){
             ]
         });
     }
-    console.log(props)
     
     async function deleteAccommodation() {
         const deleteURL = BASE_URL + 'establishments/' + props.id;

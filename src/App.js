@@ -18,13 +18,10 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Wrapper className="wrapper">
-        <Layout>
-
-          <GlobalStyles />
-
+          <Layout>
+            <GlobalStyles />
           </Layout>
         </Wrapper>
-
         <Footer/>
       </ThemeProvider>
     </>

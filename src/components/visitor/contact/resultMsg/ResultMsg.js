@@ -6,6 +6,6 @@ const SentMsg = styled.p`
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
-` 
+`; 
 
 export default SentMsg;

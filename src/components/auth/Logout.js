@@ -21,7 +21,6 @@ const LogoutBtn = styled(Buttons)`
         color: ${({theme}) => theme.colors.darkBlue};
         transition: 0.4s;
     }
-
 `; 
 
 const LogoutIcon = styled(RiLogoutCircleRLine)`

@@ -31,12 +31,15 @@ function AdminMenu(){
                 <StyledList>
                     <StyledLink to="/admin" activeStyle={style} ><AiFillHome /> Admin</StyledLink>
                 </StyledList>
+
                 <StyledList>
                     <StyledLink to="/admin/add" activeStyle={style} ><BsPlusCircleFill /> Add</StyledLink>
                 </StyledList>
+
                 <StyledList>
                     <StyledLink to="/admin/messages" activeStyle={style} ><AiFillMessage /> Contact messages</StyledLink>
                 </StyledList>
+
                 <StyledList>
                     <StyledLink to="/admin/enquiries" activeStyle={style} ><BsCalendarFill /> Booking enquiries</StyledLink>
                 </StyledList>

@@ -12,7 +12,7 @@ const ImageContainer = styled.p`
     height: 200px;
     margin: 0 0 10px 0;
     filter: drop-shadow(2px 2px 2px gray);
-` 
+`; 
 
 function Enquiry() {
     const [enquiry, setEnquiry] = useState(null);

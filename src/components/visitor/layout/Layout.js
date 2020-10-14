@@ -21,7 +21,6 @@ import Navbar from './navbar/Navbar';
 import Login from '../../auth/Login';
 import Register from '../../auth/Register';
 
-
 function Layout() {
     return(
         <AuthContextProvider>
