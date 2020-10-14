@@ -23,7 +23,7 @@ const MsgCol = styled(Col)`
     }
 `;
 
-function ContactMsg() {
+function Messages() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
     const { handleSubmit } = useForm();
@@ -31,10 +31,10 @@ function ContactMsg() {
     const history = useHistory();
 
     const options = { headers };
-    const contactURL = BASE_URL + 'contacts';
+    const messageURL = BASE_URL + 'contacts';
 
     useEffect(() => {
-        fetch(contactURL, options)
+        fetch(messageURL, options)
         .then((response) => response.json())
         .then((json) => setMessages(json))
         .catch((error) => console.log(error))
@@ -48,9 +48,9 @@ function ContactMsg() {
 
         const updateOptions = {headers, method: GET, body: JSON.stringify(data)};
 
-        await fetch(contactURL, updateOptions);
+        await fetch(messageURL, updateOptions);
 
-        history.push("/admin/contactMsg/messages")
+        history.push("/admin/messages/messages")
     }
 
     if (loading) {
@@ -85,4 +85,4 @@ function ContactMsg() {
     )
 }
 
-export default ContactMsg;
+export default Messages;

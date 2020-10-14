@@ -11,7 +11,7 @@ const StyledLink = styled.a`
         text-decoration: none;
         transition: .3s;
     }
-` 
+`; 
 
 function ContactLink({title}) {
     return (

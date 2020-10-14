@@ -12,7 +12,7 @@ const Heading1 = styled.h1`
     @media (max-width: 768px) {
         font-size: 1.9rem;
     }
-`
+`;
 
 function H1({title}) {
     return <Heading1>{title}</Heading1>

@@ -7,8 +7,8 @@ import {
 import Home from '../home/Home';
 import Contact from '../contact/Contact';
 import Accommodations from '../accommodations/Accommodations';
-import Detail from '../accommodations/detailed/Detail';
-import ContactMsg from '../../admin/contactMsg/ContactMsg';
+import Detail from '../accommodations/detail/Detail';
+import Messages from '../../admin/messages/Messages';
 import AddAccommodation from '../../admin/edit/AddAccommodation';
 import AdminDashboard from '../../admin/AdminDashboard';
 import EditAccommodation from '../../admin/edit/EditAccommodation';
@@ -31,7 +31,7 @@ function Layout() {
                 <Route path="/admin" component={AdminDashboard} />
                 <Route path="/overview" component={AccommodationOverview} />
                 <Route path="/add" component={AddAccommodation} />
-                <Route path="/messages" component={ContactMsg} />
+                <Route path="/messages" component={Messages} />
                 <Route path="/enquiries/:id" component={BookingEnquiries} />
                 <Route path="/enquiries" component={BookingEnquiries} />                
                 <Route path="/edit/:id" component={EditAccommodation} />

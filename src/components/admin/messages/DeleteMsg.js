@@ -31,7 +31,7 @@ function DeleteMsg(props){
 
         await fetch(deleteURL, options);
 
-        history.push("/admin/contactMsg/messages");
+        history.push("/admin/messages/messages");
     }
 
     return(

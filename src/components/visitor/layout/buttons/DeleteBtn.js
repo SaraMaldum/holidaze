@@ -11,6 +11,6 @@ const DeleteBtn = styled(Buttons)`
         color: ${({theme}) => theme.colors.delete};
         border: 2px solid #F03B2D;
     }
-` 
+`;
 
 export default DeleteBtn;

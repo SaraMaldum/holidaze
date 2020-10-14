@@ -20,7 +20,7 @@ const StyledLink = styled(NavLink)`
         transition: .3s;
         border-bottom: 3px solid #EB8F2D;
     }
-`
+`;
 
 const style = {
     fontWeight: 'bold',
@@ -36,11 +36,12 @@ const Logo = styled.img`
         width: 186px;
         transition: .3s;
     }
-`
+`;
+
 const StyledBurger = styled(VscMenu)`
     color: ${({ theme }) => theme.colors.white};
     font-size: 30px;
-` 
+`; 
 
 //Navbar function
 function NavBar() {

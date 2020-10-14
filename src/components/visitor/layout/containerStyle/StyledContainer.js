@@ -3,6 +3,6 @@ import { Container } from 'react-bootstrap';
 
 const StyledContainer = styled(Container)`
     margin-bottom: 20px;
-` 
+`;
 
 export default StyledContainer;

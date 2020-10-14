@@ -9,19 +9,19 @@ const BtnContainer = styled(Container)`
     max-width: 350px;
     background-color: rgba(255,255,255,.6);
     font-family: 'Fira Sans', sans-serif;
-` 
+`;
 
 const HeadingTxt = styled.p`
     font-size: 24px;
     color: ${({theme}) => theme.colors.darkBlue};
     font-weight: bold;
     text-transform: uppercase;
-` 
+`;
 
 const HeaderBtn = styled(Buttons)`
     margin: -30px 0;
     box-shadow: 4px 4px 8px gray;
-` 
+`; 
 
 function HomeHeaderBtn() {
     return(

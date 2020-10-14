@@ -18,6 +18,6 @@ const StyledButton = styled(Button)`
         color: #EB8F2D;
         transition: 0.4s;
     }
-`
+`;
 
 export default StyledButton;

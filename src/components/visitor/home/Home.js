@@ -17,14 +17,14 @@ const StyledImg = styled.div`
     height: 350px;
     width: 100%;
     filter: drop-shadow(2px 2px 2px gray);
-` 
+`; 
 
 const HomeBtn = styled(Buttons)`
     position: absolute;
     top: 44%;
     left: 32%;
     margin: 0;
-` 
+`;
 
 function Home() {
     return( 

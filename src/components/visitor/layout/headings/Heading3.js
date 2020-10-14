@@ -18,7 +18,7 @@ const Heading3 = styled.h3`
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
-` 
+`;
 
 function H3({title}) {
     return <Heading3>{title}</Heading3>
