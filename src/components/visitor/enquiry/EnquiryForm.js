@@ -11,7 +11,6 @@ import Buttons from '../layout/buttons/Buttons';
 import FormLabel from '../contact/formStyles/FormLabel';
 import Input from '../contact/formStyles/Input';
 import ResultMsg from '../contact/resultMsg/ResultMsg';
-import StyledContainer from '../layout/containerStyle/StyledContainer';
 
 const schema = yup.object().shape( {
     name: yup
