@@ -51,12 +51,7 @@ function EnquiryForm() {
             <Form onSubmit={handleSubmit(onSubmit)}>
             {enquiryForm && <ResultMsg>Thank you for your booking. We're looking forward seeing you.</ResultMsg>}  
                 <Row>
-                    <Input
-                        name="establishmentId"
-                        defaultValue={id}
-                        type="hidden"
-                        ref={register}
-                    />
+                    <Input name="establishmentId" defaultValue={id} type="hidden" ref={register}/>
                     <Col md={12}>
                         <Form.Group>
                             <FormLabel>Full name</FormLabel>

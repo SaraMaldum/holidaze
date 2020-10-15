@@ -8,11 +8,13 @@ import AccommodationItems from './AccommodationItems';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
 import Search from './search/Search';
 import ResultMsg from '../contact/resultMsg/ResultMsg';
+import ApiError from '../layout/apiError/ApiError';
 
 function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [filteredAccommodation, setFilteredAccommodation] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [serverError, setServerError] = useState(false);
 
     const establishmentURL = BASE_URL + 'establishments';
 
@@ -22,11 +24,15 @@ function Accommodations() {
         fetch(establishmentURL, options)
             .then((response) => response.json())
             .then((json) => {
-                setAccommodations(json)
-                setFilteredAccommodation(json);
-
+                if(json.error) {
+                    setServerError(true);
+                }
+                else {
+                    setAccommodations(json)
+                    setFilteredAccommodation(json);                
+                }
             })
-            .catch((error) => console.log(error))
+            .catch(error => setServerError(true))
             .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
@@ -48,6 +54,10 @@ function Accommodations() {
         return <StyledSpinner animation="border" size="md" />;
     }
     
+    if(serverError) {
+        return <StyledContainer><ApiError>There was an error fetching the data</ApiError></StyledContainer>
+    }
+
     return (
         <>
             <StyledContainer>

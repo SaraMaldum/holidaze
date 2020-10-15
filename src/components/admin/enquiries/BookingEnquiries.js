@@ -12,6 +12,7 @@ import DeleteEnquiry from './DeleteEnquiry';
 import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import Buttons from '../../visitor/layout/buttons/Buttons';
 import moment from 'moment';
+import ApiError from '../../visitor/layout/apiError/ApiError';
 import styled from 'styled-components';
 
 const EnquiryCol = styled(Col)`
@@ -27,6 +28,7 @@ const EnquiryCol = styled(Col)`
 function BokoingEnquiries() {
     const [enquiries, setEnquiries] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [serverError, setServerError] = useState(false);
     const { handleSubmit } = useForm();
 
     const history = useHistory();
@@ -37,8 +39,15 @@ function BokoingEnquiries() {
     useEffect(() => {
         fetch(enquiryURL, options)
         .then((response) => response.json())
-        .then((json) => setEnquiries(json))
-        .catch((error) => console.log(error))
+        .then(json => {
+            if(json.error) {
+                setServerError(true);
+            }
+            else {
+                setEnquiries(json)
+            }
+        })
+        .catch(error => setServerError(true))
         .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -57,6 +66,10 @@ function BokoingEnquiries() {
         return <StyledSpinner animation="border" size="md" />;
     }
 
+    if(serverError) {
+        return <StyledContainer><ApiError>There was an error fetching the data</ApiError></StyledContainer>
+    }
+    
     return(
         <>
             <StyledContainer>

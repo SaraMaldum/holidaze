@@ -11,6 +11,7 @@ import Heading2 from '../../visitor/layout/headings/Heading2';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
 import DeleteMsg from './DeleteMsg';
 import Buttons from '../../visitor/layout/buttons/Buttons';
+import ApiError from '../../visitor/layout/apiError/ApiError';
 import styled from 'styled-components';
 
 const MsgCol = styled(Col)`
@@ -26,6 +27,7 @@ const MsgCol = styled(Col)`
 function Messages() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [serverError, setServerError] = useState(false);
     const { handleSubmit } = useForm();
     
     const history = useHistory();
@@ -36,8 +38,15 @@ function Messages() {
     useEffect(() => {
         fetch(messageURL, options)
         .then((response) => response.json())
-        .then((json) => setMessages(json))
-        .catch((error) => console.log(error))
+        .then(json => {
+            if(json.error) {
+                setServerError(true);
+            }
+            else {
+                setMessages(json)
+            }
+        })
+        .catch(error => setServerError(true))
         .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -57,6 +66,10 @@ function Messages() {
         return <StyledSpinner animation="border" size="md" />;
     }
 
+    if(serverError) {
+        return <StyledContainer><ApiError>There was an error fetching the data</ApiError></StyledContainer>
+    }
+    
     return(
         <>
             <StyledContainer>

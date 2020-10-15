@@ -11,6 +11,7 @@ import Input from '../../visitor/contact/formStyles/Input';
 import StyledSpinner from '../../visitor/layout/spinner/Spinner';
 import StyledContainer from '../../visitor/layout/containerStyle/StyledContainer';
 import Buttons from '../../visitor/layout/buttons/Buttons';
+import ApiError from '../../visitor/layout/apiError/ApiError';
 
 function EditAccommodation(){
     const defaultState = {
@@ -25,6 +26,7 @@ function EditAccommodation(){
     const { register, handleSubmit } = useForm();
     const [accommodation, setAccommodation] = useState(defaultState);
     const [loading, setLoading] = useState(true);
+    const [serverError, setServerError] = useState(false);
 
     let { id } = useParams();
 
@@ -33,9 +35,16 @@ function EditAccommodation(){
 
     useEffect(() => {
         fetch(editURL, options)
-            .then((response) => response.json())
-            .then((json) => setAccommodation(json))
-            .catch((error) => console.log(error))
+        .then(response => response.json())
+        .then(json => {
+            if(json.error) {
+                setServerError(true);
+            }
+            else {
+                setAccommodation(json)
+            }
+        })
+        .catch(error => setServerError(true))
             .finally(() => setLoading(false));
             // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -52,6 +61,10 @@ function EditAccommodation(){
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
+    }
+
+    if(serverError) {
+        return <StyledContainer><ApiError>There was an error fetching the data</ApiError></StyledContainer>
     }
 
     return(

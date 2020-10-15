@@ -4,7 +4,9 @@ import { RiHotelLine } from 'react-icons/ri';
 import { BASE_URL, headers } from '../../constants/api';
 import Heading2 from '../visitor/layout/headings/Heading2';
 import StyledSpinner from '../visitor/layout/spinner/Spinner';
+import StyledContainer from '../visitor/layout/containerStyle/StyledContainer';
 import AccommodationLink from '../visitor/layout/links/AccommodationLink';
+import ApiError from '../visitor/layout/apiError/ApiError';
 import styled from 'styled-components';
 
 const StyledCol = styled(Col)`
@@ -20,6 +22,7 @@ function Accommodations() {
     const [accommodations, setAccommodations] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [serverError, setServerError] = useState(false);
 
     const overviewURL = BASE_URL + 'establishments';
 
@@ -37,13 +40,17 @@ function Accommodations() {
                     setAccommodations(json);
                 }
             })
-            .catch((error) => console.log(error))
+            .catch(error => setServerError(true))
             .finally(() => setLoading(false));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (loading) {
         return <StyledSpinner animation="border" size="md" />;
+    }
+
+    if(serverError) {
+        return <StyledContainer><ApiError>There was an error fetching the data</ApiError></StyledContainer>
     }
 
     return (
