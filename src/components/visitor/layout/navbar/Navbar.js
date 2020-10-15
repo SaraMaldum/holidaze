@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import { VscMenu } from 'react-icons/vsc';
 import logo from '../../../../images/logoHolidaze.png';
-import HeaderContainer from './HeaderContainer';
+import HeaderContainer from '../header/HeaderContainer';
 import { AuthContext } from "../../../../context/AutContext";
 import Logout from "../../../auth/Logout";
 import UserIcon from './UserIcon';

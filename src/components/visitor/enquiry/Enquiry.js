@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {BASE_URL, headers} from '../../../constants/api';
 import Heading1 from '../layout/headings/Heading1';
-import Heading2 from '../layout/headings/Heading2';
+import DetailHeading2 from '../layout/headings/DetailHeading2';
 import StyledSpinner from '../layout/spinner/Spinner';
 import StyledContainer from '../layout/containerStyle/StyledContainer';
 import EnquiryForm from './EnquiryForm';
 import ApiError from '../layout/apiError/ApiError';
 import styled from 'styled-components';
+import { Col, Row } from 'react-bootstrap';
 
 const ImageContainer = styled.p`
-    height: 200px;
-    margin: 0 0 10px 0;
+    height: 300px;
+    margin: 30px 0;
     filter: drop-shadow(2px 2px 2px gray);
 `; 
 
@@ -56,9 +57,15 @@ function Enquiry() {
             <StyledContainer>
                 <StyledSpinner />
                 <Heading1 title="Booking enquiry"/>
-                <Heading2 title={enquiry.name}  />
-                <ImageContainer style={{backgroundImage: `url(${enquiry.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
-                <EnquiryForm />
+                <Row>
+                    <Col md={6}>
+                        <ImageContainer style={{backgroundImage: `url(${enquiry.image})` , backgroundPosition: 'center', backgroundSize: 'cover'}}></ImageContainer>
+                    </Col>
+                    <Col md={6}>
+                        <DetailHeading2 title={enquiry.name}  />
+                        <EnquiryForm />
+                    </Col>
+                </Row>
             </StyledContainer>
         </>
     )

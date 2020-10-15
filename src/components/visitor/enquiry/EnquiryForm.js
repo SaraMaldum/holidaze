@@ -47,7 +47,6 @@ function EnquiryForm() {
     }
 
     return (
-        <StyledContainer>
             <Form onSubmit={handleSubmit(onSubmit)}>
             {enquiryForm && <ResultMsg>Thank you for your booking. We're looking forward seeing you.</ResultMsg>}  
                 <Row>
@@ -85,7 +84,6 @@ function EnquiryForm() {
                 </Col>
                 </Row>
         </Form>
-        </StyledContainer>
     )
 }
 
