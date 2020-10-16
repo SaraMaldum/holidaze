@@ -4,13 +4,13 @@ import { Container } from 'react-bootstrap';
 
 const StyledContainer = styled(Container)`
     background-image: url(/images/${switchProp("path",{
-        "/": "headerImg1.jpg",
-        "/accommodations": "tomas-eidsvold-g_ykfRZUDkk-unsplash1.jpg",
-        "/contact": "pexels-tobias-bjørkli-46545591.jpg",
-        "/register": "ansgar-scheffold-IZZ78Ugqsow-unsplash.jpg",
-        "/admin": "ansgar-scheffold-IZZ78Ugqsow-unsplash.jpg",
-        "/admin/add": "norway-2144782_1280.jpg",
-        "/admin/messages": "pexels-tobias-bjørkli-46545591.jpg",
+        "/": "newHeaderImg.jpg",
+        "/accommodations": "accomHeader.jpg",
+        "/contact": "contactHeader.jpg",
+        "/register": "adminHeader.jpg",
+        "/admin": "adminHeader.jpg",
+        "/admin/add": "addHeader1.jpg",
+        "/admin/messages": "contactHeader.jpg",
     },
         "headerDark1.jpg"
     )});
