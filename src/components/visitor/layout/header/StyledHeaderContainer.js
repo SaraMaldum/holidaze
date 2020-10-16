@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import { switchProp } from 'styled-tools';
 import { Container } from 'react-bootstrap';
 
-const StyledContainer = styled(Container)`
+const StyledHeaderContainer = styled(Container)`
     background-image: url(/images/${switchProp("path",{
-        "/": "newHeaderImg.jpg",
+        "/": "headerImg.jpg",
         "/accommodations": "accomHeader.jpg",
         "/contact": "contactHeader.jpg",
         "/register": "adminHeader.jpg",
         "/admin": "adminHeader.jpg",
-        "/admin/add": "addHeader1.jpg",
+        "/admin/add": "addHeader.jpg",
         "/admin/messages": "contactHeader.jpg",
     },
-        "headerDark1.jpg"
+        "headerDark.jpg"
     )});
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,4 +34,4 @@ const StyledContainer = styled(Container)`
     }
 `;
 
-export default StyledContainer;
+export default StyledHeaderContainer;
