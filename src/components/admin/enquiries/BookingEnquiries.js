@@ -77,25 +77,25 @@ function BokoingEnquiries() {
                 <Heading1 title="Booking enquiries" />
                 <AdminMenu />
                 <Row onSubmit={handleSubmit(onSubmit)}>
-                {enquiries.map((enquiry) => {
-                    return (
-                        <EnquiryCol md={4} key={enquiry.id}>
-                            <Heading2 title={enquiry.name} />
-                            <p>Accommodation id: {enquiry.establishmentId}</p>
-                            <p>Email address: {enquiry.email}</p>
-                            <p>Check in: {moment(enquiry.checkIn).format("MMM Do YY")} </p>
-                            <p>Check out: {moment(enquiry.checkOut).format("MMM Do YY")}</p>
-                            <Col  className="text-right">
-                                <Buttons href={`mailto:${enquiry.email}
-                                    ?subject=Booking confirmation for ${enquiry.name}
-                                    &body=Hi, ${enquiry.name}! %0A%0A Thank you for your booking. %0A%0A We're looking forward to seeing you at ${moment(enquiry.checkIn).format("MMM Do YY")}. %0A%0A Best regards, %0A%0A Holidaze %0A%0A`}>
-                                       <RiSendPlaneFill /> Confirmation
-                                </Buttons>
-                                <DeleteEnquiry id={enquiry.id} />
-                            </Col>
-                        </EnquiryCol>
-                    );
-                })}           
+                    {enquiries.map((enquiry) => {
+                        return (
+                            <EnquiryCol md={4} key={enquiry.id}>
+                                <Heading2 title={enquiry.name} />
+                                <p>Accommodation id: {enquiry.establishmentId}</p>
+                                <p>Email address: {enquiry.email}</p>
+                                <p>Check in: {moment(enquiry.checkIn).format("MMM Do YY")} </p>
+                                <p>Check out: {moment(enquiry.checkOut).format("MMM Do YY")}</p>
+                                <Col  className="text-right">
+                                    <Buttons href={`mailto:${enquiry.email}
+                                        ?subject=Booking confirmation for ${enquiry.name}
+                                        &body=Hi, ${enquiry.name}! %0A%0A Thank you for your booking. %0A%0A We're looking forward to seeing you at ${moment(enquiry.checkIn).format("MMM Do YY")}. %0A%0A Best regards, %0A%0A Holidaze %0A%0A`}>
+                                        <RiSendPlaneFill /> Confirmation
+                                    </Buttons>
+                                    <DeleteEnquiry id={enquiry.id} />
+                                </Col>
+                            </EnquiryCol>
+                        );
+                    })}           
                 </Row>
             </StyledContainer>
         </>

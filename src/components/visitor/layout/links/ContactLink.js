@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
     font-weight: bold;
@@ -18,5 +19,9 @@ function ContactLink({title}) {
         <StyledLink href="/contact">{title}</StyledLink>
     )
 }
+
+ContactLink.propTypes = {
+    title: PropTypes.string.isRequired
+};
 
 export default ContactLink;

@@ -48,7 +48,6 @@ function AdminMenu(){
                 <StyledList>
                     <StyledLink to="/" ><Logout /> </StyledLink>
                 </StyledList>
-                
             </StyledUl>
         </>     
     )

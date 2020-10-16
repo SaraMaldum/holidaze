@@ -60,7 +60,7 @@ function Accommodations() {
             {error && <div>{error}</div>}
 
             <Row>
-            {accommodations.map((accommodation) => {
+                {accommodations.map((accommodation) => {
                     return (
                         <StyledCol sm={6} md={4} xl={3} key={accommodation.id}>
                             <AccommodationLink to={`/admin/edit/${accommodation.id}`}><StyledHotel /> {accommodation.name}</AccommodationLink>

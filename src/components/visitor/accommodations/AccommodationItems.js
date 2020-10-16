@@ -14,34 +14,34 @@ const StyledCard = styled (Card)`
         filter: drop-shadow(2px 2px 2px #EB8F2D);
         transition: .3s;
     }
-`
+`;
 
 const StyledCol = styled(NavLink)`
     &:hover {
         text-decoration: none;
         transition: .3s;
     }
-`
+`;
 
 const ImageContainer = styled.p`
     height: 200px;
     width: 100%;
     filter: drop-shadow(1px 1px 1px gray);
-` 
+`;
 
 const StyledFilledStar = styled(FaStar)`
     color: ${({theme}) => theme.colors.starYellow};
     font-size: 24px;
     margin-bottom: 15px;
     filter: drop-shadow(1px 1px 1px gray);
-`
+`;
 
 const StyledStar = styled(FaRegStar)`
     color: ${({theme}) => theme.colors.starYellow};
     font-size: 24px;
     margin-bottom: 15px;
     filter: drop-shadow(1px 1px 1px gray);
-` 
+`; 
 
 function AccommodationItems({id, name, image}) {
     return(
@@ -60,6 +60,7 @@ function AccommodationItems({id, name, image}) {
 AccommodationItems.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
 };
 
 export default AccommodationItems;
