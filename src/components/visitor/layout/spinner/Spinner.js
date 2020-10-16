@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Spinner } from 'react-bootstrap';
 
 const StyledSpinner = styled(Spinner)`
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     margin-top: 50px;
