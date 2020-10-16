@@ -29,7 +29,7 @@ function AdminMenu(){
         <>
             <StyledUl className="text-center">
                 <StyledList>
-                    <StyledLink to="/admin" activeStyle={style} ><AiFillHome /> Admin</StyledLink>
+                    <StyledLink to="/admin" ><AiFillHome /> Admin</StyledLink>
                 </StyledList>
 
                 <StyledList>

@@ -4,15 +4,15 @@ import { Container } from 'react-bootstrap';
 
 const StyledContainer = styled(Container)`
     background-image: url(/images/${switchProp("path",{
-        "/": "headerImg.jpg",
-        "/accommodations": "tomas-eidsvold-g_ykfRZUDkk-unsplash.jpg",
-        "/contact": "pexels-tobias-bjørkli-4654559.jpg",
-        "/register": "cliff-731840_1920.jpg",
-        "/admin": "cliff-731840_1920.jpg",
-        "/add": "norway-2144782_1280.jpg",
-        "/messages": "pexels-tobias-bjørkli-4654559.jpg",
+        "/": "headerImg1.jpg",
+        "/accommodations": "tomas-eidsvold-g_ykfRZUDkk-unsplash1.jpg",
+        "/contact": "pexels-tobias-bjørkli-46545591.jpg",
+        "/register": "ansgar-scheffold-IZZ78Ugqsow-unsplash.jpg",
+        "/admin": "ansgar-scheffold-IZZ78Ugqsow-unsplash.jpg",
+        "/admin/add": "norway-2144782_1280.jpg",
+        "/admin/messages": "pexels-tobias-bjørkli-46545591.jpg",
     },
-        "headerDark.jpg"
+        "headerDark1.jpg"
     )});
     background-repeat: no-repeat;
     background-size: cover;
