@@ -2,6 +2,7 @@ import React from 'react';
 import { BsPlusCircleFill, BsCalendarFill } from 'react-icons/bs';
 import { AiFillHome, AiFillMessage } from 'react-icons/ai';
 import StyledLink from './StyledLink';
+import Logout from '../auth/Logout';
 import styled from 'styled-components';
 
 const StyledUl = styled.ul`
@@ -43,6 +44,11 @@ function AdminMenu(){
                 <StyledList>
                     <StyledLink to="/admin/enquiries" activeStyle={style} ><BsCalendarFill /> Booking enquiries</StyledLink>
                 </StyledList>
+
+                <StyledList>
+                    <StyledLink to="/" ><Logout /> </StyledLink>
+                </StyledList>
+                
             </StyledUl>
         </>     
     )

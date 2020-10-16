@@ -5,7 +5,6 @@ import { VscMenu } from 'react-icons/vsc';
 import logo from '../../../../images/logoHolidaze.png';
 import HeaderContainer from '../header/HeaderContainer';
 import { AuthContext } from "../../../../context/AutContext";
-import Logout from "../../../auth/Logout";
 import UserIcon from './UserIcon';
 import styled from 'styled-components';
 
@@ -73,8 +72,7 @@ function NavBar() {
                             </StyledLink>
                             {user ? (
                                 <>
-                                    <StyledLink to="/admin" activeStyle={style}> <UserIcon /> </StyledLink>
-                                    <Logout />
+                                    <StyledLink to="/admin" activeStyle={style}>Admin </StyledLink>
                                 </>
                             ) : (
                                 <StyledLink to="/register" activeStyle={style}> <UserIcon /> </StyledLink>

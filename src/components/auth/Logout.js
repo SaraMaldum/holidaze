@@ -6,20 +6,22 @@ import Buttons from '../visitor/layout/buttons/Buttons';
 import styled from 'styled-components';
 
 const LogoutBtn = styled(Buttons)`
+    color: ${({ theme }) => theme.colors.orange};
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0;
     background-color: transparent;
-    padding: 10px 15px;
     border: none;
-    color: ${({theme}) => theme.colors.white};
     box-shadow: none;
     text-align: left; 
-    margin: -2px 0 0 -2px;
+    margin: 0 auto;
 
     &:hover {
+        color: ${({ theme }) => theme.colors.mainBlue};
+        text-decoration: none;
+        transition: .3s;
         border: none;
-        border-bottom: 3px solid #EB8F2D;
-        background-color: transparent;
-        color: ${({theme}) => theme.colors.darkBlue};
-        transition: 0.4s;
+        background-color: transparent;        
     }
 `; 
 
@@ -37,7 +39,7 @@ function Logout() {
         history.push("/");
     }
 
-    return <LogoutBtn onClick={doLogout}><LogoutIcon /> </LogoutBtn>;
+    return <LogoutBtn onClick={doLogout}><LogoutIcon /> Log out </LogoutBtn>;
 }
 
 export default Logout;
