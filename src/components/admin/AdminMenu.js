@@ -7,15 +7,22 @@ import styled from 'styled-components';
 
 const StyledUl = styled.ul`
     margin-top: 20px; 
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;   
+
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 const StyledList = styled.li`
     display: inline-block;
-
+    
     @media (max-width: 768px) {
         display: block;
-        padding: 10px;
+        padding: 5px 0;
+        text-align: center;
+        margin-bottom: 5px;
     }
 `;
 
@@ -30,7 +37,7 @@ function AdminMenu(){
         <>
             <StyledUl className="text-center">
                 <StyledList>
-                    <StyledLink to="/admin" ><AiFillHome /> Admin</StyledLink>
+                    <StyledLink to="/admin" activeStyle={style} ><AiFillHome /> Admin</StyledLink>
                 </StyledList>
 
                 <StyledList>
