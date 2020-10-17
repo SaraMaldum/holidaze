@@ -24,14 +24,6 @@ const StyledHeaderContainer = styled(Container)`
     )};
     font-family: "Fira Sans", sans-serif;
     box-shadow: 4px 4px 8px gray;
-
-    @media (max-width: 768px) {
-        height: ${switchProp("path", {
-            "/": "50vh",
-        }, 
-        "30vh"
-        )};
-    }
 `;
 
 export default StyledHeaderContainer;
