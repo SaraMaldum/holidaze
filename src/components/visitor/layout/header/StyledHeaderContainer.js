@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 const StyledHeaderContainer = styled(Container)`
     background-image: url(/images/${switchProp("path",{
         "/": "headerImg.jpg",
-        "/accommodations": "accomHeader.jpg",
+        "/accommodations": "accommodationHeader.jpg",
         "/contact": "contactHeader.jpg",
         "/register": "adminHeader.jpg",
         "/admin": "adminHeader.jpg",

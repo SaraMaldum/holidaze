@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import Buttons from '../layout/buttons/Buttons';
 
 const BtnContainer = styled(Container)`
-    margin-top: -82px;
+    margin-top: -84px;
     padding: 4px;
     max-width: 350px;
     background-color: rgba(255,255,255,.6);

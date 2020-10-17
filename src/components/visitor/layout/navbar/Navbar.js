@@ -45,6 +45,14 @@ const StyledBurger = styled(VscMenu)`
     font-size: 30px;
 `; 
 
+const StyledNav = styled(Nav)`
+
+    @media (max-width: 990px) {
+        background-color: rgba(80,80,80,.2);
+        border-radius: 10px;
+    }
+` 
+
 //Navbar function
 function NavBar() {
     const { user } = useContext(AuthContext);
@@ -60,7 +68,7 @@ function NavBar() {
                         <StyledBurger />                
                     </Navbar.Toggle>    
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
+                        <StyledNav className="ml-auto">
                             <StyledLink to="/" activeStyle={style} exact>
                                 Home
                             </StyledLink>
@@ -77,7 +85,7 @@ function NavBar() {
                             ) : (
                                 <StyledLink to="/register" activeStyle={style}> <UserIcon /> </StyledLink>
                             )}                            
-                        </Nav>
+                        </StyledNav>
                     </Navbar.Collapse>  
                 </Navbar>
             </HeaderContainer>

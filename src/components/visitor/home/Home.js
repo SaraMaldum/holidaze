@@ -15,15 +15,17 @@ import HeaderButton from './HeaderButton';
 const StyledImg = styled.div`
     margin: 10px 0;
     height: 350px;
-    width: 100%;
     filter: drop-shadow(2px 2px 2px gray);
+    position: relative;
 `; 
 
 const HomeBtn = styled(Buttons)`
-    position: absolute;
-    top: 44%;
-    left: 32%;
     margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 `;
 
 function Home() {
